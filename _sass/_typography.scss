@@ -33,13 +33,16 @@ pre code {
   line-height: 1.5;
 }
 
-// 테이블 텍스트는 촘촘한 경우가 많아 살짝 작게
 table {
   font-size: 14px;
 }
 
-// 인용구
 blockquote {
   font-size: 15px;
   line-height: 1.6;
+  border-left: 4px solid #3b82f6;
+  background: rgba(59, 130, 246, 0.08);
+  padding: 0.75rem 1rem;
+  margin: 0 0;
+  color: inherit;
 }

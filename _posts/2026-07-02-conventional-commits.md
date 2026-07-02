@@ -240,7 +240,7 @@ chore: .env.example 파일 추가
 
 <br>
 
-#### ci — CI/CD 설정 변경
+##### ci — CI/CD 설정 변경
 
 GitHub Actions, Jenkins 등 CI/CD 파이프라인 설정을 변경했을 때 사용합니다.
 
@@ -328,4 +328,4 @@ feat!: API 응답 구조 변경
 
 특히 CI/CD 파이프라인이나 릴리즈 자동화를 구축할 때는 `type`을 기준으로 changelog를 자동 생성할 수도 있어서 데브옵스 워크플로우와도 잘 맞물립니다.
 
-</div>**
+</div>
