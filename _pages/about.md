@@ -9,7 +9,7 @@ profile:
   image: prof_pic.jpg
   image_circular: false # 이미지를 원형으로 자름
   more_info: >
-    <p>Seoul, South Korea</p>
+    <p>Suwon, South Korea</p>
     <p>wonjun.s.dev@gmail.com</p>
 
 selected_papers: false # true로 하면 "selected={true}"로 표시한 논문 목록을 보여줌
