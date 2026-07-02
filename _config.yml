@@ -2,7 +2,7 @@
 # Site settings
 # -----------------------------------------------------------------------------
 
-title: My 개발 블로그 # the website title (if blank, full name will be used instead)
+title: WonJun's Blog # the website title (if blank, full name will be used instead)
 first_name: 원준
 middle_name:
 last_name: 서
@@ -122,8 +122,8 @@ bing_site_verification: # out your bing-site-verification ID (Bing Webmaster)
 # Blog
 # -----------------------------------------------------------------------------
 
-blog_name: 기술 블로그 # blog_name will be displayed in your blog page
-blog_description: a simple whitespace theme for academics
+blog_name: 개발 블로그 # blog_name will be displayed in your blog page
+blog_description: 고민과 배움을 함께 쌓아가는 공간
 permalink: /blog/:year/:title/
 lsi: false # produce an index for related posts
 
@@ -661,7 +661,7 @@ jsonresume:
   - work
   - education
   - publications
-  - projects
+  - projectsz
   - volunteer
   - awards
   - certificates
