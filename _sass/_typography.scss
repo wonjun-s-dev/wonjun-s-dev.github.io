@@ -1,0 +1,45 @@
+// 한글 웹폰트 우선순위로 폰트 스택 재정의
+body, p, li, td, th {
+  font-family: 'Pretendard', 'Noto Sans KR', -apple-system,
+  BlinkMacSystemFont, 'Malgun Gothic', 'Apple SD Gothic Neo',
+  sans-serif;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Pretendard', 'Noto Sans KR', -apple-system,
+  BlinkMacSystemFont, 'Malgun Gothic', sans-serif;
+  font-weight: 400; // 한글 폰트는 굵기 지정을 명시하는 게 안전
+}
+
+// 헤딩 레벨별 크기 개별 지정
+h1 { font-size: 26px; }
+h2 { font-size: 22px; }
+h3 { font-size: 19px; }
+h4 { font-size: 17px; }
+h5 { font-size: 15px; }
+h6 { font-size: 14px; }
+
+// 인라인 코드는 한글 섞여도 폰트 안 깨지게 별도 지정
+code {
+  font-family: 'D2Coding', 'Consolas', monospace;
+  font-size: 13px;
+}
+
+// 코드 블록(pre > code)은 인라인 코드와 다르게 관리하고 싶을 때
+pre code {
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+// 테이블 텍스트는 촘촘한 경우가 많아 살짝 작게
+table {
+  font-size: 14px;
+}
+
+// 인용구
+blockquote {
+  font-size: 15px;
+  line-height: 1.6;
+}
