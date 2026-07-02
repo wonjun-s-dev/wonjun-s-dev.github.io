@@ -7,7 +7,7 @@ subtitle: Full-Stack Developer · React · TypeScript · NestJS
 profile:
   align: right
   image: prof_pic.jpg
-  image_circular: true # 이미지를 원형으로 자름
+  image_circular: false # 이미지를 원형으로 자름
   more_info: >
     <p>Seoul, South Korea</p>
     <p>wonjun.s.dev@gmail.com</p>
@@ -35,5 +35,3 @@ latest_posts:
 요즘은 한 단계 더 나아가고 싶어서 Docker, AWS, GitHub Actions로 배포 파이프라인을 직접 구축해보고 있습니다. 만드는 데서 끝내지 않고 안정적으로 운영까지 이어갈 수 있는 개발자가 되는 게 목표입니다.
 
 전공을 바꿨다기보다, 문제를 푸는 방식을 바꿨다고 생각합니다. 도면 대신 코드로, 기계 대신 서버로요.
-
-프로젝트 이야기는 아래에서 하나씩 풀어보겠습니다.
