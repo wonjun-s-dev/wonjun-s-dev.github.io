@@ -1,0 +1,197 @@
+<!DOCTYPE html> <html lang="ko"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title> starbucks-homepage | WonJun's Blog </title> <meta name="author" content="원준 서"> <meta name="description" content="스타벅스 코리아 공식 홈페이지 UI/인터랙션을 재현한 정적 프론트엔드 클론 프로젝트"> <meta name="keywords" content="jekyll, jekyll-theme, academic-website, portfolio-website"> <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:; media-src 'self' https:; frame-src 'self' https:; connect-src 'self' https:;"> <style>
+  :root {
+    --max-content-width: 930px;
+  }
+</style> <link rel="stylesheet" href="/assets/css/tailwind.css?v=50c64c15cbb9fd1ce6056fdb8bcb4b62"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css" integrity="sha256-MVopmdyC2tYTiJ8wlktf0uh0v4NgT+vNdyVFepi7Q0c=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.5/css/academicons.min.css" integrity="sha256-SzrCOBJbGVFMahewkgjwnApaV2+av1DwMAA+/QGLyZw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/scholar-icons@1.0.3/css/scholar-icons.css" integrity="sha256-VY3hHVj/hNX3fYG6wtbA6TcKJQl7+FthzGSyIB64klY=" crossorigin="anonymous"> <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&amp;display=swap"> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?v=591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light"> <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%E2%9A%9B%EF%B8%8F&lt;/text&gt;&lt;/svg&gt;"> <link rel="stylesheet" href="/assets/css/main.css?v=f0b101217084a90093badfe99ff9a7d1"> <link rel="canonical" href="https://wonjun-s-dev.github.io/projects/1_project/"> <script src="/assets/js/theme.js?v=7af685e2ba20b37fef545c97b8064050"></script> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css?v=5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark"> <script>
+    initTheme();
+  </script> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> WonJun's Blog </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">about </a> </li> <li class="nav-item "> <a class="nav-link" href="/blog/">blog </a> </li> <li class="nav-item "> <a class="nav-link" href="/news/">daily </a> </li> <li class="nav-item active"> <a class="nav-link" href="/projects/">projects <span class="sr-only">(current)</span> </a> </li> <li class="nav-item "> <a class="nav-link" href="/cv/">CV </a> </li> <li class="nav-item"> <button id="search-toggle" type="button" title="Search" aria-label="Open search"> <span class="nav-link">ctrl k <i class="fa-solid fa-magnifying-glass"></i></span> </button> </li> <li class="toggle-container"> <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"> <i class="fa-half-sun-moon" id="light-toggle-system"></i> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="post"> <header class="post-header"> <h1 class="post-title">starbucks-homepage</h1> <p class="post-description">스타벅스 코리아 공식 홈페이지 UI/인터랙션을 재현한 정적 프론트엔드 클론 프로젝트</p> </header> <article> <div style="word-break: keep-all; overflow-wrap: break-word;"> <p>스타벅스 코리아 공식 홈페이지의 UI와 인터랙션을 그대로 재현한 정적 프론트엔드 클론 프로젝트입니다.</p> <p><strong>배포</strong>: <a href="https://euphonious-manatee-8cb890.netlify.app/" rel="external nofollow noopener" target="_blank">바로가기</a> <br> <strong>레포지토리</strong>: <a href="https://github.com/wonjun-s-dev/starbucks-homepage" rel="external nofollow noopener" target="_blank">바로가기</a> <br> <strong>Stack</strong>: HTML5, CSS3, Vanilla JavaScript, GSAP, Swiper, ScrollMagic <br> <strong>기간 / 인원</strong>: 2026.07.02 ~ 2026.07.06 · 1인 개발 <br></p> <div class="row"> <div class="col-sm mt-3 mt-md-0"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/sc-01-480.webp 480w,/assets/img/sc-01-800.webp 800w,/assets/img/sc-01-1400.webp 1400w," type="image/webp" sizes="95vw"></source> <img src="/assets/img/sc-01.png" class="img-fluid rounded z-depth-1" width="100%" height="auto" title="메인 화면" loading="eager" onerror="this.onerror=null; document.querySelectorAll('.responsive-img-srcset').forEach(function (n) { n.remove(); });"> </picture> </figure> </div> <div class="col-sm mt-3 mt-md-0"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/sc-03-480.webp 480w,/assets/img/sc-03-800.webp 800w,/assets/img/sc-03-1400.webp 1400w," type="image/webp" sizes="95vw"></source> <img src="/assets/img/sc-03.png" class="img-fluid rounded z-depth-1" width="100%" height="auto" title="로그인 화면" loading="eager" onerror="this.onerror=null; document.querySelectorAll('.responsive-img-srcset').forEach(function (n) { n.remove(); });"> </picture> </figure> </div> </div> <div class="caption"> 좌측은 메인 페이지 비주얼 섹션, 우측은 별도 경로(/signin)로 구현한 로그인 페이지입니다. </div> <h2 id="section">프로젝트 소개</h2> <p>프론트엔드 퍼블리싱 실력과 스크롤/애니메이션 라이브러리 활용 능력을 기르기 위해 진행한 클론 프로젝트입니다. (패스트캠퍼스 강의 실습)</p> <ul> <li>메인 페이지의 12개 이상 섹션(비주얼, 공지, 리워드, 유튜브, 시즌 상품, 리저브 커피, Find the store, Awards 등) 마크업/스타일 재현</li> <li>GSAP 기반 스크롤 인터랙션(헤더 뱃지 페이드, Top 버튼, 플로팅 오브젝트, 스크롤 스파이)</li> <li>Swiper를 활용한 3종 캐러셀(공지사항 세로 슬라이드, 프로모션, 어워드)</li> <li>로그인 페이지 UI 별도 구현</li> </ul> <p><strong>왜 만들었는가</strong></p> <p>실제 서비스 화면을 그대로 뜯어보며 레이아웃 구현, CSS 애니메이션, 서드파티 라이브러리(GSAP/Swiper/ScrollMagic) 연동 경험을 쌓기 위해 제작했습니다.</p> <p><strong>성과 / 결과</strong></p> <p>학습 목적의 클론 프로젝트로, 실사용자 지표는 없습니다.</p> <hr> <h2 id="section-1">기술 스택</h2> <table> <thead> <tr> <th>구분</th> <th>기술</th> <th>선택 이유</th> </tr> </thead> <tbody> <tr> <td>Markup / Style</td> <td>HTML5, CSS3</td> <td>프레임워크 없이 순수 마크업/스타일링 연습</td> </tr> <tr> <td>Animation</td> <td>GSAP 3.5.1, ScrollToPlugin</td> <td>스크롤 트리거 애니메이션과 부드러운 스크롤 이동 구현</td> </tr> <tr> <td>Carousel</td> <td>Swiper 6.8.4</td> <td>공지/프로모션/어워드 등 다양한 슬라이드 옵션(방향, autoplay, pagination)을 한 라이브러리로 통일</td> </tr> <tr> <td>Scroll Effect</td> <td>ScrollMagic 2.0.8</td> <td> <code class="language-plaintext highlighter-rouge">scroll-spy</code> 클래스 토글로 섹션 진입 시 애니메이션 트리거</td> </tr> <tr> <td>Utility</td> <td>Lodash</td> <td>스크롤 이벤트 <code class="language-plaintext highlighter-rouge">throttle</code> 처리로 성능 저하 방지</td> </tr> <tr> <td>기타</td> <td>YouTube IFrame API, Google Fonts(Nanum Gothic), Material Icons</td> <td>영상 임베드 및 디자인 요소 재현</td> </tr> <tr> <td>Tooling</td> <td>Prettier</td> <td>코드 포맷 통일 (<code class="language-plaintext highlighter-rouge">.prettierrc</code>)</td> </tr> </tbody> </table> <p>이번 프로젝트에서 <strong>처음 써본 기술</strong>은 ScrollMagic과 GSAP ScrollToPlugin입니다. CSS만으로는 어려운 “스크롤 위치에 따른 클래스 토글”과 “특정 좌표로 부드럽게 스크롤”을 라이브러리로 해결하는 경험을 쌓았습니다.</p> <hr> <h2 id="section-2">프로젝트 구조</h2> <div class="language-plaintext highlighter-rouge"> <div class="highlight"><pre class="highlight"><code>starbucks-homepage/
+├── index.html          # 메인 페이지
+├── signin/
+│   └── index.html       # 로그인 페이지
+├── css/
+│   ├── common.css       # 헤더/푸터 등 공통 스타일
+│   ├── main.css        # 메인 페이지 섹션별 스타일
+│   └── signin.css       # 로그인 페이지 스타일
+├── js/
+│   ├── common.js       # 검색창 인터랙션, 연도 표시
+│   ├── main.js         # GSAP/Swiper/ScrollMagic 인터랙션
+│   └── youtube.js       # YouTube IFrame API 초기화
+├── images/             # 슬라이드, 배경, 아이콘 등 에셋
+└── favicon.ico / favicon.png
+</code></pre></div> </div> <hr> <h2 id="section-3">주요 기능</h2> <p><strong>1. 헤더 인터랙션</strong></p> <p>검색창 focus 시 확장 애니메이션, 스크롤 500px 이상 시 상단 뱃지 페이드아웃 및 Top 버튼 노출.</p> <p><strong>2. 메인 비주얼</strong></p> <p>GSAP를 이용한 텍스트/이미지 순차 페이드인 효과.</p> <p><strong>3. 캐러셀 3종</strong></p> <p>공지사항(세로 자동 슬라이드), 프로모션(가운데 정렬 + 토글 숨김 버튼), Awards(5개 노출 + 좌우 네비게이션) — 모두 Swiper로 구현.</p> <p><strong>4. 스크롤 스파이 애니메이션</strong></p> <p><code class="language-plaintext highlighter-rouge">section.scroll-spy</code> 요소가 뷰포트에 80% 진입하면 ScrollMagic이 <code class="language-plaintext highlighter-rouge">show</code> 클래스를 토글해 섹션 등장 애니메이션을 트리거.</p> <p><strong>5. 플로팅 오브젝트</strong></p> <p><code class="language-plaintext highlighter-rouge">floating1~3</code> 요소를 GSAP로 랜덤한 딜레이/폭으로 상하 반복 이동시켜 자연스러운 부유 효과 연출.</p> <p><strong>6. YouTube 임베드</strong></p> <p>YouTube IFrame API를 동적으로 로드해 자동재생 + 무음 + 반복재생 플레이어 삽입.</p> <p><strong>7. 로그인 페이지</strong></p> <p>메인 페이지와 분리된 <code class="language-plaintext highlighter-rouge">/signin</code> 경로에 별도 UI 구현.</p> <hr> <h2 id="section-4">실행 방법</h2> <p>빌드 도구 없이 정적 파일로 구성되어 있어 별도 설치 과정이 필요 없습니다.</p> <div class="language-bash highlighter-rouge"> <div class="highlight"><pre class="highlight"><code>git clone <span class="o">[</span>저장소_URL]
+<span class="nb">cd </span>starbucks-homepage
+
+<span class="c"># 방법 1: 브라우저로 바로 열기</span>
+open index.html
+
+<span class="c"># 방법 2: 로컬 서버로 실행 (권장 — CORS/상대경로 이슈 방지)</span>
+npx live-server
+</code></pre></div> </div> <hr> <h2 id="section-5">회고</h2> <p><strong>배운 점</strong></p> <p>GSAP·Swiper·ScrollMagic 세 라이브러리를 한 페이지에서 같이 써보면서 각각의 역할을 명확히 구분하는 법을 익혔습니다. 특히 스크롤 이벤트에 애니메이션을 직접 걸면 성능이 급격히 떨어진다는 걸 체감하고 나서, <code class="language-plaintext highlighter-rouge">lodash.throttle</code>로 스크롤 핸들러 실행 빈도를 제한하는 습관을 들이게 됐습니다.</p> <p><strong>아쉬운 점</strong></p> <p>화면 크기를 데스크톱 기준으로만 만들어서 모바일/태블릿 대응이 전혀 안 되어 있습니다. 로그인 페이지도 UI만 있고 실제 인증 로직은 없어서, 지금은 “마크업+인터랙션 재현”에 그친 상태입니다.</p> <p><strong>다음 계획</strong></p> <p>반응형 브레이크포인트 추가 → 이미지 lazy loading 적용 → 로그인 폼에 최소한의 유효성 검사 붙이기 순으로 진행할 예정입니다.</p> <h3 id="section-6">향후 개선 계획</h3> <ul class="task-list"> <li class="task-list-item"> <input type="checkbox" class="task-list-item-checkbox" disabled>반응형 레이아웃 대응 (모바일/태블릿)</li> <li class="task-list-item"> <input type="checkbox" class="task-list-item-checkbox" disabled>로그인 페이지 실제 인증 로직 연동</li> <li class="task-list-item"> <input type="checkbox" class="task-list-item-checkbox" disabled>이미지 lazy loading 적용</li> </ul> </div> </article> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 원준 서. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>. Photos from <a href="https://unsplash.com" target="_blank" rel="external nofollow noopener">Unsplash</a>. </div> </footer> <script>
+  window.alFolio = {
+    compatBootstrap: false
+  };
+</script> <script src="/assets/js/nav-toggle.js?v=141bd79a73ebc0f0b6ea58e440ae79fc"></script> <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script> <script defer src="/assets/js/masonry.js?v=e49affc7bd2646f6acdad1dbe02c2359" type="text/javascript"></script> <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI=" crossorigin="anonymous"></script> <script src="/assets/al_math/js/mathjax-setup.js"></script> <script defer src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6" crossorigin="anonymous"></script> <script src="/assets/js/tooltips-setup.js?v=fe487e99db6c43751e6e7bdb2d6a0611"></script> <script src="/assets/js/no_defer.js?v=53b1b1a645525975c963ce8bf8bfefcf"></script> <script defer src="/assets/js/common.js?v=87baac90f765f2f3362dcf6aaf312a8a"></script> <script defer src="/assets/js/copy_code.js?v=c8a01c11a92744d44b093fc3bda915df" type="text/javascript"></script> <script defer src="/assets/js/jupyter_new_tab.js?v=896d254890d9b47f0281f63bfccf0dee"></script> <script async src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script> <script async src="https://badge.dimensions.ai/badge.js"></script> <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script> <script defer src="/assets/al_img_tools/js/zoom.js"></script> <script defer src="/assets/js/progress-bar.js?v=499464c5c63ced6cf7ad62509f1e2610" type="text/javascript"></script> <script src="https://cdn.jsdelivr.net/npm/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js" integrity="sha256-uMJJ3EoTyfRBoTbR+lrfu1uRQ87RZG8AR3cVNuQVeFg=" crossorigin="anonymous"></script> <script>
+    addBackToTop();
+  </script> <script type="module" src="/assets/al_search/js/search/ninja-keys.min.js"></script> <ninja-keys hidebreadcrumbs noautoloadmdicons placeholder="Type to start searching"></ninja-keys> <script src="/assets/al_search/js/search-setup.js"></script> <script>
+// get the ninja-keys element
+const ninja = document.querySelector('ninja-keys');
+
+// add the home and posts menu items
+ninja.data = [{
+    id: "nav-about",
+    title: "about",
+    section: "Navigation",
+    handler: () => {
+      window.location.href = "/";
+    },
+  },{id: "nav-blog",
+          title: "blog",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/blog/";
+          },
+        },{id: "nav-daily",
+          title: "daily",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/news/";
+          },
+        },{id: "nav-projects",
+          title: "projects",
+          description: "실무, 개인 프로젝트",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/projects/";
+          },
+        },{id: "nav-cv",
+          title: "CV",
+          description: "This is a description of the page. You can modify it in &#39;_pages/cv.md&#39;. You can also change or remove the top pdf download button.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/cv/";
+          },
+        },{id: "post-css만으로-패럴랙스-배경-만들기",
+        
+          title: "CSS만으로 패럴랙스 배경 만들기",
+        
+        description: "background-attachment fixed 파헤치기",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/parallax-background/";
+          
+        },
+      },{id: "post-커밋-메시지-컨벤션-가이드",
+        
+          title: "커밋 메시지 컨벤션 가이드",
+        
+        description: "용도별로 정리한 커밋 메시지 타입과 실전 팁",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/conventional-commits/";
+          
+        },
+      },{id: "books-the-godfather",
+          title: 'The Godfather',
+          description: "",
+          section: "Books",handler: () => {
+              window.location.href = "/books/the_godfather/";
+            },},{id: "news-2026-07-02-01-daily",
+          title: '2026-07-02-01 Daily',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/2026-07-02-01-daily/";
+            },},{id: "news-2026-07-06-01-daily",
+          title: '2026-07-06-01 Daily',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/2026-07-06-01-daily/";
+            },},{id: "projects-starbucks-homepage",
+          title: 'starbucks-homepage',
+          description: "스타벅스 코리아 공식 홈페이지 UI/인터랙션을 재현한 정적 프론트엔드 클론 프로젝트",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/1_project/";
+            },},{id: "teachings-data-science-fundamentals",
+          title: 'Data Science Fundamentals',
+          description: "This course covers the foundational aspects of data science, including data collection, cleaning, analysis, and visualization. Students will learn practical skills for working with real-world datasets.",
+          section: "Teachings",handler: () => {
+              window.location.href = "/teachings/data-science-fundamentals/";
+            },},{id: "teachings-introduction-to-machine-learning",
+          title: 'Introduction to Machine Learning',
+          description: "This course provides an introduction to machine learning concepts, algorithms, and applications. Students will learn about supervised and unsupervised learning, model evaluation, and practical implementations.",
+          section: "Teachings",handler: () => {
+              window.location.href = "/teachings/introduction-to-machine-learning/";
+            },},{
+        id: 'social-cv',
+        title: 'CV',
+        section: 'Socials',
+        handler: () => {
+          window.open("/assets/pdf/example_pdf.pdf", "_blank");
+        },
+      },{
+        id: 'social-email',
+        title: 'email',
+        section: 'Socials',
+        handler: () => {
+          window.open("mailto:%79%6F%75@%65%78%61%6D%70%6C%65.%63%6F%6D", "_blank");
+        },
+      },{
+        id: 'social-inspire',
+        title: 'Inspire HEP',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://inspirehep.net/authors/1010907", "_blank");
+        },
+      },{
+        id: 'social-rss',
+        title: 'RSS Feed',
+        section: 'Socials',
+        handler: () => {
+          window.open("/feed.xml", "_blank");
+        },
+      },{
+        id: 'social-scholar',
+        title: 'Google Scholar',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://scholar.google.com/citations?user=qc6CJjYAAAAJ", "_blank");
+        },
+      },{
+        id: 'social-custom_social',
+        title: 'Custom_social',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://www.alberteinstein.com/", "_blank");
+        },
+      },{
+      id: 'light-theme',
+      title: 'Change theme to light',
+      description: 'Change the theme of the site to Light',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("light");
+      },
+    },
+    {
+      id: 'dark-theme',
+      title: 'Change theme to dark',
+      description: 'Change the theme of the site to Dark',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("dark");
+      },
+    },
+    {
+      id: 'system-theme',
+      title: 'Use system default theme',
+      description: 'Change the theme of the site to System Default',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("system");
+      },
+    },];
+
+</script> <script src="/assets/al_search/js/shortcut-key.js"></script> </body> </html>
