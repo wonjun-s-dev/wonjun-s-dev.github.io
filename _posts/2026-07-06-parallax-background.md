@@ -1,7 +1,7 @@
 ---
 layout: post
 title: CSS만으로 패럴랙스 배경 만들기
-description: background-attachment: fixed 파헤치기
+description: background-attachment fixed 파헤치기
 tags: 학습 CSS
 categories: posts
 related_posts: false
@@ -9,8 +9,6 @@ toc:
   sidebar: right
 
 ---
-
-<div style="word-break: keep-all; overflow-wrap: break-word;" markdown="1">
 
 <div style="word-break: keep-all; overflow-wrap: break-word;" markdown="1">
 
@@ -121,3 +119,5 @@ function updateParallax() {
 | JS + `transform` (Intersection Observer) | 성능 우수, 세밀한 제어 가능     | 구현 복잡도 증가                  |
 
 간단한 히어로 섹션 정도라면 `background-attachment: fixed`로 충분하지만, 프로덕션 환경에서 모바일 트래픽 비중이 크다면 처음부터 `transform` 기반 JS 패럴랙스를 고려하는 게 유지보수 측면에서 더 안전합니다.
+
+</div>
