@@ -17,10 +17,13 @@ Apple Korea 공식 홈페이지의 iPad 10.2 제품 소개 페이지(`apple.com/
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/sc-01.png" title="Hero 섹션" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/pro-02-01.png" title="Hero 섹션" class="img-fluid rounded z-depth-1" %}
     </div>
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/sc-03.png" title="Compare 섹션" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/pro-02-02.png" title="Compare 섹션" class="img-fluid rounded z-depth-1" %}
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/pro-02-03.png" title="Compare 섹션" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
