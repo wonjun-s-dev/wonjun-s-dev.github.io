@@ -1,0 +1,362 @@
+<!DOCTYPE html> <html lang="ko"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title> iPad Homepage 프로젝트에서 생각해봐야할 것들 (2) — 푸터 아코디언 편 | WonJun's Blog </title> <meta name="author" content="원준 서"> <meta name="description" content="A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design. "> <meta name="keywords" content="jekyll, jekyll-theme, academic-website, portfolio-website"> <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:; media-src 'self' https:; frame-src 'self' https:; connect-src 'self' https:;"> <style>
+  :root {
+    --max-content-width: 930px;
+  }
+</style> <link rel="stylesheet" href="/assets/css/tailwind.css?v=50c64c15cbb9fd1ce6056fdb8bcb4b62"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tocbot@4.36.4/dist/tocbot.css" integrity="sha256-zTN0r+0OKaIv2xqeNNIYxNk0pWJ6+IqPGc1iDgVzWF0=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css" integrity="sha256-MVopmdyC2tYTiJ8wlktf0uh0v4NgT+vNdyVFepi7Q0c=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.5/css/academicons.min.css" integrity="sha256-SzrCOBJbGVFMahewkgjwnApaV2+av1DwMAA+/QGLyZw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/scholar-icons@1.0.3/css/scholar-icons.css" integrity="sha256-VY3hHVj/hNX3fYG6wtbA6TcKJQl7+FthzGSyIB64klY=" crossorigin="anonymous"> <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&amp;display=swap"> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?v=591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light"> <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%E2%9A%9B%EF%B8%8F&lt;/text&gt;&lt;/svg&gt;"> <link rel="stylesheet" href="/assets/css/main.css?v=f0b101217084a90093badfe99ff9a7d1"> <link rel="canonical" href="https://wonjun-s-dev.github.io/blog/2026/accordion/"> <script src="/assets/js/theme.js?v=7af685e2ba20b37fef545c97b8064050"></script> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css?v=5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark"> <script>
+    initTheme();
+  </script> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> WonJun's Blog </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">about </a> </li> <li class="nav-item active"> <a class="nav-link" href="/blog/">blog </a> </li> <li class="nav-item "> <a class="nav-link" href="/news/">daily </a> </li> <li class="nav-item "> <a class="nav-link" href="/projects/">projects </a> </li> <li class="nav-item "> <a class="nav-link" href="/cv/">CV </a> </li> <li class="nav-item"> <button id="search-toggle" type="button" title="Search" aria-label="Open search"> <span class="nav-link">ctrl k <i class="fa-solid fa-magnifying-glass"></i></span> </button> </li> <li class="toggle-container"> <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"> <i class="fa-half-sun-moon" id="light-toggle-system"></i> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="row"> <div class="col-sm-9"> <div class="post"> <header class="post-header"> <h1 class="post-title">iPad Homepage 프로젝트에서 생각해봐야할 것들 (2) — 푸터 아코디언 편</h1> <p class="post-meta"> Created on July 11, 2026 </p> <p class="post-tags"> <a href="/blog/2026"> <i class="fa-solid fa-calendar fa-sm"></i> 2026 </a>   ·   <a href="/blog/tag/css"> <i class="fa-solid fa-hashtag fa-sm"></i> CSS</a>   <a href="/blog/tag/javascript"> <i class="fa-solid fa-hashtag fa-sm"></i> JavaScript</a>   <a href="/blog/tag/accordion"> <i class="fa-solid fa-hashtag fa-sm"></i> Accordion</a>   <a href="/blog/tag/accessibility"> <i class="fa-solid fa-hashtag fa-sm"></i> Accessibility</a> </p> </header> <article class="post-content"> <div id="markdown-content"> <div style="word-break: keep-all; overflow-wrap: break-word;"> <p>지난 글에서 스프라이트 아이콘, <code class="language-plaintext highlighter-rouge">IntersectionObserver</code>, 마스킹 같은 개별 트릭을 하나씩 뜯어봤다면, 이번엔 컴포넌트 하나를 처음부터 끝까지 관통해서 본다. 애플 홈페이지 하단에 있는 “사이트맵” 아코디언 — 클릭하면 펼쳐지고 다시 클릭하면 접히는 그 메뉴 — 를 만든 코드는 JS 5줄, CSS 20줄 남짓이다. 짧지만 그 안에 “동적 렌더링”, “height 트랜지션의 한계”, “브레이크포인트별 역할 분리”, “접근성 트레이드오프”가 전부 들어있다.</p> <h2 id="section">이 컴포넌트가 하는 일</h2> <p><code class="language-plaintext highlighter-rouge">data/navigations.js</code>에는 “쇼핑 및 알아보기”, “서비스”, “계정” 같은 8개 카테고리가 배열로 정의돼 있고, 각 카테고리는 <code class="language-plaintext highlighter-rouge">title</code>과 <code class="language-plaintext highlighter-rouge">maps</code>(링크 목록)를 가진다.</p> <div class="language-js highlighter-rouge"> <div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="k">default</span> <span class="p">[</span>
+  <span class="p">{</span>
+    <span class="na">title</span><span class="p">:</span> <span class="dl">'</span><span class="s1">쇼핑 및 알아보기</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">maps</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">스토어</span><span class="dl">'</span><span class="p">,</span> <span class="na">url</span><span class="p">:</span> <span class="dl">'</span><span class="s1">/shop/goto/store</span><span class="dl">'</span> <span class="p">},</span>
+      <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Mac</span><span class="dl">'</span><span class="p">,</span> <span class="na">url</span><span class="p">:</span> <span class="dl">'</span><span class="s1">/mac</span><span class="dl">'</span> <span class="p">},</span>
+      <span class="c1">// ...</span>
+    <span class="p">]</span>
+  <span class="p">},</span>
+  <span class="c1">// ... 총 8개 카테고리</span>
+<span class="p">]</span>
+</code></pre></div> </div> <p><code class="language-plaintext highlighter-rouge">js/main.js</code>는 이 배열을 순회하며 <code class="language-plaintext highlighter-rouge">&lt;div class="map"&gt;</code> 8개를 만들어 <code class="language-plaintext highlighter-rouge">footer .navigations</code>에 밀어 넣는다.</p> <div class="language-js highlighter-rouge"> <div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">navigationsEl</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">footer .navigations</span><span class="dl">'</span><span class="p">);</span>
+<span class="nx">navigations</span><span class="p">.</span><span class="nf">forEach</span><span class="p">(</span><span class="nf">function </span><span class="p">(</span><span class="nx">nav</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">mapEl</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">createElement</span><span class="p">(</span><span class="dl">'</span><span class="s1">div</span><span class="dl">'</span><span class="p">);</span>
+  <span class="nx">mapEl</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="dl">'</span><span class="s1">map</span><span class="dl">'</span><span class="p">);</span>
+
+  <span class="kd">let</span> <span class="nx">mapList</span> <span class="o">=</span> <span class="dl">''</span><span class="p">;</span>
+  <span class="nx">nav</span><span class="p">.</span><span class="nx">maps</span><span class="p">.</span><span class="nf">forEach</span><span class="p">(</span><span class="nf">function </span><span class="p">(</span><span class="nx">map</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">mapList</span> <span class="o">+=</span> <span class="s2">`&lt;li&gt;&lt;a href="</span><span class="p">${</span><span class="nx">map</span><span class="p">.</span><span class="nx">url</span><span class="p">}</span><span class="s2">"&gt;</span><span class="p">${</span><span class="nx">map</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span><span class="s2">&lt;/a&gt;&lt;/li&gt;`</span><span class="p">;</span>
+  <span class="p">});</span>
+
+  <span class="nx">mapEl</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s2">`
+    &lt;h3&gt;
+      &lt;span class="text"&gt;</span><span class="p">${</span><span class="nx">nav</span><span class="p">.</span><span class="nx">title</span><span class="p">}</span><span class="s2">&lt;/span&gt;
+      &lt;span class="icon"&gt;+&lt;/span&gt;
+    &lt;/h3&gt;
+    &lt;ul&gt;
+      </span><span class="p">${</span><span class="nx">mapList</span><span class="p">}</span><span class="s2">
+    &lt;/ul&gt;
+  `</span><span class="p">;</span>
+
+  <span class="nx">navigationsEl</span><span class="p">.</span><span class="nf">appendChild</span><span class="p">(</span><span class="nx">mapEl</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div> </div> <p>그리고 렌더링이 끝난 뒤, 방금 만든 <code class="language-plaintext highlighter-rouge">.map</code> 요소들을 다시 한번 순회하며 클릭 핸들러를 붙인다.</p> <div class="language-js highlighter-rouge"> <div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">mapEls</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">querySelectorAll</span><span class="p">(</span><span class="dl">'</span><span class="s1">footer .navigations .map</span><span class="dl">'</span><span class="p">);</span>
+<span class="nx">mapEls</span><span class="p">.</span><span class="nf">forEach</span><span class="p">(</span><span class="nf">function </span><span class="p">(</span><span class="nx">el</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">h3El</span> <span class="o">=</span> <span class="nx">el</span><span class="p">.</span><span class="nf">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">h3</span><span class="dl">'</span><span class="p">);</span>
+  <span class="nx">h3El</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">click</span><span class="dl">'</span><span class="p">,</span> <span class="nf">function </span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">el</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nf">toggle</span><span class="p">(</span><span class="dl">'</span><span class="s1">active</span><span class="dl">'</span><span class="p">);</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+</code></pre></div> </div> <p>핵심 로직은 이게 전부다. <code class="language-plaintext highlighter-rouge">h3</code>를 클릭하면 부모 <code class="language-plaintext highlighter-rouge">.map</code>에 <code class="language-plaintext highlighter-rouge">active</code> 클래스를 토글한다. 펼치고 접는 애니메이션, 아이콘이 회전하는 것, 심지어 “아코디언처럼 보이는 것” 자체도 JS는 전혀 모른다. 전부 CSS가 한다.</p> <hr> <h2 id="height-auto------">1. <code class="language-plaintext highlighter-rouge">height: auto</code>는 트랜지션이 안 된다 — 그래서 우회한다</h2> <p>아코디언을 처음 만들어보면 누구나 이 함정에 걸린다. “펼쳐진 목록의 실제 높이”는 항목 개수에 따라 다 다른데(3개짜리 카테고리도 있고 10개짜리도 있다), CSS <code class="language-plaintext highlighter-rouge">transition</code>은 <code class="language-plaintext highlighter-rouge">height: 0</code>에서 <code class="language-plaintext highlighter-rouge">height: auto</code>로 가는 애니메이션을 지원하지 않는다. <code class="language-plaintext highlighter-rouge">auto</code>는 애니메이션 가능한 값이 아니라서, 브라우저는 그 구간을 보간 없이 즉시 점프시켜 버린다.</p> <p>이 프로젝트는 그 한계를 정면돌파하는 대신 우회한다. <code class="language-plaintext highlighter-rouge">height</code>는 그냥 순간적으로 바뀌게 놔두고, <strong>실제로 부드럽게 보이는 효과는 <code class="language-plaintext highlighter-rouge">transform</code>과 <code class="language-plaintext highlighter-rouge">opacity</code>가 전담</strong>한다.</p> <div class="language-css highlighter-rouge"> <div class="highlight"><pre class="highlight"><code><span class="c">/* 접힌 상태 (기본) */</span>
+<span class="nt">footer</span> <span class="nc">.navigations</span> <span class="nc">.map</span> <span class="nt">ul</span> <span class="p">{</span>
+  <span class="nl">height</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+  <span class="nl">overflow</span><span class="p">:</span> <span class="nb">hidden</span><span class="p">;</span>
+  <span class="nl">transition</span><span class="p">:</span>
+    <span class="n">transform</span> <span class="m">0.6s</span><span class="p">,</span>
+    <span class="nf">opacity</span> <span class="m">0.4s</span><span class="p">;</span>
+  <span class="nl">transform</span><span class="p">:</span> <span class="nf">translate</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">-20px</span><span class="p">);</span>
+  <span class="nl">opacity</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* 아코디언 메뉴 */</span>
+<span class="nt">footer</span> <span class="nc">.navigations</span> <span class="nc">.map.active</span> <span class="nt">ul</span> <span class="p">{</span>
+  <span class="nl">height</span><span class="p">:</span> <span class="nb">auto</span><span class="p">;</span>
+  <span class="nl">overflow</span><span class="p">:</span> <span class="nb">visible</span><span class="p">;</span>
+  <span class="nl">padding</span><span class="p">:</span> <span class="m">6px</span> <span class="m">0</span> <span class="m">18px</span><span class="p">;</span>
+  <span class="nl">transform</span><span class="p">:</span> <span class="nf">translate</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">);</span>
+  <span class="nl">opacity</span><span class="p">:</span> <span class="m">1</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div> </div> <h3 id="section-1">왜 이게 “괜찮게” 보이는가</h3> <p><code class="language-plaintext highlighter-rouge">height</code>는 <code class="language-plaintext highlighter-rouge">0</code>과 <code class="language-plaintext highlighter-rouge">auto</code> 사이를 순간이동하지만, <code class="language-plaintext highlighter-rouge">overflow: hidden</code>이 걸려 있는 동안은 어차피 내용물이 보이지 않는다. 그리고 <code class="language-plaintext highlighter-rouge">transform: translate(0, -20px) → translate(0, 0)</code>과 <code class="language-plaintext highlighter-rouge">opacity: 0 → 1</code>은 정상적으로 애니메이션되는 속성이라, 눈에는 “위에서 살짝 내려오면서 페이드인” 하는 것처럼 보인다. 즉 이 아코디언은 진짜로 “펼쳐지는” 게 아니라, <strong>height는 접혔다 폈다를 툭툭 스냅하고, 그 위에 transform+opacity로 만든 슬라이드-페이드 효과를 덧씌운</strong> 것이다.</p> <p>이 트릭의 한계는 항목이 아주 많은 카테고리(예시 데이터 기준 “Apple Store” 카테고리는 10개 링크)에서 드러난다. <code class="language-plaintext highlighter-rouge">height: 0 → auto</code>가 순간 전환되기 때문에, 링크가 10개인 목록이나 3개인 목록이나 “펼쳐지는 속도감”은 동일하다 — 원래 height 자체를 애니메이션했다면 내용이 많을수록 더 크게 열리는 느낌을 줄 수 있었겠지만, 여기선 그 디테일은 포기하고 구현 단순성을 택한 것이다.</p> <h3 id="grid-template-rows-0fr--1fr-">심화 — <code class="language-plaintext highlighter-rouge">grid-template-rows: 0fr → 1fr</code>라는 대안</h3> <p>최근 브라우저(2023년 이후 Chrome/Firefox/Safari)에서는 <code class="language-plaintext highlighter-rouge">fr</code> 단위가 트랜지션 가능한 값이 되면서, <code class="language-plaintext highlighter-rouge">height</code> 대신 CSS Grid로 이 문제를 더 깔끔하게 풀 수 있게 됐다.</p> <div class="language-css highlighter-rouge"> <div class="highlight"><pre class="highlight"><code><span class="nc">.map</span> <span class="nt">ul</span> <span class="p">{</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="nb">grid</span><span class="p">;</span>
+  <span class="nl">grid-template-rows</span><span class="p">:</span> <span class="m">0fr</span><span class="p">;</span>
+  <span class="nl">transition</span><span class="p">:</span> <span class="n">grid-template-rows</span> <span class="m">0.6s</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.map.active</span> <span class="nt">ul</span> <span class="p">{</span>
+  <span class="nl">grid-template-rows</span><span class="p">:</span> <span class="m">1fr</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.map</span> <span class="nt">ul</span> <span class="o">&gt;</span> <span class="nc">.inner</span> <span class="p">{</span>
+  <span class="nl">overflow</span><span class="p">:</span> <span class="nb">hidden</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div> </div> <p>이 방식은 <code class="language-plaintext highlighter-rouge">height</code>가 실제로 콘텐츠 높이만큼 부드럽게 늘어나기 때문에, <code class="language-plaintext highlighter-rouge">translate</code> + <code class="language-plaintext highlighter-rouge">opacity</code>로 눈속임할 필요 없이 “진짜 펼쳐지는” 느낌을 준다. 다만 <code class="language-plaintext highlighter-rouge">ul</code> 안에 <code class="language-plaintext highlighter-rouge">overflow: hidden</code>을 가진 래퍼 한 겹(<code class="language-plaintext highlighter-rouge">.inner</code>)이 추가로 필요하다는 제약이 있다. 이 프로젝트가 만들어진 시점을 생각하면 <code class="language-plaintext highlighter-rouge">translate</code> + <code class="language-plaintext highlighter-rouge">opacity</code> 조합이 더 안전한 선택이었을 수 있지만, 지금 새로 만든다면 <code class="language-plaintext highlighter-rouge">grid-template-rows</code> 쪽이 코드도 더 단순하고 실제 높이감도 살아있어 더 나은 선택이다.</p> <hr> <h2 id="section-2">2. 아이콘 “+”가 “×”로 변신하는 방법</h2> <p>각 카테고리 제목 옆의 <code class="language-plaintext highlighter-rouge">+</code> 아이콘은 별도의 이미지나 SVG가 아니라 그냥 텍스트 <code class="language-plaintext highlighter-rouge">+</code>다. 열렸을 때 <code class="language-plaintext highlighter-rouge">×</code>처럼 보이는 것도 이미지 교체가 아니라 순수 CSS 회전이다.</p> <div class="language-css highlighter-rouge"> <div class="highlight"><pre class="highlight"><code><span class="nt">footer</span> <span class="nc">.navigations</span> <span class="nc">.map.active</span> <span class="nt">h3</span> <span class="nc">.icon</span> <span class="p">{</span>
+  <span class="nl">transform</span><span class="p">:</span> <span class="nf">scale</span><span class="p">(</span><span class="m">1.2</span><span class="p">)</span> <span class="nf">rotate</span><span class="p">(</span><span class="m">45deg</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div> </div> <p><code class="language-plaintext highlighter-rouge">+</code> 글자를 45도 돌리면 가로줄과 세로줄이 대각선으로 눕는데, 이게 시각적으로 <code class="language-plaintext highlighter-rouge">×</code>(닫기) 기호처럼 읽힌다. <code class="language-plaintext highlighter-rouge">scale(1.2)</code>는 회전하면서 살짝 작아 보이는 착시를 보정하려고 더해진 값으로 보인다. 아이콘을 여닫을 때마다 이미지 스와핑이나 별도의 <code class="language-plaintext highlighter-rouge">.icon--close</code> 클래스 없이, 문자 하나 + <code class="language-plaintext highlighter-rouge">transform</code> 두 줄로 열림/닫힘 상태를 표현한 셈이다. 실무에서 “아이콘 상태 변화”를 만들 때 아이콘 폰트나 SVG 두 벌을 준비하는 대신 이런 순수 CSS 변형으로 처리할 수 있다는 걸 보여주는 예시다.</p> <hr> <h2 id="section-3">3. 같은 이벤트 리스너, 다른 시각적 결과 — 브레이크포인트가 동작을 결정한다</h2> <p><code class="language-plaintext highlighter-rouge">h3El.addEventListener('click', ...)</code>는 화면 크기와 무관하게 항상 등록된다. 데스크톱에서 이 링크 목록을 클릭해도 <code class="language-plaintext highlighter-rouge">classList.toggle('active')</code>는 똑같이 실행된다. 그런데 실제 애플 사이트에서 데스크톱 화면의 푸터 사이트맵은 애초에 접혀있지 않고 8개 카테고리가 전부 펼쳐진 채로 보인다. 아코디언처럼 동작하는 건 모바일(740px 이하)뿐이다.</p> <p>이걸 가능하게 하는 건 아이콘과 <code class="language-plaintext highlighter-rouge">ul</code>에 걸린 규칙이 전부 미디어쿼리 안에 있기 때문이다.</p> <div class="language-css highlighter-rouge"> <div class="highlight"><pre class="highlight"><code><span class="c">/* 기본(데스크톱/태블릿): 아이콘 자체를 숨김 */</span>
+<span class="nt">footer</span> <span class="nc">.navigations</span> <span class="nc">.map</span> <span class="nt">h3</span> <span class="nc">.icon</span> <span class="p">{</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">@media</span> <span class="p">(</span><span class="n">max-width</span><span class="p">:</span> <span class="m">740px</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nt">footer</span> <span class="nc">.navigations</span> <span class="nc">.map</span> <span class="p">{</span>
+    <span class="nl">margin-top</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+    <span class="nl">border-bottom</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="nf">var</span><span class="p">(</span><span class="l">--color-border</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="nt">footer</span> <span class="nc">.navigations</span> <span class="nc">.map</span> <span class="nt">h3</span> <span class="p">{</span>
+    <span class="nl">padding</span><span class="p">:</span> <span class="m">12px</span> <span class="m">0</span><span class="p">;</span>
+    <span class="nl">font-weight</span><span class="p">:</span> <span class="m">400</span><span class="p">;</span>
+    <span class="nl">display</span><span class="p">:</span> <span class="nb">flex</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="nt">footer</span> <span class="nc">.navigations</span> <span class="nc">.map</span><span class="nd">:hover</span> <span class="nt">h3</span> <span class="p">{</span>
+    <span class="nl">font-weight</span><span class="p">:</span> <span class="m">600</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="nt">footer</span> <span class="nc">.navigations</span> <span class="nc">.map</span> <span class="nt">h3</span> <span class="nc">.text</span> <span class="p">{</span>
+    <span class="nl">flex-grow</span><span class="p">:</span> <span class="m">1</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="nt">footer</span> <span class="nc">.navigations</span> <span class="nc">.map</span> <span class="nt">h3</span> <span class="nc">.icon</span> <span class="p">{</span>
+    <span class="nl">display</span><span class="p">:</span> <span class="nb">block</span><span class="p">;</span>
+    <span class="nl">padding</span><span class="p">:</span> <span class="m">0</span> <span class="m">10px</span><span class="p">;</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="l">--color-font-darkgray</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="nt">footer</span> <span class="nc">.navigations</span> <span class="nc">.map</span> <span class="nt">ul</span> <span class="p">{</span>
+    <span class="nl">height</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+    <span class="nl">overflow</span><span class="p">:</span> <span class="nb">hidden</span><span class="p">;</span>
+    <span class="nl">transition</span><span class="p">:</span> <span class="n">transform</span> <span class="m">0.6s</span><span class="p">,</span> <span class="nf">opacity</span> <span class="m">0.4s</span><span class="p">;</span>
+    <span class="nl">transform</span><span class="p">:</span> <span class="nf">translate</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">-20px</span><span class="p">);</span>
+    <span class="nl">opacity</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="nt">footer</span> <span class="nc">.navigations</span> <span class="nc">.map.active</span> <span class="nt">ul</span> <span class="p">{</span>
+    <span class="nl">height</span><span class="p">:</span> <span class="nb">auto</span><span class="p">;</span>
+    <span class="nl">overflow</span><span class="p">:</span> <span class="nb">visible</span><span class="p">;</span>
+    <span class="nl">padding</span><span class="p">:</span> <span class="m">6px</span> <span class="m">0</span> <span class="m">18px</span><span class="p">;</span>
+    <span class="nl">transform</span><span class="p">:</span> <span class="nf">translate</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">);</span>
+    <span class="nl">opacity</span><span class="p">:</span> <span class="m">1</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div> </div> <p><code class="language-plaintext highlighter-rouge">height: 0</code>, <code class="language-plaintext highlighter-rouge">overflow: hidden</code> 같은 “접힘” 규칙 자체가 740px 이하에서만 존재한다. 데스크톱/태블릿에는 이 규칙이 아예 없으니 <code class="language-plaintext highlighter-rouge">ul</code>은 항상 기본값(<code class="language-plaintext highlighter-rouge">height: auto</code>나 다름없는 자연스러운 블록 높이)으로 펼쳐져 있고, <code class="language-plaintext highlighter-rouge">active</code> 클래스가 붙든 안 붙든 시각적으로 달라질 게 없다. <code class="language-plaintext highlighter-rouge">h3 .icon</code>도 기본이 <code class="language-plaintext highlighter-rouge">display: none</code>이라 데스크톱에서는 <code class="language-plaintext highlighter-rouge">+</code>/<code class="language-plaintext highlighter-rouge">×</code> 아이콘 자체가 렌더링되지 않는다.</p> <h3 id="section-4">왜 이 설계가 영리한가</h3> <p>“아코디언이냐 아니냐”를 JS가 판단해서 분기 처리(<code class="language-plaintext highlighter-rouge">if (window.innerWidth &lt;= 740) { ... }</code>)하는 방법도 있었을 것이다. 하지만 그렇게 했다면 리사이즈 이벤트마다 상태를 다시 계산하고, 데스크톱에서 모바일로 전환되는 순간의 엣지 케이스(이미 열려 있던 게 갑자기 접혀야 하는지 등)를 신경 써야 했다. 대신 이 프로젝트는 <strong>“클릭했을 때 상태를 뒤집는다”는 사실 하나만 JS가 책임지고, 그 상태가 화면에 어떻게 반영될지는 전적으로 CSS 미디어쿼리에 위임</strong>했다. 덕분에 리사이즈 핸들러도, 뷰포트 분기 로직도 필요 없다 — 브라우저가 미디어쿼리를 재평가하는 걸 그냥 이용하는 것이다. <code class="language-plaintext highlighter-rouge">js/main.js</code> 안에서 리사이즈 이벤트를 직접 구독하는 코드는 검색바(<code class="language-plaintext highlighter-rouge">.searching</code> 클래스 제거)에만 있고, 아코디언 쪽에는 전혀 없다는 게 이 설계를 뒷받침한다.</p> <hr> <h2 id="section-5">4. 아쉬운 점 — “하나만 열리는” 아코디언이 아니다, 그리고 접근성</h2> <h3 id="exclusive-open---">배타적 열림(exclusive open)이 구현돼 있지 않다</h3> <p><code class="language-plaintext highlighter-rouge">forEach</code>로 8개의 <code class="language-plaintext highlighter-rouge">.map</code>에 각각 독립적인 리스너를 붙였을 뿐, “다른 걸 열면 나머지는 닫는다”는 로직이 없다. 그래서 사용자가 8개 카테고리를 전부 클릭하면 8개가 동시에 펼쳐진 채로 남는다. 애플 실사이트도 실제로 이렇게 동작하기 때문에 “버그”는 아니지만, 흔히 알려진 “아코디언 = 하나만 열림” 패턴을 기대하고 구현하면 놓치기 쉬운 지점이다. 배타적으로 만들고 싶다면 클릭 시 형제 요소를 순회하며 닫아주는 코드가 필요하다.</p> <div class="language-js highlighter-rouge"> <div class="highlight"><pre class="highlight"><code><span class="nx">mapEls</span><span class="p">.</span><span class="nf">forEach</span><span class="p">(</span><span class="nf">function </span><span class="p">(</span><span class="nx">el</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">h3El</span> <span class="o">=</span> <span class="nx">el</span><span class="p">.</span><span class="nf">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">h3</span><span class="dl">'</span><span class="p">);</span>
+  <span class="nx">h3El</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">click</span><span class="dl">'</span><span class="p">,</span> <span class="nf">function </span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">willOpen</span> <span class="o">=</span> <span class="o">!</span><span class="nx">el</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nf">contains</span><span class="p">(</span><span class="dl">'</span><span class="s1">active</span><span class="dl">'</span><span class="p">);</span>
+    <span class="nx">mapEls</span><span class="p">.</span><span class="nf">forEach</span><span class="p">(</span><span class="nf">function </span><span class="p">(</span><span class="nx">other</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">other</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nf">remove</span><span class="p">(</span><span class="dl">'</span><span class="s1">active</span><span class="dl">'</span><span class="p">);</span>
+    <span class="p">});</span>
+    <span class="k">if </span><span class="p">(</span><span class="nx">willOpen</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">el</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="dl">'</span><span class="s1">active</span><span class="dl">'</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+</code></pre></div> </div> <h3 id="h3----"> <code class="language-plaintext highlighter-rouge">&lt;h3&gt;</code>는 클릭 가능한 요소가 아니다</h3> <p>클릭 핸들러가 <code class="language-plaintext highlighter-rouge">&lt;button&gt;</code>이 아니라 <code class="language-plaintext highlighter-rouge">&lt;h3&gt;</code>에 달려 있다. 마우스로는 문제없이 동작하지만, 키보드만으로 이 페이지를 탐색하는 사용자는 <code class="language-plaintext highlighter-rouge">Tab</code>으로 이 요소에 포커스를 옮길 수조차 없다(<code class="language-plaintext highlighter-rouge">h3</code>는 기본적으로 포커스 가능한 요소가 아니다). 스크린 리더 사용자 입장에서도 이 항목이 “펼치고 접을 수 있는 토글 버튼”이라는 정보(<code class="language-plaintext highlighter-rouge">aria-expanded</code>)가 전혀 없어서, 그냥 제목처럼 읽히고 지나간다. README의 회고에도 “접근성(ARIA, 포커스 트랩) 속성 보강은 진행하지 않았다”고 스스로 짚었는데, 이 아코디언이 바로 그 사례다.</p> <p>실무에서 같은 컴포넌트를 만든다면 최소한 이 정도는 갖추는 걸 권장한다.</p> <div class="language-html highlighter-rouge"> <div class="highlight"><pre class="highlight"><code><span class="nt">&lt;h3&gt;</span>
+  <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"text"</span> <span class="na">aria-expanded=</span><span class="s">"false"</span> <span class="na">aria-controls=</span><span class="s">"map-panel-0"</span><span class="nt">&gt;</span>
+    쇼핑 및 알아보기
+  <span class="nt">&lt;/button&gt;</span>
+  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"icon"</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;</span>+<span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;/h3&gt;</span>
+<span class="nt">&lt;ul</span> <span class="na">id=</span><span class="s">"map-panel-0"</span><span class="nt">&gt;</span>
+  ...
+<span class="nt">&lt;/ul&gt;</span>
+</code></pre></div> </div> <div class="language-js highlighter-rouge"> <div class="highlight"><pre class="highlight"><code><span class="nx">h3El</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">click</span><span class="dl">'</span><span class="p">,</span> <span class="nf">function </span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">isActive</span> <span class="o">=</span> <span class="nx">el</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nf">toggle</span><span class="p">(</span><span class="dl">'</span><span class="s1">active</span><span class="dl">'</span><span class="p">);</span>
+  <span class="kd">const</span> <span class="nx">btn</span> <span class="o">=</span> <span class="nx">h3El</span><span class="p">.</span><span class="nf">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">button</span><span class="dl">'</span><span class="p">);</span>
+  <span class="nx">btn</span><span class="p">.</span><span class="nf">setAttribute</span><span class="p">(</span><span class="dl">'</span><span class="s1">aria-expanded</span><span class="dl">'</span><span class="p">,</span> <span class="nc">String</span><span class="p">(</span><span class="nx">isActive</span><span class="p">));</span>
+<span class="p">});</span>
+</code></pre></div> </div> <p><code class="language-plaintext highlighter-rouge">&lt;button&gt;</code>으로 바꾸면 키보드 포커스와 <code class="language-plaintext highlighter-rouge">Enter</code>/<code class="language-plaintext highlighter-rouge">Space</code> 클릭이 브라우저 기본 동작으로 딸려 오고, <code class="language-plaintext highlighter-rouge">aria-expanded</code>를 토글해주면 스크린 리더가 “접혀 있음 / 펼쳐져 있음” 상태를 그대로 읽어준다. 코드량은 몇 줄 늘지 않지만 체감되는 접근성 차이는 크다.</p> <hr> <h2 id="section-6">정리 표</h2> <table> <thead> <tr> <th>항목</th> <th>구현 방식</th> <th>강점</th> <th>아쉬운 점</th> </tr> </thead> <tbody> <tr> <td>데이터 렌더링</td> <td> <code class="language-plaintext highlighter-rouge">navigations.js</code> 배열 → <code class="language-plaintext highlighter-rouge">forEach</code> + 템플릿 리터럴</td> <td>카테고리·링크 추가/삭제가 데이터 수정만으로 끝남</td> <td>-</td> </tr> <tr> <td>펼침/접힘 로직</td> <td><code class="language-plaintext highlighter-rouge">classList.toggle('active')</code></td> <td>JS 코드가 5줄로 끝남</td> <td>배타적 열림(하나만 열기) 미구현</td> </tr> <tr> <td>펼침/접힘 표현</td> <td> <code class="language-plaintext highlighter-rouge">height: 0/auto</code> + <code class="language-plaintext highlighter-rouge">transform</code>/<code class="language-plaintext highlighter-rouge">opacity</code> 트랜지션</td> <td> <code class="language-plaintext highlighter-rouge">height: auto</code> 트랜지션 불가 문제를 우회</td> <td>항목 수와 무관하게 항상 같은 속도로 열림</td> </tr> <tr> <td>아이콘 상태 변화</td> <td>텍스트 <code class="language-plaintext highlighter-rouge">+</code>를 <code class="language-plaintext highlighter-rouge">rotate(45deg)</code> </td> <td>별도 이미지/아이콘 세트 불필요</td> <td>-</td> </tr> <tr> <td>브레이크포인트 분리</td> <td>아코디언 CSS 전체가 <code class="language-plaintext highlighter-rouge">@media (max-width: 740px)</code> 안에만 존재</td> <td>JS는 뷰포트를 몰라도 됨, 리사이즈 핸들러 불필요</td> <td>-</td> </tr> <tr> <td>접근성</td> <td> <code class="language-plaintext highlighter-rouge">&lt;h3&gt;</code> 클릭, <code class="language-plaintext highlighter-rouge">aria-*</code> 없음</td> <td>-</td> <td>키보드 포커스 불가, 스크린 리더 정보 없음</td> </tr> </tbody> </table> <hr> <h2 id="typescript--">TypeScript 프로젝트에서의 참고</h2> <p>React + TypeScript로 옮긴다면, 이 컴포넌트가 안고 있던 문제들을 상태 관리와 타입으로 자연스럽게 해소할 수 있다.</p> <ul> <li> <strong>배타적 열림</strong>: <code class="language-plaintext highlighter-rouge">activeIndex: number | null</code>을 부모에서 <code class="language-plaintext highlighter-rouge">useState</code>로 관리하고, 각 <code class="language-plaintext highlighter-rouge">.map</code>은 <code class="language-plaintext highlighter-rouge">isActive={activeIndex === index}</code> prop만 받아 렌더링하면 “다른 걸 열면 나머지가 닫힌다”는 로직이 클릭 핸들러 한 곳(<code class="language-plaintext highlighter-rouge">setActiveIndex(prev =&gt; prev === index ? null : index)</code>)으로 모인다. 지금처럼 <code class="language-plaintext highlighter-rouge">forEach</code>로 DOM을 순회하며 클래스를 직접 지우는 명령형 코드가 필요 없어진다.</li> <li> <strong>접근성</strong>: <code class="language-plaintext highlighter-rouge">aria-expanded</code>, <code class="language-plaintext highlighter-rouge">aria-controls</code>, <code class="language-plaintext highlighter-rouge">&lt;button&gt;</code> 시맨틱을 매번 손으로 챙기는 대신 <code class="language-plaintext highlighter-rouge">useAccordionItem(id: string)</code> 같은 커스텀 훅으로 감싸면, 훅이 <code class="language-plaintext highlighter-rouge">buttonProps</code>/<code class="language-plaintext highlighter-rouge">panelProps</code> 객체를 반환하고 컴포넌트는 스프레드만 하면 되도록 만들 수 있다. <code class="language-plaintext highlighter-rouge">aria-expanded: boolean</code>처럼 boolean 타입을 명시해두면 문자열 <code class="language-plaintext highlighter-rouge">'true'</code>/<code class="language-plaintext highlighter-rouge">'false'</code>를 실수로 넣는 것도 컴파일 타임에 걸러진다.</li> <li> <strong>height 트랜지션</strong>: CSS Grid의 <code class="language-plaintext highlighter-rouge">grid-template-rows: 0fr → 1fr</code> 트랜지션은 Framer Motion 같은 애니메이션 라이브러리 없이도 순수 CSS로 처리 가능하니, 굳이 JS로 <code class="language-plaintext highlighter-rouge">scrollHeight</code>를 측정해서 <code class="language-plaintext highlighter-rouge">style.height</code>에 픽셀 값을 넣는(리플로우를 유발하는) 방식은 피하는 게 좋다.</li> <li> <strong>데이터 타입</strong>: <code class="language-plaintext highlighter-rouge">navigations.js</code>의 배열 구조를 그대로 옮긴다면 <code class="language-plaintext highlighter-rouge">interface NavGroup { title: string; maps: { name: string; url: string }[] }</code> 정도로 타입을 선언해두면, 렌더링 컴포넌트 쪽에서 <code class="language-plaintext highlighter-rouge">nav.maps.map(...)</code>을 돌 때 <code class="language-plaintext highlighter-rouge">name</code>/<code class="language-plaintext highlighter-rouge">url</code> 오타를 자동완성과 타입 체크로 방지할 수 있다.</li> </ul> </div> </div> </article> </div> </div> <div class="col-sm-3"> <nav id="toc-sidebar" class="sticky-top toc toc-sidebar" aria-label="Table of contents" data-toc-collapse="expanded" data-toc-collapse-depth=""></nav> </div> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 원준 서. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>. Photos from <a href="https://unsplash.com" target="_blank" rel="external nofollow noopener">Unsplash</a>. </div> </footer> <script>
+  window.alFolio = {
+    compatBootstrap: false
+  };
+</script> <script src="/assets/js/nav-toggle.js?v=141bd79a73ebc0f0b6ea58e440ae79fc"></script> <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script> <script defer src="/assets/js/masonry.js?v=e49affc7bd2646f6acdad1dbe02c2359" type="text/javascript"></script> <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI=" crossorigin="anonymous"></script> <script src="/assets/al_math/js/mathjax-setup.js"></script> <script defer src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6" crossorigin="anonymous"></script> <script src="/assets/js/tooltips-setup.js?v=fe487e99db6c43751e6e7bdb2d6a0611"></script> <script defer src="https://cdn.jsdelivr.net/npm/tocbot@4.36.4/dist/tocbot.min.js" integrity="sha256-lo/r+jQ81wWrxdIiiiEEd538z4+dTJTt+leOuAS7GCw=" crossorigin="anonymous"></script> <script src="/assets/js/no_defer.js?v=53b1b1a645525975c963ce8bf8bfefcf"></script> <script defer src="/assets/js/common.js?v=87baac90f765f2f3362dcf6aaf312a8a"></script> <script defer src="/assets/js/copy_code.js?v=c8a01c11a92744d44b093fc3bda915df" type="text/javascript"></script> <script defer src="/assets/js/jupyter_new_tab.js?v=896d254890d9b47f0281f63bfccf0dee"></script> <script async src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script> <script async src="https://badge.dimensions.ai/badge.js"></script> <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script> <script defer src="/assets/al_img_tools/js/zoom.js"></script> <script defer src="/assets/js/progress-bar.js?v=499464c5c63ced6cf7ad62509f1e2610" type="text/javascript"></script> <script src="https://cdn.jsdelivr.net/npm/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js" integrity="sha256-uMJJ3EoTyfRBoTbR+lrfu1uRQ87RZG8AR3cVNuQVeFg=" crossorigin="anonymous"></script> <script>
+    addBackToTop();
+  </script> <script type="module" src="/assets/al_search/js/search/ninja-keys.min.js"></script> <ninja-keys hidebreadcrumbs noautoloadmdicons placeholder="Type to start searching"></ninja-keys> <script src="/assets/al_search/js/search-setup.js"></script> <script>
+// get the ninja-keys element
+const ninja = document.querySelector('ninja-keys');
+
+// add the home and posts menu items
+ninja.data = [{
+    id: "nav-about",
+    title: "about",
+    section: "Navigation",
+    handler: () => {
+      window.location.href = "/";
+    },
+  },{id: "nav-blog",
+          title: "blog",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/blog/";
+          },
+        },{id: "nav-daily",
+          title: "daily",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/news/";
+          },
+        },{id: "nav-projects",
+          title: "projects",
+          description: "실무, 개인 프로젝트",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/projects/";
+          },
+        },{id: "nav-cv",
+          title: "CV",
+          description: "This is a description of the page. You can modify it in &#39;_pages/cv.md&#39;. You can also change or remove the top pdf download button.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/cv/";
+          },
+        },{id: "post-ipad-homepage-프로젝트에서-생각해봐야할-것들-2-푸터-아코디언-편",
+        
+          title: "iPad Homepage 프로젝트에서 생각해봐야할 것들 (2) — 푸터 아코디언 편",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/accordion/";
+          
+        },
+      },{id: "post-ipad-homepage-프로젝트에서-생각해봐야할-5가지-1",
+        
+          title: "iPad Homepage 프로젝트에서 생각해봐야할 5가지 (1)",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/01-post/";
+          
+        },
+      },{id: "post-css만으로-패럴랙스-배경-만들기",
+        
+          title: "CSS만으로 패럴랙스 배경 만들기",
+        
+        description: "background-attachment fixed 파헤치기",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/parallax-background/";
+          
+        },
+      },{id: "post-커밋-메시지-컨벤션-가이드",
+        
+          title: "커밋 메시지 컨벤션 가이드",
+        
+        description: "용도별로 정리한 커밋 메시지 타입과 실전 팁",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/conventional-commits/";
+          
+        },
+      },{id: "books-the-godfather",
+          title: 'The Godfather',
+          description: "",
+          section: "Books",handler: () => {
+              window.location.href = "/books/the_godfather/";
+            },},{id: "news-2026-07-02-01-daily",
+          title: '2026-07-02-01 Daily',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/2026-07-02-01-daily/";
+            },},{id: "news-2026-07-06-01-daily",
+          title: '2026-07-06-01 Daily',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/2026-07-06-01-daily/";
+            },},{id: "news-2026-07-07-01-daily",
+          title: '2026-07-07-01 Daily',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/2026-07-07-01-daily/";
+            },},{id: "news-2026-07-07-02-daily",
+          title: '2026-07-07-02 Daily',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/2026-07-07-02-daily/";
+            },},{id: "news-2026-07-07-03-daily",
+          title: '2026-07-07-03 Daily',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/2026-07-07-03-daily/";
+            },},{id: "news-2026-07-10-01-daily",
+          title: '2026-07-10-01 Daily',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/2026-07-10-01-daily/";
+            },},{id: "projects-starbucks-homepage",
+          title: 'starbucks-homepage',
+          description: "스타벅스 코리아 공식 홈페이지 UI/인터랙션을 재현한 정적 프론트엔드 클론 프로젝트",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/1_project/";
+            },},{id: "projects-ipad-homepage",
+          title: 'ipad-homepage',
+          description: "Apple Korea 공식 홈페이지의 iPad 10.2 제품 소개 페이지를 그대로 재현한 반응형 프론트엔드 클론 프로젝트",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/2_project/";
+            },},{id: "teachings-data-science-fundamentals",
+          title: 'Data Science Fundamentals',
+          description: "This course covers the foundational aspects of data science, including data collection, cleaning, analysis, and visualization. Students will learn practical skills for working with real-world datasets.",
+          section: "Teachings",handler: () => {
+              window.location.href = "/teachings/data-science-fundamentals/";
+            },},{id: "teachings-introduction-to-machine-learning",
+          title: 'Introduction to Machine Learning',
+          description: "This course provides an introduction to machine learning concepts, algorithms, and applications. Students will learn about supervised and unsupervised learning, model evaluation, and practical implementations.",
+          section: "Teachings",handler: () => {
+              window.location.href = "/teachings/introduction-to-machine-learning/";
+            },},{
+        id: 'social-cv',
+        title: 'CV',
+        section: 'Socials',
+        handler: () => {
+          window.open("/assets/pdf/example_pdf.pdf", "_blank");
+        },
+      },{
+        id: 'social-email',
+        title: 'email',
+        section: 'Socials',
+        handler: () => {
+          window.open("mailto:%79%6F%75@%65%78%61%6D%70%6C%65.%63%6F%6D", "_blank");
+        },
+      },{
+        id: 'social-inspire',
+        title: 'Inspire HEP',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://inspirehep.net/authors/1010907", "_blank");
+        },
+      },{
+        id: 'social-rss',
+        title: 'RSS Feed',
+        section: 'Socials',
+        handler: () => {
+          window.open("/feed.xml", "_blank");
+        },
+      },{
+        id: 'social-scholar',
+        title: 'Google Scholar',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://scholar.google.com/citations?user=qc6CJjYAAAAJ", "_blank");
+        },
+      },{
+        id: 'social-custom_social',
+        title: 'Custom_social',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://www.alberteinstein.com/", "_blank");
+        },
+      },{
+      id: 'light-theme',
+      title: 'Change theme to light',
+      description: 'Change the theme of the site to Light',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("light");
+      },
+    },
+    {
+      id: 'dark-theme',
+      title: 'Change theme to dark',
+      description: 'Change the theme of the site to Dark',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("dark");
+      },
+    },
+    {
+      id: 'system-theme',
+      title: 'Use system default theme',
+      description: 'Change the theme of the site to System Default',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("system");
+      },
+    },];
+
+</script> <script src="/assets/al_search/js/shortcut-key.js"></script> </body> </html>
