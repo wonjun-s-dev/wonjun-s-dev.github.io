@@ -1,0 +1,236 @@
+<!DOCTYPE html> <html lang="ko"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title> ipad-homepage | WonJun's Blog </title> <meta name="author" content="원준 서"> <meta name="description" content="Apple Korea 공식 홈페이지의 iPad 10.2 제품 소개 페이지를 그대로 재현한 반응형 프론트엔드 클론 프로젝트"> <meta name="keywords" content="jekyll, jekyll-theme, academic-website, portfolio-website"> <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:; media-src 'self' https:; frame-src 'self' https:; connect-src 'self' https:;"> <style>
+  :root {
+    --max-content-width: 930px;
+  }
+</style> <link rel="stylesheet" href="/assets/css/tailwind.css?v=50c64c15cbb9fd1ce6056fdb8bcb4b62"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css" integrity="sha256-MVopmdyC2tYTiJ8wlktf0uh0v4NgT+vNdyVFepi7Q0c=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.5/css/academicons.min.css" integrity="sha256-SzrCOBJbGVFMahewkgjwnApaV2+av1DwMAA+/QGLyZw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/scholar-icons@1.0.3/css/scholar-icons.css" integrity="sha256-VY3hHVj/hNX3fYG6wtbA6TcKJQl7+FthzGSyIB64klY=" crossorigin="anonymous"> <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&amp;display=swap"> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?v=591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light"> <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%E2%9A%9B%EF%B8%8F&lt;/text&gt;&lt;/svg&gt;"> <link rel="stylesheet" href="/assets/css/main.css?v=f0b101217084a90093badfe99ff9a7d1"> <link rel="canonical" href="https://wonjun-s-dev.github.io/projects/2_project/"> <script src="/assets/js/theme.js?v=7af685e2ba20b37fef545c97b8064050"></script> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css?v=5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark"> <script>
+    initTheme();
+  </script> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> WonJun's Blog </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">about </a> </li> <li class="nav-item "> <a class="nav-link" href="/blog/">blog </a> </li> <li class="nav-item "> <a class="nav-link" href="/news/">daily </a> </li> <li class="nav-item active"> <a class="nav-link" href="/projects/">projects <span class="sr-only">(current)</span> </a> </li> <li class="nav-item "> <a class="nav-link" href="/cv/">CV </a> </li> <li class="nav-item"> <button id="search-toggle" type="button" title="Search" aria-label="Open search"> <span class="nav-link">ctrl k <i class="fa-solid fa-magnifying-glass"></i></span> </button> </li> <li class="toggle-container"> <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"> <i class="fa-half-sun-moon" id="light-toggle-system"></i> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="post"> <header class="post-header"> <h1 class="post-title">ipad-homepage</h1> <p class="post-description">Apple Korea 공식 홈페이지의 iPad 10.2 제품 소개 페이지를 그대로 재현한 반응형 프론트엔드 클론 프로젝트</p> </header> <article> <div style="word-break: keep-all; overflow-wrap: break-word;"> <p>Apple Korea 공식 홈페이지의 iPad 10.2 제품 소개 페이지(<code class="language-plaintext highlighter-rouge">apple.com/kr/ipad-10.2</code>)를 그대로 재현한 반응형 프론트엔드 클론 프로젝트입니다.</p> <p><strong>배포</strong>: <a href="https://ipad-homepage.vercel.app/" rel="external nofollow noopener" target="_blank">바로가기</a> <br> <strong>레포지토리</strong>: <a href="https://github.com/wonjun-s-dev/ipad-homepage" rel="external nofollow noopener" target="_blank">바로가기</a> <br> <strong>Stack</strong>: HTML5, CSS3, Vanilla JavaScript (ES Modules), Prettier <br> <strong>기간 / 인원</strong>: 2026.07.07 ~ 2026.07.13 · 1인 개발 <br></p> <div class="row"> <div class="col-sm mt-3 mt-md-0"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/sc-01-480.webp 480w,/assets/img/sc-01-800.webp 800w,/assets/img/sc-01-1400.webp 1400w," type="image/webp" sizes="95vw"></source> <img src="/assets/img/sc-01.png" class="img-fluid rounded z-depth-1" width="100%" height="auto" title="Hero 섹션" loading="eager" onerror="this.onerror=null; document.querySelectorAll('.responsive-img-srcset').forEach(function (n) { n.remove(); });"> </picture> </figure> </div> <div class="col-sm mt-3 mt-md-0"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/sc-03-480.webp 480w,/assets/img/sc-03-800.webp 800w,/assets/img/sc-03-1400.webp 1400w," type="image/webp" sizes="95vw"></source> <img src="/assets/img/sc-03.png" class="img-fluid rounded z-depth-1" width="100%" height="auto" title="Compare 섹션" loading="eager" onerror="this.onerror=null; document.querySelectorAll('.responsive-img-srcset').forEach(function (n) { n.remove(); });"> </picture> </figure> </div> </div> <div class="caption"> 좌측은 메인 Hero 섹션, 우측은 data/ipads.js 기반으로 동적 렌더링되는 iPad 라인업 비교 섹션입니다. </div> <h2 id="section">프로젝트 소개</h2> <p>애플 공식 사이트의 마크업/스타일/모션을 픽셀 단위로 분석하고 그대로 구현해보며, 실무형 반응형 퍼블리싱 역량을 기르기 위해 진행한 클론 코딩 프로젝트입니다.</p> <ul> <li>헤더 검색바 · 장바구니 드롭다운 · 글로벌 내비게이션 메뉴 토글 등 애플 특유의 인터랙션 재현</li> <li>Hero부터 Footer까지 15개 이상의 섹션을 데스크톱(1000px 초과) / 태블릿(741~1000px) / 모바일(740px 이하) 3단 브레이크포인트로 반응형 대응</li> <li>Sprite Image 애니메이션, <code class="language-plaintext highlighter-rouge">IntersectionObserver</code> 기반 스크롤 등장 애니메이션, 비디오 재생 제어 등 순수 JS로 모션 구현</li> <li>제품 비교 목록과 푸터 내비게이션을 JS 데이터 모듈로 동적 렌더링</li> </ul> <p><strong>왜 만들었는가</strong></p> <p>정적인 페이지를 그대로 베끼는 것을 넘어, 실제 서비스 수준의 미세한 상호작용(트랜지션 딜레이, 스크롤 잠금, 브레이크포인트별 마크업 차이 등)을 뜯어보고 재현하며 반응형 퍼블리싱 실력을 검증하기 위해 만들었습니다.</p> <p><strong>성과 / 결과</strong></p> <p>학습 목적의 클론 프로젝트로, 실사용자 지표는 없습니다.</p> <hr> <h2 id="section-1">기술 스택</h2> <table> <thead> <tr> <th>구분</th> <th>기술</th> <th>비고</th> </tr> </thead> <tbody> <tr> <td>마크업</td> <td>HTML5</td> <td>Open Graph / Twitter Card 메타 태그 포함</td> </tr> <tr> <td>스타일</td> <td>CSS3 (Vanilla)</td> <td>CSS 변수(<code class="language-plaintext highlighter-rouge">:root</code> 커스텀 프로퍼티)로 색상 토큰 관리, <code class="language-plaintext highlighter-rouge">@media</code>로 반응형 처리</td> </tr> <tr> <td>스크립트</td> <td>Vanilla JavaScript (ES Modules)</td> <td>프레임워크 없이 DOM API만으로 인터랙션 구현</td> </tr> <tr> <td>폰트</td> <td>Google Fonts (Noto Sans KR, Roboto)</td> <td> </td> </tr> <tr> <td>리셋</td> <td>reset-css (CDN)</td> <td> </td> </tr> <tr> <td>포매팅</td> <td>Prettier</td> <td> <code class="language-plaintext highlighter-rouge">tabWidth: 2</code>, <code class="language-plaintext highlighter-rouge">singleQuote</code>, <code class="language-plaintext highlighter-rouge">printWidth: 120</code> </td> </tr> </tbody> </table> <p>이번 프로젝트는 <strong>프레임워크나 서드파티 라이브러리 없이</strong> 순수 DOM API만으로 애플 특유의 계단식 트랜지션, 스크롤 잠금, 스프라이트 애니메이션을 재현하는 데 집중했습니다.</p> <hr> <h2 id="section-2">프로젝트 구조</h2> <div class="language-plaintext highlighter-rouge"> <div class="highlight"><pre class="highlight"><code>ipad-homepage/
+├── index.html          # 전체 페이지 마크업 (헤더 ~ 푸터, 15개 섹션)
+├── css/
+│   └── main.css         # 전역 스타일 + 섹션별 스타일 + 반응형 미디어쿼리
+├── js/
+│   └── main.js           # 헤더/내비게이션 인터랙션, 스크롤 애니메이션, 데이터 렌더링
+├── data/
+│   ├── ipads.js           # '당신에게 맞는 iPad는?' 비교 섹션용 제품 데이터
+│   └── navigations.js     # 푸터 사이트맵 내비게이션 데이터
+├── images/              # 섹션별 이미지 · 스프라이트 · 아이콘 (100여 개)
+├── videos/
+│   └── center-stage.mp4  # 카메라 섹션 센터 스테이지 소개 영상
+├── favicon.ico
+├── .prettierrc / .prettierignore
+└── .gitignore
+</code></pre></div> </div> <hr> <h2 id="section-3">주요 섹션 구성</h2> <p><code class="language-plaintext highlighter-rouge">index.html</code> 기준 상단부터 순서대로 구성된 섹션입니다.</p> <table> <thead> <tr> <th>섹션</th> <th>설명</th> </tr> </thead> <tbody> <tr> <td>Header / Navigation</td> <td>Apple 글로벌 헤더, 검색바 애니메이션, 장바구니 드롭다운, iPad 서브 내비게이션(개요/iPad를 선택하는 이유/비교하기/구입 등 앵커 메뉴)</td> </tr> <tr> <td>Hero</td> <td>제품 메인 비주얼, Figures 공통 레이아웃</td> </tr> <tr> <td>Power</td> <td>A13 Bionic 칩 소개, Sprite Image 프레임 애니메이션</td> </tr> <tr> <td>Display</td> <td>Liquid Retina 디스플레이, True Tone 소개</td> </tr> <tr> <td>Camera</td> <td>카메라 하드웨어 및 센터 스테이지 영상(<code class="language-plaintext highlighter-rouge">center-stage.mp4</code>) 재생/일시정지 컨트롤</td> </tr> <tr> <td>Wireless</td> <td>Wi-Fi 6, 5G 등 연결성 소개</td> </tr> <tr> <td>Accessories</td> <td>Apple Pencil / Smart Keyboard 액세서리 소개</td> </tr> <tr> <td>iPadOS</td> <td>iPadOS 기능 소개</td> </tr> <tr> <td>Apps</td> <td>Adobe, Books, GoodNotes, Masterclass 등 앱 생태계 소개</td> </tr> <tr> <td>Privacy</td> <td>개인정보 보호 정책 소개</td> </tr> <tr> <td>Accessibility</td> <td>손쉬운 사용 기능 소개</td> </tr> <tr> <td>AR / Environment</td> <td>증강현실 및 친환경 소재 소개 (Whitebox 공통 스타일 적용)</td> </tr> <tr> <td>Accessory-shop / Trade</td> <td>액세서리 구매, Apple Trade In 유도 섹션</td> </tr> <tr> <td>Compare</td> <td> <code class="language-plaintext highlighter-rouge">data/ipads.js</code> 기반으로 렌더링되는 iPad 라인업 비교 카드</td> </tr> <tr> <td>Footer</td> <td>각주(Footnote), Breadcrumbs, <code class="language-plaintext highlighter-rouge">data/navigations.js</code> 기반 사이트맵 아코디언 메뉴, 저작권 연도 자동 표시</td> </tr> </tbody> </table> <hr> <h2 id="javascript">주요 기능 (JavaScript)</h2> <p><strong>1. 장바구니 드롭다운</strong></p> <p>클릭 토글 + 외부 클릭 시 닫힘(<code class="language-plaintext highlighter-rouge">stopPropagation</code> 처리).</p> <p><strong>2. 검색바</strong></p> <p>열림/닫힘 시 헤더 메뉴 항목과 검색 결과 li에 순차적인 <code class="language-plaintext highlighter-rouge">transitionDelay</code>를 부여해 계단식 애니메이션 구현, 모바일 전용 검색 모드 별도 처리.</p> <p><strong>3. 글로벌/서브 내비게이션 메뉴 토글</strong></p> <p>모바일 환경에서 햄버거 메뉴 및 iPad 서브 메뉴 토글, 열림 시 <code class="language-plaintext highlighter-rouge">html.fixed</code>로 배경 스크롤 잠금.</p> <p><strong>4. 스크롤 등장 애니메이션</strong></p> <p><code class="language-plaintext highlighter-rouge">IntersectionObserver</code>로 <code class="language-plaintext highlighter-rouge">.info</code> 요소를 관찰하다가 뷰포트에 들어오면 <code class="language-plaintext highlighter-rouge">show</code> 클래스 부여.</p> <p><strong>5. 비디오 컨트롤</strong></p> <p>카메라 섹션 영상의 재생/일시정지 버튼 토글.</p> <p><strong>6. 데이터 기반 동적 렌더링</strong></p> <p><code class="language-plaintext highlighter-rouge">data/ipads.js</code> → Compare 섹션 상품 카드(썸네일, 색상 스와치, 이름, 가격, 링크) 렌더링. <code class="language-plaintext highlighter-rouge">data/navigations.js</code> → 푸터 사이트맵을 <code class="language-plaintext highlighter-rouge">map</code> 블록으로 렌더링, 클릭 시 아코디언처럼 펼침/접힘 토글.</p> <p><strong>7. 연도 자동화</strong></p> <p>푸터 저작권 표기의 연도(<code class="language-plaintext highlighter-rouge">span.this-year</code>)를 현재 연도로 자동 갱신.</p> <hr> <h2 id="section-4">반응형 브레이크포인트</h2> <table> <thead> <tr> <th>브레이크포인트</th> <th>대상</th> </tr> </thead> <tbody> <tr> <td><code class="language-plaintext highlighter-rouge">&gt; 1000px</code></td> <td>데스크톱</td> </tr> <tr> <td><code class="language-plaintext highlighter-rouge">~ 1000px</code></td> <td>태블릿</td> </tr> <tr> <td><code class="language-plaintext highlighter-rouge">~ 740px</code></td> <td>모바일</td> </tr> </tbody> </table> <p>거의 모든 섹션이 <code class="language-plaintext highlighter-rouge">max-width: 1000px</code>, <code class="language-plaintext highlighter-rouge">max-width: 740px</code> 두 단계의 미디어쿼리를 가지고 있으며, 일부 섹션(예: Accessories 캡션 이미지)은 모바일 전용 이미지 에셋(<code class="language-plaintext highlighter-rouge">_mobile</code> 접미사)을 별도로 사용합니다.</p> <hr> <h2 id="section-5">실행 방법</h2> <p>별도의 빌드 도구나 패키지 매니저 없이, 정적 파일을 그대로 브라우저에서 열거나 로컬 서버로 서빙하면 됩니다.</p> <div class="language-bash highlighter-rouge"> <div class="highlight"><pre class="highlight"><code>git clone https://github.com/wonjun-s-dev/ipad-homepage.git
+<span class="nb">cd </span>ipad-homepage
+
+<span class="c"># 방법 1: 파일을 브라우저로 직접 열기</span>
+open index.html
+
+<span class="c"># 방법 2: 간단한 정적 서버로 실행 (JS 모듈의 CORS 이슈 방지를 위해 권장)</span>
+npx serve <span class="nb">.</span>
+<span class="c"># 또는</span>
+python3 <span class="nt">-m</span> http.server 8080
+</code></pre></div> </div> <blockquote> <p><code class="language-plaintext highlighter-rouge">js/main.js</code>가 ES Module(<code class="language-plaintext highlighter-rouge">type="module"</code>)로 로드되므로, <code class="language-plaintext highlighter-rouge">file://</code>로 직접 열면 브라우저에 따라 모듈 임포트가 차단될 수 있습니다. 로컬 서버로 실행하는 것을 권장합니다.</p> </blockquote> <hr> <h2 id="section-6">회고</h2> <p><strong>반응형 디자인 관점</strong></p> <p>처음에는 데스크톱 레이아웃을 그대로 두고 폭만 줄이는 방식으로 접근했지만, 애플 원본을 뜯어보니 브레이크포인트마다 레이아웃 전략 자체가 달랐습니다. 대표적으로 <code class="language-plaintext highlighter-rouge">.figures</code>(Hero 등 이미지+캡션 조합)는 데스크톱에서 <code class="language-plaintext highlighter-rouge">position: absolute</code>로 이미지와 캡션들을 겹쳐 쌓다가, 740px 이하에서는 <code class="language-plaintext highlighter-rouge">display: flex; justify-content: center</code>와 <code class="language-plaintext highlighter-rouge">figure { position: relative }</code>로 전환해 겹쳐진 레이어를 세로로 풀어헤치는 구조였습니다. “반응형 = 크기 조정”이 아니라 “브레이크포인트별로 별개의 레이아웃 알고리즘을 설계하는 것”이라는 감각을 이 프로젝트로 체득했습니다.</p> <p>3단 브레이크포인트(<code class="language-plaintext highlighter-rouge">1000px</code> / <code class="language-plaintext highlighter-rouge">740px</code>) 역시 임의로 정한 게 아니라, 데스크톱(대형 화면 전용 배치) → 태블릿(여백·폰트·아이콘 스케일 축소) → 모바일(flex 방향 전환·카드 스택) 순으로 점진적으로 정보 밀도를 낮추는 패턴을 원본에서 발견하고 그대로 따랐습니다. <code class="language-plaintext highlighter-rouge">.info</code>(기능 설명 카드)는 1000px 이하에서 <code class="language-plaintext highlighter-rouge">max-width: 230px</code>로 줄고 아이콘은 <code class="language-plaintext highlighter-rouge">transform: scale(0.8)</code>로 축소되며, 740px 이하에서는 아예 <code class="language-plaintext highlighter-rouge">max-width: none; padding: 0 20px</code>으로 스택형 레이아웃이 되는데, 하나의 컴포넌트가 두 번의 트랜지션을 거치며 형태를 바꾸는 걸 구현해보면서 반응형은 값 하나를 스케일링하는 게 아니라 구간마다 별도의 디자인 결정이 필요하다는 걸 체감했습니다.</p> <p><strong>레이아웃 디자인 관점</strong></p> <p>AR·Accessory-shop·Compare 등 여러 섹션이 “흰 배경 박스 안에 아이콘+제목+설명+링크”라는 동일한 골격을 공유한다는 걸 발견하고 <code class="language-plaintext highlighter-rouge">.whitebox</code> 공통 클래스로 추상화했습니다. 섹션마다 배경 이미지나 텍스트만 다르고 레이아웃 골격은 재사용되도록 설계하니, 새 섹션을 추가할 때 콘텐츠만 갈아끼우면 되는 구조가 됐습니다.</p> <p>스크롤 리빌 애니메이션은 애니메이션 로직(언제 보여줄지)을 JS가, 애니메이션 표현(어떻게 보여줄지)을 CSS가 담당하도록 역할을 분리했습니다. <code class="language-plaintext highlighter-rouge">.info</code>는 기본 상태에서 <code class="language-plaintext highlighter-rouge">transform: translate(0, 100px); opacity: 0</code>으로 숨겨져 있다가, <code class="language-plaintext highlighter-rouge">IntersectionObserver</code>가 뷰포트 진입을 감지해 <code class="language-plaintext highlighter-rouge">.show</code> 클래스를 붙이면 <code class="language-plaintext highlighter-rouge">transform: translate(0, 0); opacity: 1</code>로 전환되는 방식인데, 이렇게 나누니 코드가 훨씬 읽기 쉬웠고 새 섹션에 같은 등장 효과를 넣을 때도 <code class="language-plaintext highlighter-rouge">.info</code> 클래스만 붙이면 됐습니다.</p> <p>Power/Camera/Wireless 등에서 쓰이는 기능 아이콘은 처음엔 GIF나 Lottie를 쓸 줄 알았는데, 실제로는 여러 프레임이 가로로 나열된 스프라이트 이미지 한 장과 <code class="language-plaintext highlighter-rouge">animation: sprite-icon 3s steps(1) infinite</code> + <code class="language-plaintext highlighter-rouge">background-position</code> 이동 조합으로 구현된 것이었습니다. 정적 이미지 한 장만으로 가벼운 프레임 애니메이션을 만들 수 있다는 걸 배웠고, 1000px 이하에서는 스프라이트 좌표는 그대로 재사용하고 <code class="language-plaintext highlighter-rouge">scale(0.8)</code>로 크기만 축소해 별도 에셋 없이 대응했습니다.</p> <p><strong>아쉬운 점</strong></p> <p>실제 데이터 연동(장바구니, 검색 결과 등)이나 접근성(ARIA, 포커스 트랩) 속성 보강은 진행하지 않아 시각적·레이아웃 재현에 머물렀습니다. 브레이크포인트 값(<code class="language-plaintext highlighter-rouge">1000px</code>, <code class="language-plaintext highlighter-rouge">740px</code>)과 <code class="language-plaintext highlighter-rouge">.info</code>의 <code class="language-plaintext highlighter-rouge">max-width</code> 같은 수치들이 CSS 곳곳에 하드코딩되어 있어 디자인 토큰으로 뽑아내지 못한 점, 절대 위치 기반 <code class="language-plaintext highlighter-rouge">.figures</code> 레이아웃이 이미지 원본 비율이 바뀌면 좌표를 다시 잡아야 하는 유지보수 비용을 그대로 안고 간 점도 아쉬웠습니다.</p> <p><strong>다음 계획</strong></p> <p>시맨틱 마크업 및 ARIA 속성 보강, 라이트하우스 성능/접근성 점검 → 하드코딩된 브레이크포인트·간격 값을 CSS 커스텀 프로퍼티 기반 디자인 토큰으로 정리 → 이미지 최적화(WebP 전환 및 지연 로딩) 및 <code class="language-plaintext highlighter-rouge">.figures</code>의 절대 위치 레이어링을 CSS Grid <code class="language-plaintext highlighter-rouge">grid-template-areas</code> 기반으로 재설계해 반응형 좌표 계산 비용을 줄이는 순으로 진행할 예정입니다.</p> <h3 id="section-7">향후 개선 계획</h3> <ul class="task-list"> <li class="task-list-item"> <input type="checkbox" class="task-list-item-checkbox" disabled>시맨틱 마크업 및 ARIA 속성 보강</li> <li class="task-list-item"> <input type="checkbox" class="task-list-item-checkbox" disabled>브레이크포인트/스페이싱 디자인 토큰화 (CSS 커스텀 프로퍼티)</li> <li class="task-list-item"> <input type="checkbox" class="task-list-item-checkbox" disabled>이미지 WebP 전환 및 지연 로딩 적용</li> <li class="task-list-item"> <input type="checkbox" class="task-list-item-checkbox" disabled><code class="language-plaintext highlighter-rouge">.figures</code> 절대 위치 레이어링을 CSS Grid로 재설계</li> </ul> </div> </article> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 원준 서. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>. Photos from <a href="https://unsplash.com" target="_blank" rel="external nofollow noopener">Unsplash</a>. </div> </footer> <script>
+  window.alFolio = {
+    compatBootstrap: false
+  };
+</script> <script src="/assets/js/nav-toggle.js?v=141bd79a73ebc0f0b6ea58e440ae79fc"></script> <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script> <script defer src="/assets/js/masonry.js?v=e49affc7bd2646f6acdad1dbe02c2359" type="text/javascript"></script> <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI=" crossorigin="anonymous"></script> <script src="/assets/al_math/js/mathjax-setup.js"></script> <script defer src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6" crossorigin="anonymous"></script> <script src="/assets/js/tooltips-setup.js?v=fe487e99db6c43751e6e7bdb2d6a0611"></script> <script src="/assets/js/no_defer.js?v=53b1b1a645525975c963ce8bf8bfefcf"></script> <script defer src="/assets/js/common.js?v=87baac90f765f2f3362dcf6aaf312a8a"></script> <script defer src="/assets/js/copy_code.js?v=c8a01c11a92744d44b093fc3bda915df" type="text/javascript"></script> <script defer src="/assets/js/jupyter_new_tab.js?v=896d254890d9b47f0281f63bfccf0dee"></script> <script async src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script> <script async src="https://badge.dimensions.ai/badge.js"></script> <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script> <script defer src="/assets/al_img_tools/js/zoom.js"></script> <script defer src="/assets/js/progress-bar.js?v=499464c5c63ced6cf7ad62509f1e2610" type="text/javascript"></script> <script src="https://cdn.jsdelivr.net/npm/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js" integrity="sha256-uMJJ3EoTyfRBoTbR+lrfu1uRQ87RZG8AR3cVNuQVeFg=" crossorigin="anonymous"></script> <script>
+    addBackToTop();
+  </script> <script type="module" src="/assets/al_search/js/search/ninja-keys.min.js"></script> <ninja-keys hidebreadcrumbs noautoloadmdicons placeholder="Type to start searching"></ninja-keys> <script src="/assets/al_search/js/search-setup.js"></script> <script>
+// get the ninja-keys element
+const ninja = document.querySelector('ninja-keys');
+
+// add the home and posts menu items
+ninja.data = [{
+    id: "nav-about",
+    title: "about",
+    section: "Navigation",
+    handler: () => {
+      window.location.href = "/";
+    },
+  },{id: "nav-blog",
+          title: "blog",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/blog/";
+          },
+        },{id: "nav-daily",
+          title: "daily",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/news/";
+          },
+        },{id: "nav-projects",
+          title: "projects",
+          description: "실무, 개인 프로젝트",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/projects/";
+          },
+        },{id: "nav-cv",
+          title: "CV",
+          description: "This is a description of the page. You can modify it in &#39;_pages/cv.md&#39;. You can also change or remove the top pdf download button.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/cv/";
+          },
+        },{id: "post-ipad-homepage-프로젝트에서-생각해봐야할-5가지-1",
+        
+          title: "iPad Homepage 프로젝트에서 생각해봐야할 5가지 (1)",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/01-post/";
+          
+        },
+      },{id: "post-css만으로-패럴랙스-배경-만들기",
+        
+          title: "CSS만으로 패럴랙스 배경 만들기",
+        
+        description: "background-attachment fixed 파헤치기",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/parallax-background/";
+          
+        },
+      },{id: "post-커밋-메시지-컨벤션-가이드",
+        
+          title: "커밋 메시지 컨벤션 가이드",
+        
+        description: "용도별로 정리한 커밋 메시지 타입과 실전 팁",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/conventional-commits/";
+          
+        },
+      },{id: "books-the-godfather",
+          title: 'The Godfather',
+          description: "",
+          section: "Books",handler: () => {
+              window.location.href = "/books/the_godfather/";
+            },},{id: "news-2026-07-02-01-daily",
+          title: '2026-07-02-01 Daily',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/2026-07-02-01-daily/";
+            },},{id: "news-2026-07-06-01-daily",
+          title: '2026-07-06-01 Daily',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/2026-07-06-01-daily/";
+            },},{id: "news-2026-07-07-01-daily",
+          title: '2026-07-07-01 Daily',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/2026-07-07-01-daily/";
+            },},{id: "news-2026-07-07-02-daily",
+          title: '2026-07-07-02 Daily',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/2026-07-07-02-daily/";
+            },},{id: "news-2026-07-07-03-daily",
+          title: '2026-07-07-03 Daily',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/2026-07-07-03-daily/";
+            },},{id: "news-2026-07-10-01-daily",
+          title: '2026-07-10-01 Daily',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/2026-07-10-01-daily/";
+            },},{id: "projects-starbucks-homepage",
+          title: 'starbucks-homepage',
+          description: "스타벅스 코리아 공식 홈페이지 UI/인터랙션을 재현한 정적 프론트엔드 클론 프로젝트",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/1_project/";
+            },},{id: "projects-ipad-homepage",
+          title: 'ipad-homepage',
+          description: "Apple Korea 공식 홈페이지의 iPad 10.2 제품 소개 페이지를 그대로 재현한 반응형 프론트엔드 클론 프로젝트",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/2_project/";
+            },},{id: "teachings-data-science-fundamentals",
+          title: 'Data Science Fundamentals',
+          description: "This course covers the foundational aspects of data science, including data collection, cleaning, analysis, and visualization. Students will learn practical skills for working with real-world datasets.",
+          section: "Teachings",handler: () => {
+              window.location.href = "/teachings/data-science-fundamentals/";
+            },},{id: "teachings-introduction-to-machine-learning",
+          title: 'Introduction to Machine Learning',
+          description: "This course provides an introduction to machine learning concepts, algorithms, and applications. Students will learn about supervised and unsupervised learning, model evaluation, and practical implementations.",
+          section: "Teachings",handler: () => {
+              window.location.href = "/teachings/introduction-to-machine-learning/";
+            },},{
+        id: 'social-cv',
+        title: 'CV',
+        section: 'Socials',
+        handler: () => {
+          window.open("/assets/pdf/example_pdf.pdf", "_blank");
+        },
+      },{
+        id: 'social-email',
+        title: 'email',
+        section: 'Socials',
+        handler: () => {
+          window.open("mailto:%79%6F%75@%65%78%61%6D%70%6C%65.%63%6F%6D", "_blank");
+        },
+      },{
+        id: 'social-inspire',
+        title: 'Inspire HEP',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://inspirehep.net/authors/1010907", "_blank");
+        },
+      },{
+        id: 'social-rss',
+        title: 'RSS Feed',
+        section: 'Socials',
+        handler: () => {
+          window.open("/feed.xml", "_blank");
+        },
+      },{
+        id: 'social-scholar',
+        title: 'Google Scholar',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://scholar.google.com/citations?user=qc6CJjYAAAAJ", "_blank");
+        },
+      },{
+        id: 'social-custom_social',
+        title: 'Custom_social',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://www.alberteinstein.com/", "_blank");
+        },
+      },{
+      id: 'light-theme',
+      title: 'Change theme to light',
+      description: 'Change the theme of the site to Light',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("light");
+      },
+    },
+    {
+      id: 'dark-theme',
+      title: 'Change theme to dark',
+      description: 'Change the theme of the site to Dark',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("dark");
+      },
+    },
+    {
+      id: 'system-theme',
+      title: 'Use system default theme',
+      description: 'Change the theme of the site to System Default',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("system");
+      },
+    },];
+
+</script> <script src="/assets/al_search/js/shortcut-key.js"></script> </body> </html>
