@@ -1,0 +1,336 @@
+<!DOCTYPE html> <html lang="ko"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title> omdb-movie-app에서 생각해봐야할 것들 (1) — 프레임워크 없이 SPA 만들기 편 | WonJun's Blog </title> <meta name="author" content="원준 서"> <meta name="description" content="A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design. "> <meta name="keywords" content="jekyll, jekyll-theme, academic-website, portfolio-website"> <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:; media-src 'self' https:; frame-src 'self' https:; connect-src 'self' https:;"> <style>
+  :root {
+    --max-content-width: 930px;
+  }
+</style> <link rel="stylesheet" href="/assets/css/tailwind.css?v=50c64c15cbb9fd1ce6056fdb8bcb4b62"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tocbot@4.36.4/dist/tocbot.css" integrity="sha256-zTN0r+0OKaIv2xqeNNIYxNk0pWJ6+IqPGc1iDgVzWF0=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css" integrity="sha256-MVopmdyC2tYTiJ8wlktf0uh0v4NgT+vNdyVFepi7Q0c=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.5/css/academicons.min.css" integrity="sha256-SzrCOBJbGVFMahewkgjwnApaV2+av1DwMAA+/QGLyZw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/scholar-icons@1.0.3/css/scholar-icons.css" integrity="sha256-VY3hHVj/hNX3fYG6wtbA6TcKJQl7+FthzGSyIB64klY=" crossorigin="anonymous"> <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&amp;display=swap"> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?v=591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light"> <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%E2%9A%9B%EF%B8%8F&lt;/text&gt;&lt;/svg&gt;"> <link rel="stylesheet" href="/assets/css/main.css?v=f0b101217084a90093badfe99ff9a7d1"> <link rel="canonical" href="https://wonjun-s-dev.github.io/blog/2026/01-vanilla-spa-core/"> <script src="/assets/js/theme.js?v=7af685e2ba20b37fef545c97b8064050"></script> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css?v=5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark"> <script>
+    initTheme();
+  </script> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> WonJun's Blog </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">about </a> </li> <li class="nav-item active"> <a class="nav-link" href="/blog/">blog </a> </li> <li class="nav-item "> <a class="nav-link" href="/news/">daily </a> </li> <li class="nav-item "> <a class="nav-link" href="/projects/">projects </a> </li> <li class="nav-item "> <a class="nav-link" href="/cv/">CV </a> </li> <li class="nav-item"> <button id="search-toggle" type="button" title="Search" aria-label="Open search"> <span class="nav-link">ctrl k <i class="fa-solid fa-magnifying-glass"></i></span> </button> </li> <li class="toggle-container"> <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"> <i class="fa-half-sun-moon" id="light-toggle-system"></i> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="row"> <div class="col-sm-9"> <div class="post"> <header class="post-header"> <h1 class="post-title">omdb-movie-app에서 생각해봐야할 것들 (1) — 프레임워크 없이 SPA 만들기 편</h1> <p class="post-meta"> Created on July 15, 2026 </p> <p class="post-tags"> <a href="/blog/2026"> <i class="fa-solid fa-calendar fa-sm"></i> 2026 </a>   ·   <a href="/blog/tag/typescript"> <i class="fa-solid fa-hashtag fa-sm"></i> TypeScript</a>   <a href="/blog/tag/spa"> <i class="fa-solid fa-hashtag fa-sm"></i> SPA</a>   <a href="/blog/tag/state-management"> <i class="fa-solid fa-hashtag fa-sm"></i> State Management</a>   <a href="/blog/tag/router"> <i class="fa-solid fa-hashtag fa-sm"></i> Router</a>   <a href="/blog/tag/frontend"> <i class="fa-solid fa-hashtag fa-sm"></i> Frontend</a> </p> </header> <article class="post-content"> <div id="markdown-content"> <div style="word-break: keep-all; overflow-wrap: break-word;"> <p>React를 몇 년째 쓰면서도 정작 <code class="language-plaintext highlighter-rouge">useState</code>를 호출하면 왜 화면이 다시 그려지는지, 그 안에서 무슨 일이 벌어지는지를 설명하지 못한다는 걸 깨달은 적이 있다. 프레임워크가 대신 풀어주던 문제를 한 번도 직접 풀어본 적이 없었기 때문이다. 그래서 2일짜리 사이드 프로젝트(omdb-movie-app)에서는 React도, Vue도, 어떤 상태관리 라이브러리도 쓰지 않고 <code class="language-plaintext highlighter-rouge">Component</code>, <code class="language-plaintext highlighter-rouge">Store</code>, <code class="language-plaintext highlighter-rouge">Router</code> 세 가지를 직접 만들었다. 짧은 코드지만 그 안에 “반응형 상태란 무엇인가”, “구독 기반 렌더링”, “배열 반응성의 한계”, “URL과 화면을 동기화하는 법”이 전부 들어있다.</p> <h2 id="section">1. 왜 프레임워크 없이 만들어보기로 했나</h2> <p>이 프로젝트를 시작할 때 목표는 “빠르게 완성”이 아니라 “블랙박스를 열어보기”였다. React의 <code class="language-plaintext highlighter-rouge">useState</code>, Vue의 <code class="language-plaintext highlighter-rouge">ref</code>/<code class="language-plaintext highlighter-rouge">reactive</code>는 전부 “상태가 바뀌면 관련된 화면만 다시 그린다”는 동일한 문제를 풀고 있는데, 그 내부 구현을 한 번도 직접 만들어보지 않고서는 왜 특정 패턴(예: 배열을 직접 <code class="language-plaintext highlighter-rouge">push</code>하면 안 되고 새 배열로 교체해야 한다는 규칙)이 존재하는지 감으로만 알고 있을 뿐이었다. 그래서 이번엔 라이브러리 없이 <code class="language-plaintext highlighter-rouge">Component</code>(렌더 생명주기), <code class="language-plaintext highlighter-rouge">Store</code>(반응형 상태), <code class="language-plaintext highlighter-rouge">Router</code>(URL 동기화) 세 가지 코어를 직접 설계했다.</p> <h2 id="objectdefineproperty--">2. 반응형 상태란 무엇인가 — <code class="language-plaintext highlighter-rouge">Object.defineProperty</code>로 직접 구현</h2> <p>“반응형 상태”란 결국 “값이 바뀌는 순간을 코드가 알아챌 수 있는 상태”다. 일반 객체의 프로퍼티는 값이 바뀌어도 아무도 알림을 받지 못한다. 이걸 감지하려면 값을 읽고 쓰는 지점에 코드를 끼워 넣어야 하는데, <code class="language-plaintext highlighter-rouge">Object.defineProperty</code>가 바로 그 지점을 만들어준다.</p> <div class="language-ts highlighter-rouge"> <div class="highlight"><pre class="highlight"><code><span class="c1">// src/core/core.ts (핵심만 정리)</span>
+<span class="kd">type</span> <span class="nx">Observer</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="k">void</span><span class="p">;</span>
+
+<span class="k">export</span> <span class="kd">class</span> <span class="nc">Store</span><span class="o">&lt;</span><span class="nx">S</span> <span class="kd">extends</span> <span class="nb">Record</span><span class="o">&lt;</span><span class="kr">string</span><span class="p">,</span> <span class="nx">unknown</span><span class="o">&gt;&gt;</span> <span class="p">{</span>
+  <span class="na">state</span><span class="p">:</span> <span class="nx">S</span><span class="p">;</span>
+  <span class="k">private</span> <span class="na">observers</span><span class="p">:</span> <span class="nb">Partial</span><span class="o">&lt;</span><span class="nb">Record</span><span class="o">&lt;</span><span class="kr">keyof</span> <span class="nx">S</span><span class="p">,</span> <span class="nx">Observer</span><span class="p">[]</span><span class="o">&gt;&gt;</span> <span class="o">=</span> <span class="p">{};</span>
+
+  <span class="nf">constructor</span><span class="p">(</span><span class="na">initialState</span><span class="p">:</span> <span class="nx">S</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">state</span> <span class="o">=</span> <span class="p">{}</span> <span class="kd">as </span><span class="nx">S</span><span class="p">;</span>
+
+    <span class="p">(</span><span class="nb">Object</span><span class="p">.</span><span class="nf">keys</span><span class="p">(</span><span class="nx">initialState</span><span class="p">)</span> <span class="kd">as </span><span class="p">(</span><span class="kr">keyof</span> <span class="nx">S</span><span class="p">)[]).</span><span class="nf">forEach</span><span class="p">((</span><span class="nx">key</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="kd">let</span> <span class="nx">value</span> <span class="o">=</span> <span class="nx">initialState</span><span class="p">[</span><span class="nx">key</span><span class="p">];</span>
+
+      <span class="nb">Object</span><span class="p">.</span><span class="nf">defineProperty</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">,</span> <span class="nx">key</span><span class="p">,</span> <span class="p">{</span>
+        <span class="na">get</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">value</span><span class="p">,</span>
+        <span class="na">set</span><span class="p">:</span> <span class="p">(</span><span class="nx">newValue</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+          <span class="nx">value</span> <span class="o">=</span> <span class="nx">newValue</span><span class="p">;</span>
+          <span class="k">this</span><span class="p">.</span><span class="nf">notify</span><span class="p">(</span><span class="nx">key</span><span class="p">);</span>
+        <span class="p">},</span>
+      <span class="p">});</span>
+    <span class="p">});</span>
+  <span class="p">}</span>
+
+  <span class="nf">subscribe</span><span class="p">(</span><span class="na">key</span><span class="p">:</span> <span class="kr">keyof</span> <span class="nx">S</span><span class="p">,</span> <span class="na">callback</span><span class="p">:</span> <span class="nx">Observer</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if </span><span class="p">(</span><span class="o">!</span><span class="k">this</span><span class="p">.</span><span class="nx">observers</span><span class="p">[</span><span class="nx">key</span><span class="p">])</span> <span class="k">this</span><span class="p">.</span><span class="nx">observers</span><span class="p">[</span><span class="nx">key</span><span class="p">]</span> <span class="o">=</span> <span class="p">[];</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">observers</span><span class="p">[</span><span class="nx">key</span><span class="p">]</span><span class="o">!</span><span class="p">.</span><span class="nf">push</span><span class="p">(</span><span class="nx">callback</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="k">private</span> <span class="nf">notify</span><span class="p">(</span><span class="na">key</span><span class="p">:</span> <span class="kr">keyof</span> <span class="nx">S</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">observers</span><span class="p">[</span><span class="nx">key</span><span class="p">]?.</span><span class="nf">forEach</span><span class="p">((</span><span class="nx">cb</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nf">cb</span><span class="p">());</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div> </div> <p>원리는 단순하다. <code class="language-plaintext highlighter-rouge">initialState</code>의 각 key를 순회하며 진짜 값은 클로저 변수(<code class="language-plaintext highlighter-rouge">value</code>)에 숨겨두고, <code class="language-plaintext highlighter-rouge">state.movies</code>처럼 그 key에 접근할 때는 <code class="language-plaintext highlighter-rouge">get</code>이, <code class="language-plaintext highlighter-rouge">state.movies = [...]</code>처럼 값을 대입할 때는 <code class="language-plaintext highlighter-rouge">set</code>이 호출되도록 만든다. <code class="language-plaintext highlighter-rouge">set</code> 안에서 <code class="language-plaintext highlighter-rouge">notify</code>를 호출해 그 key를 구독하고 있는 콜백들을 전부 실행하면, “값이 바뀌면 관련된 곳에 알림이 간다”는 반응형의 최소 조건이 완성된다.</p> <h2 id="subscribe-----">3. 구독(subscribe) 패턴으로 필요한 컴포넌트만 다시 그리기</h2> <p>상태가 바뀔 때마다 페이지 전체를 다시 그리는 건 간단하지만 비효율적이다. 그래서 컴포넌트는 자신이 실제로 관심 있는 key만 구독하도록 만들었다.</p> <div class="language-ts highlighter-rouge"> <div class="highlight"><pre class="highlight"><code><span class="c1">// src/components/MovieList.ts</span>
+<span class="k">export</span> <span class="kd">class</span> <span class="nc">MovieList</span> <span class="kd">extends</span> <span class="nc">Component</span> <span class="p">{</span>
+  <span class="nf">constructor</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">super</span><span class="p">();</span>
+    <span class="nx">movieStore</span><span class="p">.</span><span class="nf">subscribe</span><span class="p">(</span><span class="dl">'</span><span class="s1">movies</span><span class="dl">'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="k">this</span><span class="p">.</span><span class="nf">render</span><span class="p">());</span>
+    <span class="nx">movieStore</span><span class="p">.</span><span class="nf">subscribe</span><span class="p">(</span><span class="dl">'</span><span class="s1">isLoading</span><span class="dl">'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="k">this</span><span class="p">.</span><span class="nf">render</span><span class="p">());</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div> </div> <p><code class="language-plaintext highlighter-rouge">Component</code> 자체는 아주 단순한 생명주기만 가진다.</p> <div class="language-ts highlighter-rouge"> <div class="highlight"><pre class="highlight"><code><span class="c1">// src/core/core.ts</span>
+<span class="k">export</span> <span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">Component</span><span class="o">&lt;</span><span class="nx">P</span> <span class="o">=</span> <span class="nx">unknown</span><span class="o">&gt;</span> <span class="p">{</span>
+  <span class="na">el</span><span class="p">:</span> <span class="nx">HTMLElement</span><span class="p">;</span>
+
+  <span class="nf">constructor</span><span class="p">(</span><span class="k">protected</span> <span class="nx">props</span><span class="p">?:</span> <span class="nx">P</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">el</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">createElement</span><span class="p">(</span><span class="dl">'</span><span class="s1">div</span><span class="dl">'</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nf">render</span><span class="p">();</span>
+  <span class="p">}</span>
+
+  <span class="kd">abstract</span> <span class="nf">template</span><span class="p">():</span> <span class="kr">string</span><span class="p">;</span>
+
+  <span class="nf">render</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">el</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nf">template</span><span class="p">();</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">setEvent</span><span class="p">?.();</span>
+  <span class="p">}</span>
+
+  <span class="nx">setEvent</span><span class="p">?():</span> <span class="k">void</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div> </div> <p><code class="language-plaintext highlighter-rouge">movieStore.state.movies = newMovies</code>가 실행되면 <code class="language-plaintext highlighter-rouge">Store</code>의 setter가 <code class="language-plaintext highlighter-rouge">notify('movies')</code>를 호출하고, 그걸 구독하고 있던 <code class="language-plaintext highlighter-rouge">MovieList.render()</code>만 다시 실행된다. <code class="language-plaintext highlighter-rouge">Chatbot</code>이나 <code class="language-plaintext highlighter-rouge">TheHeader</code>처럼 <code class="language-plaintext highlighter-rouge">movies</code> key와 무관한 컴포넌트는 전혀 영향을 받지 않는다. 이게 “전체 리렌더 대신 필요한 컴포넌트만 다시 그린다”는 것의 실체다 — React의 재조정(reconciliation)과는 결이 다르지만, “관심 있는 상태만 구독한다”는 목적은 동일하다.</p> <h2 id="section-1">4. 한계 체감: 배열 반응성이 안 되는 이유</h2> <p>이 구조를 만들고 나서 바로 부딪힌 문제가 있다.</p> <div class="language-ts highlighter-rouge"> <div class="highlight"><pre class="highlight"><code><span class="nx">movieStore</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">movies</span><span class="p">.</span><span class="nf">push</span><span class="p">(</span><span class="nx">newMovie</span><span class="p">);</span> <span class="c1">// 아무 일도 일어나지 않는다</span>
+</code></pre></div> </div> <p><code class="language-plaintext highlighter-rouge">Object.defineProperty</code>는 <code class="language-plaintext highlighter-rouge">state.movies</code>라는 <strong>프로퍼티 자체</strong>에 대한 get/set만 감시한다. <code class="language-plaintext highlighter-rouge">movies</code>가 가리키는 배열 안에서 <code class="language-plaintext highlighter-rouge">push</code>가 실행되는 건 “프로퍼티 재할당”이 아니라 “배열 인스턴스 내부 메서드 호출”이기 때문에 setter를 전혀 거치지 않는다. 그래서 이 프로젝트에서는 항상 새 배열로 통째로 교체하는 방식을 강제했다.</p> <div class="language-ts highlighter-rouge"> <div class="highlight"><pre class="highlight"><code><span class="nx">movieStore</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">movies</span> <span class="o">=</span> <span class="p">[...</span><span class="nx">movieStore</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">movies</span><span class="p">,</span> <span class="nx">newMovie</span><span class="p">];</span> <span class="c1">// 이렇게 "재할당"해야 감지된다</span>
+</code></pre></div> </div> <p>이 한계를 직접 겪어보고 나서야 Vue2가 왜 <code class="language-plaintext highlighter-rouge">push</code>, <code class="language-plaintext highlighter-rouge">pop</code>, <code class="language-plaintext highlighter-rouge">splice</code> 같은 배열 변경 감지를 위해 배열 메서드 자체를 오버라이드하는 별도의 트릭을 써야 했는지, 그리고 Vue3와 대부분의 최신 상태관리 라이브러리가 왜 <code class="language-plaintext highlighter-rouge">Proxy</code>로 옮겨갔는지가 코드 레벨에서 이해됐다. <code class="language-plaintext highlighter-rouge">Proxy</code>는 프로퍼티 단위가 아니라 객체 전체에 대한 <code class="language-plaintext highlighter-rouge">get</code>/<code class="language-plaintext highlighter-rouge">set</code>/<code class="language-plaintext highlighter-rouge">deleteProperty</code> 트랩을 걸 수 있어서, 배열 인덱스 변경이나 메서드 호출까지 더 근본적으로 감지할 수 있다.</p> <h2 id="url---">5. 라우팅도 결국 “URL 상태”를 동기화하는 문제다</h2> <p><code class="language-plaintext highlighter-rouge">react-router</code> 없이 URL과 화면을 맞추려면 최소한 두 가지만 있으면 된다. “URL이 바뀌었다는 신호”와 “그 URL에 맞는 화면을 그리는 함수”다.</p> <div class="language-ts highlighter-rouge"> <div class="highlight"><pre class="highlight"><code><span class="c1">// src/core/core.ts</span>
+<span class="k">export</span> <span class="kd">function</span> <span class="nf">createRouter</span><span class="p">(</span><span class="nx">routes</span><span class="p">:</span> <span class="nx">Route</span><span class="p">[])</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">routeRender</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">hash</span> <span class="o">=</span> <span class="nx">location</span><span class="p">.</span><span class="nx">hash</span><span class="p">.</span><span class="nf">slice</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">||</span> <span class="dl">'</span><span class="s1">/</span><span class="dl">'</span><span class="p">;</span>
+    <span class="kd">const</span> <span class="nx">matched</span> <span class="o">=</span> <span class="nx">routes</span><span class="p">.</span><span class="nf">find</span><span class="p">((</span><span class="nx">route</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="k">new</span> <span class="nc">RegExp</span><span class="p">(</span><span class="s2">`</span><span class="p">${</span><span class="nx">route</span><span class="p">.</span><span class="nx">path</span><span class="p">}</span><span class="s2">/?$`</span><span class="p">).</span><span class="nf">test</span><span class="p">(</span><span class="nx">hash</span><span class="p">));</span>
+    <span class="p">(</span><span class="nx">matched</span><span class="p">?.</span><span class="nx">component</span> <span class="o">??</span> <span class="nx">NotFound</span><span class="p">).</span><span class="nf">render</span><span class="p">();</span>
+  <span class="p">};</span>
+
+  <span class="nb">window</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">popstate</span><span class="dl">'</span><span class="p">,</span> <span class="nx">routeRender</span><span class="p">);</span>
+  <span class="nb">window</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">hashchange</span><span class="dl">'</span><span class="p">,</span> <span class="nx">routeRender</span><span class="p">);</span>
+  <span class="nf">routeRender</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div> </div> <p><code class="language-plaintext highlighter-rouge">location.hash</code> + <code class="language-plaintext highlighter-rouge">hashchange</code>/<code class="language-plaintext highlighter-rouge">popstate</code> 이벤트만으로 라우팅이 동작한다. 다만 라우트 매칭을 정규식으로 처리하다 보니 <code class="language-plaintext highlighter-rouge">/movie/:id</code> 같은 동적 세그먼트는 지원하지 않는다. 그래서 영화 상세 페이지로 이동할 때는 URL 파라미터 대신 <code class="language-plaintext highlighter-rouge">history.state</code>에 값을 담아 우회했다.</p> <div class="language-ts highlighter-rouge"> <div class="highlight"><pre class="highlight"><code><span class="c1">// src/routes/Movie.ts (진입 시)</span>
+<span class="nx">history</span><span class="p">.</span><span class="nf">replaceState</span><span class="p">({</span> <span class="na">id</span><span class="p">:</span> <span class="nx">imdbID</span> <span class="p">},</span> <span class="dl">''</span><span class="p">);</span>
+<span class="nx">location</span><span class="p">.</span><span class="nx">hash</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">#/movie</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="c1">// src/routes/Movie.ts (렌더링 시)</span>
+<span class="kd">const</span> <span class="p">{</span> <span class="nx">id</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">history</span><span class="p">.</span><span class="nx">state</span><span class="p">;</span>
+</code></pre></div> </div> <p>URL 쿼리스트링(<code class="language-plaintext highlighter-rouge">#/movie?id=...</code>)으로 직접 처리하는 방법도 있었지만, <code class="language-plaintext highlighter-rouge">history.state</code>를 쓰면 파싱 코드 없이 객체를 그대로 주고받을 수 있어 더 단순했다. 대신 링크를 그대로 복사해서 새 창에서 열면 <code class="language-plaintext highlighter-rouge">history.state</code>가 없으니 상세 정보가 비는 한계는 그대로 남는다 — 이 프로젝트에서는 SNS 공유나 직접 링크 접근 요구사항이 없어서 문제가 되지 않았을 뿐이다.</p> <h2 id="proxy-">6. Proxy로 바꾼다면?</h2> <p>지금 구조의 다음 개선 방향은 명확하다. <code class="language-plaintext highlighter-rouge">Object.defineProperty</code> 기반 <code class="language-plaintext highlighter-rouge">Store</code>를 <code class="language-plaintext highlighter-rouge">Proxy</code> 기반으로 바꾸면, 배열 <code class="language-plaintext highlighter-rouge">push</code>나 새로운 key 추가까지 감지할 수 있다.</p> <div class="language-ts highlighter-rouge"> <div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">reactive</span><span class="o">&lt;</span><span class="nx">S</span> <span class="kd">extends</span> <span class="nx">object</span><span class="o">&gt;</span><span class="p">(</span><span class="nx">target</span><span class="p">:</span> <span class="nx">S</span><span class="p">,</span> <span class="nx">onChange</span><span class="p">:</span> <span class="p">(</span><span class="nx">key</span><span class="p">:</span> <span class="kr">keyof</span> <span class="nx">S</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="k">void</span><span class="p">):</span> <span class="nx">S</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="k">new</span> <span class="nc">Proxy</span><span class="p">(</span><span class="nx">target</span><span class="p">,</span> <span class="p">{</span>
+    <span class="nf">set</span><span class="p">(</span><span class="nx">obj</span><span class="p">,</span> <span class="nx">key</span><span class="p">,</span> <span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">obj</span><span class="p">[</span><span class="nx">key</span> <span class="kd">as </span><span class="kr">keyof</span> <span class="nx">S</span><span class="p">]</span> <span class="o">=</span> <span class="nx">value</span><span class="p">;</span>
+      <span class="nf">onChange</span><span class="p">(</span><span class="nx">key</span> <span class="kd">as </span><span class="kr">keyof</span> <span class="nx">S</span><span class="p">);</span>
+      <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+    <span class="p">},</span>
+  <span class="p">});</span>
+<span class="p">}</span>
+</code></pre></div> </div> <p><code class="language-plaintext highlighter-rouge">Proxy</code>는 객체 전체를 감싸기 때문에 <code class="language-plaintext highlighter-rouge">Object.defineProperty</code>처럼 생성 시점에 모든 key를 미리 알아야 하는 제약도 없다. Vue3의 <code class="language-plaintext highlighter-rouge">reactive()</code>, Solid.js의 signal, Zustand 같은 최신 상태관리 도구들이 공통적으로 이 방향(값 자체를 프록시하거나, 값 변경을 구독 가능한 원자 단위로 쪼개는 것)으로 수렴한 이유를 이번에 직접 만들어보고서야 체감했다.</p> <hr> <h2 id="section-2">정리 표</h2> <table> <thead> <tr> <th>항목</th> <th>구현 방식</th> <th>강점</th> <th>아쉬운 점</th> </tr> </thead> <tbody> <tr> <td>반응형 상태</td> <td> <code class="language-plaintext highlighter-rouge">Object.defineProperty</code> getter/setter + pub-sub</td> <td>외부 라이브러리 없이 구독 기반 부분 렌더링 구현</td> <td>배열 <code class="language-plaintext highlighter-rouge">push</code>/<code class="language-plaintext highlighter-rouge">splice</code> 등 메서드 변경은 감지 못 함</td> </tr> <tr> <td>구독/렌더링</td> <td><code class="language-plaintext highlighter-rouge">store.subscribe(key, callback)</code></td> <td>컴포넌트가 관심 있는 key만 구독해 불필요한 렌더 방지</td> <td>구독 해제(unsubscribe) 로직이 없어 메모리 누수 여지</td> </tr> <tr> <td>컴포넌트 생명주기</td> <td>생성자에서 <code class="language-plaintext highlighter-rouge">render()</code> 호출하는 단순 구조</td> <td>코드량이 적고 이해하기 쉬움</td> <td>마운트/언마운트 훅이 없어 정리(cleanup) 시점을 못 잡음</td> </tr> <tr> <td>라우팅</td> <td> <code class="language-plaintext highlighter-rouge">location.hash</code> + <code class="language-plaintext highlighter-rouge">popstate</code>/<code class="language-plaintext highlighter-rouge">hashchange</code>, 정규식 매칭</td> <td>react-router 없이 SPA 라우팅 구현</td> <td>동적 세그먼트(<code class="language-plaintext highlighter-rouge">:id</code>) 미지원, <code class="language-plaintext highlighter-rouge">history.state</code>로 우회</td> </tr> </tbody> </table> <h2 id="section-3">실무 프로젝트에 적용한다면</h2> <p>이 정도 규모를 넘어서는 프로젝트라면 직접 만든 <code class="language-plaintext highlighter-rouge">Store</code>보다는 <code class="language-plaintext highlighter-rouge">Proxy</code> 기반 반응성을 갖춘 도구(Vue3의 <code class="language-plaintext highlighter-rouge">reactive</code>, Zustand, Jotai, Solid.js의 signal)를 쓰는 게 합리적이다. 다만 이번처럼 한 번 직접 만들어보면, 그 도구들의 API 뒤에서 실제로 무슨 일이 벌어지는지 — “구독”, “알림”, “변경 감지의 단위”가 왜 그런 형태로 설계됐는지 — 를 문서가 아니라 코드로 이해하게 된다. 도구를 잘 쓰기 위해 도구 없이 한 번 만들어보는 경험의 값어치는 여기에 있었다.</p> </div> </div> </article> </div> </div> <div class="col-sm-3"> <nav id="toc-sidebar" class="sticky-top toc toc-sidebar" aria-label="Table of contents" data-toc-collapse="expanded" data-toc-collapse-depth=""></nav> </div> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 원준 서. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>. Photos from <a href="https://unsplash.com" target="_blank" rel="external nofollow noopener">Unsplash</a>. </div> </footer> <script>
+  window.alFolio = {
+    compatBootstrap: false
+  };
+</script> <script src="/assets/js/nav-toggle.js?v=141bd79a73ebc0f0b6ea58e440ae79fc"></script> <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script> <script defer src="/assets/js/masonry.js?v=e49affc7bd2646f6acdad1dbe02c2359" type="text/javascript"></script> <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI=" crossorigin="anonymous"></script> <script src="/assets/al_math/js/mathjax-setup.js"></script> <script defer src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6" crossorigin="anonymous"></script> <script src="/assets/js/tooltips-setup.js?v=fe487e99db6c43751e6e7bdb2d6a0611"></script> <script defer src="https://cdn.jsdelivr.net/npm/tocbot@4.36.4/dist/tocbot.min.js" integrity="sha256-lo/r+jQ81wWrxdIiiiEEd538z4+dTJTt+leOuAS7GCw=" crossorigin="anonymous"></script> <script src="/assets/js/no_defer.js?v=53b1b1a645525975c963ce8bf8bfefcf"></script> <script defer src="/assets/js/common.js?v=87baac90f765f2f3362dcf6aaf312a8a"></script> <script defer src="/assets/js/copy_code.js?v=c8a01c11a92744d44b093fc3bda915df" type="text/javascript"></script> <script defer src="/assets/js/jupyter_new_tab.js?v=896d254890d9b47f0281f63bfccf0dee"></script> <script async src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script> <script async src="https://badge.dimensions.ai/badge.js"></script> <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script> <script defer src="/assets/al_img_tools/js/zoom.js"></script> <script defer src="/assets/js/progress-bar.js?v=499464c5c63ced6cf7ad62509f1e2610" type="text/javascript"></script> <script src="https://cdn.jsdelivr.net/npm/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js" integrity="sha256-uMJJ3EoTyfRBoTbR+lrfu1uRQ87RZG8AR3cVNuQVeFg=" crossorigin="anonymous"></script> <script>
+    addBackToTop();
+  </script> <script type="module" src="/assets/al_search/js/search/ninja-keys.min.js"></script> <ninja-keys hidebreadcrumbs noautoloadmdicons placeholder="Type to start searching"></ninja-keys> <script src="/assets/al_search/js/search-setup.js"></script> <script>
+// get the ninja-keys element
+const ninja = document.querySelector('ninja-keys');
+
+// add the home and posts menu items
+ninja.data = [{
+    id: "nav-about",
+    title: "about",
+    section: "Navigation",
+    handler: () => {
+      window.location.href = "/";
+    },
+  },{id: "nav-blog",
+          title: "blog",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/blog/";
+          },
+        },{id: "nav-daily",
+          title: "daily",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/news/";
+          },
+        },{id: "nav-projects",
+          title: "projects",
+          description: "실무, 개인 프로젝트",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/projects/";
+          },
+        },{id: "nav-cv",
+          title: "CV",
+          description: "This is a description of the page. You can modify it in &#39;_pages/cv.md&#39;. You can also change or remove the top pdf download button.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/cv/";
+          },
+        },{id: "post-omdb-movie-app에서-생각해봐야할-것들-2-llm-응답을-ui-로직에-연결하기-편",
+        
+          title: "omdb-movie-app에서 생각해봐야할 것들 (2) — LLM 응답을 UI 로직에 연결하기 편",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/02-llm-output-format/";
+          
+        },
+      },{id: "post-omdb-movie-app에서-생각해봐야할-것들-1-프레임워크-없이-spa-만들기-편",
+        
+          title: "omdb-movie-app에서 생각해봐야할 것들 (1) — 프레임워크 없이 SPA 만들기 편",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/01-vanilla-spa-core/";
+          
+        },
+      },{id: "post-ipad-homepage-프로젝트에서-생각해봐야할-것들-2-푸터-아코디언-편",
+        
+          title: "iPad Homepage 프로젝트에서 생각해봐야할 것들 (2) — 푸터 아코디언 편",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/accordion/";
+          
+        },
+      },{id: "post-ipad-homepage-프로젝트에서-생각해봐야할-5가지-1",
+        
+          title: "iPad Homepage 프로젝트에서 생각해봐야할 5가지 (1)",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/01-post/";
+          
+        },
+      },{id: "post-css만으로-패럴랙스-배경-만들기",
+        
+          title: "CSS만으로 패럴랙스 배경 만들기",
+        
+        description: "background-attachment fixed 파헤치기",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/parallax-background/";
+          
+        },
+      },{id: "post-커밋-메시지-컨벤션-가이드",
+        
+          title: "커밋 메시지 컨벤션 가이드",
+        
+        description: "용도별로 정리한 커밋 메시지 타입과 실전 팁",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/conventional-commits/";
+          
+        },
+      },{id: "books-the-godfather",
+          title: 'The Godfather',
+          description: "",
+          section: "Books",handler: () => {
+              window.location.href = "/books/the_godfather/";
+            },},{id: "news-2026-07-02-01-daily",
+          title: '2026-07-02-01 Daily',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/2026-07-02-01-daily/";
+            },},{id: "news-2026-07-06-01-daily",
+          title: '2026-07-06-01 Daily',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/2026-07-06-01-daily/";
+            },},{id: "news-2026-07-07-01-daily",
+          title: '2026-07-07-01 Daily',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/2026-07-07-01-daily/";
+            },},{id: "news-2026-07-07-02-daily",
+          title: '2026-07-07-02 Daily',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/2026-07-07-02-daily/";
+            },},{id: "news-2026-07-07-03-daily",
+          title: '2026-07-07-03 Daily',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/2026-07-07-03-daily/";
+            },},{id: "news-2026-07-10-01-daily",
+          title: '2026-07-10-01 Daily',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/2026-07-10-01-daily/";
+            },},{id: "projects-starbucks-homepage",
+          title: 'starbucks-homepage',
+          description: "스타벅스 코리아 공식 홈페이지 UI/인터랙션을 재현한 정적 프론트엔드 클론 프로젝트",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/1_project/";
+            },},{id: "projects-ipad-homepage",
+          title: 'ipad-homepage',
+          description: "Apple Korea 공식 홈페이지의 iPad 10.2 제품 소개 페이지를 그대로 재현한 반응형 프론트엔드 클론 프로젝트",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/2_project/";
+            },},{id: "projects-omdb-movie-app",
+          title: 'omdb-movie-app',
+          description: "프레임워크 없이 TypeScript로 직접 구현한 SPA 코어(Component/Store/Router) 기반 영화 검색 &amp; OpenAI 챗봇 추천 서비스",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/3_project/";
+            },},{id: "teachings-data-science-fundamentals",
+          title: 'Data Science Fundamentals',
+          description: "This course covers the foundational aspects of data science, including data collection, cleaning, analysis, and visualization. Students will learn practical skills for working with real-world datasets.",
+          section: "Teachings",handler: () => {
+              window.location.href = "/teachings/data-science-fundamentals/";
+            },},{id: "teachings-introduction-to-machine-learning",
+          title: 'Introduction to Machine Learning',
+          description: "This course provides an introduction to machine learning concepts, algorithms, and applications. Students will learn about supervised and unsupervised learning, model evaluation, and practical implementations.",
+          section: "Teachings",handler: () => {
+              window.location.href = "/teachings/introduction-to-machine-learning/";
+            },},{
+        id: 'social-cv',
+        title: 'CV',
+        section: 'Socials',
+        handler: () => {
+          window.open("/assets/pdf/example_pdf.pdf", "_blank");
+        },
+      },{
+        id: 'social-email',
+        title: 'email',
+        section: 'Socials',
+        handler: () => {
+          window.open("mailto:%79%6F%75@%65%78%61%6D%70%6C%65.%63%6F%6D", "_blank");
+        },
+      },{
+        id: 'social-inspire',
+        title: 'Inspire HEP',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://inspirehep.net/authors/1010907", "_blank");
+        },
+      },{
+        id: 'social-rss',
+        title: 'RSS Feed',
+        section: 'Socials',
+        handler: () => {
+          window.open("/feed.xml", "_blank");
+        },
+      },{
+        id: 'social-scholar',
+        title: 'Google Scholar',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://scholar.google.com/citations?user=qc6CJjYAAAAJ", "_blank");
+        },
+      },{
+        id: 'social-custom_social',
+        title: 'Custom_social',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://www.alberteinstein.com/", "_blank");
+        },
+      },{
+      id: 'light-theme',
+      title: 'Change theme to light',
+      description: 'Change the theme of the site to Light',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("light");
+      },
+    },
+    {
+      id: 'dark-theme',
+      title: 'Change theme to dark',
+      description: 'Change the theme of the site to Dark',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("dark");
+      },
+    },
+    {
+      id: 'system-theme',
+      title: 'Use system default theme',
+      description: 'Change the theme of the site to System Default',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("system");
+      },
+    },];
+
+</script> <script src="/assets/al_search/js/shortcut-key.js"></script> </body> </html>

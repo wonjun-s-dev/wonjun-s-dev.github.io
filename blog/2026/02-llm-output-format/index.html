@@ -1,0 +1,311 @@
+<!DOCTYPE html> <html lang="ko"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title> omdb-movie-app에서 생각해봐야할 것들 (2) — LLM 응답을 UI 로직에 연결하기 편 | WonJun's Blog </title> <meta name="author" content="원준 서"> <meta name="description" content="A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design. "> <meta name="keywords" content="jekyll, jekyll-theme, academic-website, portfolio-website"> <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:; media-src 'self' https:; frame-src 'self' https:; connect-src 'self' https:;"> <style>
+  :root {
+    --max-content-width: 930px;
+  }
+</style> <link rel="stylesheet" href="/assets/css/tailwind.css?v=50c64c15cbb9fd1ce6056fdb8bcb4b62"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tocbot@4.36.4/dist/tocbot.css" integrity="sha256-zTN0r+0OKaIv2xqeNNIYxNk0pWJ6+IqPGc1iDgVzWF0=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css" integrity="sha256-MVopmdyC2tYTiJ8wlktf0uh0v4NgT+vNdyVFepi7Q0c=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.5/css/academicons.min.css" integrity="sha256-SzrCOBJbGVFMahewkgjwnApaV2+av1DwMAA+/QGLyZw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/scholar-icons@1.0.3/css/scholar-icons.css" integrity="sha256-VY3hHVj/hNX3fYG6wtbA6TcKJQl7+FthzGSyIB64klY=" crossorigin="anonymous"> <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&amp;display=swap"> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?v=591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light"> <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%E2%9A%9B%EF%B8%8F&lt;/text&gt;&lt;/svg&gt;"> <link rel="stylesheet" href="/assets/css/main.css?v=f0b101217084a90093badfe99ff9a7d1"> <link rel="canonical" href="https://wonjun-s-dev.github.io/blog/2026/02-llm-output-format/"> <script src="/assets/js/theme.js?v=7af685e2ba20b37fef545c97b8064050"></script> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css?v=5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark"> <script>
+    initTheme();
+  </script> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> WonJun's Blog </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">about </a> </li> <li class="nav-item active"> <a class="nav-link" href="/blog/">blog </a> </li> <li class="nav-item "> <a class="nav-link" href="/news/">daily </a> </li> <li class="nav-item "> <a class="nav-link" href="/projects/">projects </a> </li> <li class="nav-item "> <a class="nav-link" href="/cv/">CV </a> </li> <li class="nav-item"> <button id="search-toggle" type="button" title="Search" aria-label="Open search"> <span class="nav-link">ctrl k <i class="fa-solid fa-magnifying-glass"></i></span> </button> </li> <li class="toggle-container"> <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"> <i class="fa-half-sun-moon" id="light-toggle-system"></i> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="row"> <div class="col-sm-9"> <div class="post"> <header class="post-header"> <h1 class="post-title">omdb-movie-app에서 생각해봐야할 것들 (2) — LLM 응답을 UI 로직에 연결하기 편</h1> <p class="post-meta"> Created on July 15, 2026 </p> <p class="post-tags"> <a href="/blog/2026"> <i class="fa-solid fa-calendar fa-sm"></i> 2026 </a>   ·   <a href="/blog/tag/typescript"> <i class="fa-solid fa-hashtag fa-sm"></i> TypeScript</a>   <a href="/blog/tag/openai"> <i class="fa-solid fa-hashtag fa-sm"></i> OpenAI</a>   <a href="/blog/tag/prompt-engineering"> <i class="fa-solid fa-hashtag fa-sm"></i> Prompt Engineering</a>   <a href="/blog/tag/llm"> <i class="fa-solid fa-hashtag fa-sm"></i> LLM</a>   <a href="/blog/tag/frontend"> <i class="fa-solid fa-hashtag fa-sm"></i> Frontend</a> </p> </header> <article class="post-content"> <div id="markdown-content"> <div style="word-break: keep-all; overflow-wrap: break-word;"> <p>ChatGPT가 추천한 영화 제목을, 자연어 처리(NER 등) 없이 정규식 한 줄로 클릭 가능한 링크로 바꿀 수 있을까? omdb-movie-app의 챗봇은 사용자와 대화하며 영화를 추천해주는데, 추천된 영화 제목을 클릭하면 바로 검색 결과로 연결된다. 이걸 가능하게 한 건 복잡한 자연어 처리가 아니라, “모델이 항상 정해진 포맷으로만 답하도록 프롬프트 단계에서 강제”하는 아주 단순한 전략이었다. 이 글은 그 설계 과정과, 다시 코드를 들여다보며 발견한 개선 여지까지 정직하게 기록한다.</p> <h2 id="section">1. 챗봇이 추천한 영화를 어떻게 “클릭 가능하게” 만들까?</h2> <p>문제를 정리하면 이렇다. LLM은 “인터스텔라 추천해요, 크리스토퍼 놀란 감독의 명작이죠” 같은 자유 형식의 자연어로 답한다. 이 응답 안에서 “인터스텔라”가 영화 제목이라는 걸 프론트엔드가 구조적으로 알아채려면 무언가 표시가 필요하다. 선택지는 두 가지였다. 응답을 받은 뒤 자연어 처리(개체명 인식 등)로 영화 제목을 추출하거나, 애초에 모델이 답할 때부터 영화 제목을 구분 가능한 포맷으로 감싸게 만드는 것. 전자는 정확도가 들쭉날쭉하고 구현 비용도 크다. 그래서 후자, 즉 “출력 포맷 자체를 프롬프트로 계약(contract)처럼 명시”하는 방향을 택했다.</p> <h2 id="section-1">2. 자연어 파싱 대신 출력 포맷을 프롬프트로 강제하기</h2> <p>시스템 프롬프트에 영화 제목은 항상 <code class="language-plaintext highlighter-rouge">(출시년도)</code> 형식으로 감싸라는 규칙을 명시했다.</p> <div class="language-ts highlighter-rouge"> <div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">fineTunedMessages</span><span class="p">:</span> <span class="nx">OpenAI</span><span class="p">.</span><span class="nx">ChatCompletionMessageParam</span><span class="p">[]</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="p">{</span>
+    <span class="na">role</span><span class="p">:</span> <span class="dl">'</span><span class="s1">system</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">content</span><span class="p">:</span>
+      <span class="dl">'</span><span class="s1">너는 영화 정보를 알려주는 챗봇이야! 어떤 방식으로든 답변에서의 영화 제목은 항상 </span><span class="dl">'</span> <span class="o">+</span>
+      <span class="dl">'</span><span class="s1">(출시년도) 처럼  기호로 제목을 묶어 // 기호로 한글과 영어 제목을 구분하고 </span><span class="dl">'</span> <span class="o">+</span>
+      <span class="dl">'</span><span class="s1">() 기호로 영화의 출시년도를 표시해 줘! 그리고 영화의 한글 제목이 정확하지 않다면, 억지로 지어내지 말고 </span><span class="dl">'</span> <span class="o">+</span>
+      <span class="dl">'</span><span class="s1">(1234) 처럼 영어 제목만 표시해 줘.</span><span class="dl">'</span><span class="p">,</span>
+  <span class="p">},</span>
+  <span class="c1">// ... few-shot 예시 (아래 3절 참고)</span>
+<span class="p">];</span>
+</code></pre></div> </div> <p>``로 감싸고 <code class="language-plaintext highlighter-rouge">//</code>로 한글/영어를 구분하는 이 마크업은 마크다운이나 HTML과 충돌할 일이 없는 독자적인 델리미터를 고른 것이다. “한글 제목이 확실하지 않으면 지어내지 말라”는 조건까지 넣은 이유는, 국내 미개봉작처럼 공식 한글 제목이 없는 영화에 모델이 그럴듯한 오역을 지어내는 걸 막기 위해서였다.</p> <h2 id="few-shot-------">3. Few-shot 예시 설계: 몇 개, 어떤 기준으로 만들었나</h2> <p>규칙 설명만으로는 모델이 형식을 꾸준히 지키지 않는다. 그래서 실제 톤과 포맷을 그대로 보여주는 예시 10개를 시스템 메시지 뒤에 이어 붙였다.</p> <div class="language-ts highlighter-rouge"> <div class="highlight"><pre class="highlight"><code><span class="p">{</span>
+  <span class="nl">role</span><span class="p">:</span> <span class="dl">'</span><span class="s1">assistant</span><span class="dl">'</span><span class="p">,</span>
+  <span class="nx">content</span><span class="p">:</span>
+    <span class="dl">'</span><span class="s1">영화 (2019)은 국제적으로 큰 주목을 받은 봉준호 감독 작품이에요. </span><span class="dl">'</span> <span class="o">+</span>
+    <span class="dl">'</span><span class="s1">현실적이면서도 예술적인 연출과 뛰어난 연기력으로 많은 관객들의 호응을 얻은 작품이죠.</span><span class="dl">'</span><span class="p">,</span>
+<span class="p">},</span>
+<span class="p">{</span>
+  <span class="na">role</span><span class="p">:</span> <span class="dl">'</span><span class="s1">assistant</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">content</span><span class="p">:</span>
+    <span class="dl">'</span><span class="s1">매트릭스 시리즈는 현재까지 총 3편으로 이루어져 있어요. (1999)는 </span><span class="dl">'</span> <span class="o">+</span>
+    <span class="dl">'</span><span class="s1">사이버 퓨처와 현실 사이의 모순에 관한 기발한 아이디어의 인상적인 작품이에요. </span><span class="dl">'</span> <span class="o">+</span>
+    <span class="dl">'</span><span class="s1">(2003)는 첫 번째 영화의 이야기를 이어받아 전개되는 작품이에요.</span><span class="dl">'</span><span class="p">,</span>
+<span class="p">},</span>
+<span class="c1">// ... 장르/시리즈별로 총 10개</span>
+</code></pre></div> </div> <p>10개를 고른 기준은 “포맷이 흔들릴 수 있는 다양한 케이스”를 커버하는 것이었다. 제목이 한 편인 경우, 시리즈물이라 여러 편의 제목이 한 답변에 몰려 있는 경우, 감독 이름 기준으로 여러 영화를 나열하는 경우 등을 섞었다. 실제로 이렇게 다양한 케이스를 보여줄수록 모델이 포맷을 벗어나는 빈도가 눈에 띄게 줄었다.</p> <p>이 코드를 다시 들여다보며 발견한 개선 여지도 있다. 지금은 <code class="language-plaintext highlighter-rouge">assistant</code> 메시지만 10개 연속으로 나열되어 있고, 그 앞에 대응하는 <code class="language-plaintext highlighter-rouge">user</code> 질문이 없다. API가 role의 엄격한 교대를 요구하지 않아 동작은 하지만, few-shot의 원래 목적(“이런 질문엔 이런 형식으로 답한다”는 패턴 학습)을 생각하면 각 예시 앞에 <code class="language-plaintext highlighter-rouge">{ role: 'user', content: '봉준호 감독 영화 추천해줘' }</code> 같은 질문을 붙여주는 쪽이 형식 준수율을 더 끌어올렸을 것이다.</p> <h2 id="section-2">4. 정규식으로 안전하게 캡처하기</h2> <p>모델이 포맷을 지켜서 응답하면, 프론트엔드는 그 포맷만 정규식으로 캡처해 클릭 가능한 요소로 바꾼다.</p> <div class="language-ts highlighter-rouge"> <div class="highlight"><pre class="highlight"><code><span class="nx">$</span><span class="p">{</span>
+  <span class="k">typeof</span> <span class="nx">msg</span><span class="p">.</span><span class="nx">content</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">string</span><span class="dl">'</span>
+    <span class="p">?</span> <span class="nx">msg</span><span class="p">.</span><span class="nx">content</span><span class="p">.</span><span class="nf">replace</span><span class="p">(</span>
+        <span class="c1">//g,</span>
+        <span class="p">(</span><span class="nx">match</span><span class="p">,</span> <span class="nx">ko</span><span class="p">,</span> <span class="nx">en</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="s2">`&lt;span class="movie-title" data-movie-title="</span><span class="p">${</span><span class="nx">en</span><span class="p">}</span><span class="s2">"&gt;</span><span class="p">${</span><span class="nx">ko</span><span class="p">}</span><span class="s2">&lt;/span&gt;`</span><span class="p">,</span>
+      <span class="p">)</span>
+    <span class="p">:</span> <span class="dl">''</span>
+<span class="p">}</span>
+</code></pre></div> </div> <p><code class="language-plaintext highlighter-rouge">는</code> 사이에서 <code class="language-plaintext highlighter-rouge">//</code>를 기준으로 한글/영어 제목을 각각 캡처하고, <code class="language-plaintext highlighter-rouge">g</code> 플래그로 한 응답에 여러 제목이 있어도 전부 치환한다. 결과로 화면엔 한글 제목이 보이고, <code class="language-plaintext highlighter-rouge">data-movie-title</code> 속성에 영어 제목을 심어뒀다가 클릭 이벤트에서 그 값으로 OMDb 검색을 다시 트리거하는 식으로 연결했다.</p> <p>이 부분에도 다시 보니 두 가지 걸리는 점이 있었다. 하나는 <code class="language-plaintext highlighter-rouge">typeof msg.content === 'string'</code> 체크인데, OpenAI 응답의 <code class="language-plaintext highlighter-rouge">content</code>가 항상 문자열이라는 보장이 없어서(멀티모달 응답 등에서는 배열일 수 있음) 넣어둔 안전장치다. 다른 하나는 이 결과를 <code class="language-plaintext highlighter-rouge">innerHTML</code>에 그대로 꽂고 있다는 점이다. <code class="language-plaintext highlighter-rouge">ko</code>/<code class="language-plaintext highlighter-rouge">en</code> 값은 LLM 응답에서 그대로 온 문자열이라, 이론적으로는 프롬프트 인젝션으로 스크립트가 섞여 들어올 여지가 있다. 개인 학습 프로젝트라 지금은 기술 부채로 남겼지만, 실제 서비스라면 반드시 이스케이프나 <code class="language-plaintext highlighter-rouge">DOMPurify</code> 같은 sanitize 처리가 필요한 지점이다.</p> <h2 id="section-3">5. 한계와 리스크: 포맷을 어길 가능성은 어떻게 대비할 것인가</h2> <p>지금 구조의 가장 큰 약점은 “모델이 포맷을 지킬 거라는 가정” 자체가 검증되지 않는다는 점이다. few-shot으로 준수율을 끌어올렸을 뿐, 응답이 길어지거나 대화가 누적되면 모델이 형식을 놓치는 경우가 생길 수 있다. 이때는 정규식이 그냥 아무것도 매칭하지 못하고, 사용자에게는 <code class="language-plaintext highlighter-rouge">(2019)</code> 같은 날것의 마크업이 그대로 노출된다 — 이 프로젝트에서는 실제로 그런 실패 케이스를 별도로 검증하거나 대비하지 않았다.</p> <p>더 견고하게 만들려면 OpenAI의 <code class="language-plaintext highlighter-rouge">response_format</code>(JSON 스키마 강제)이나 function calling을 쓰는 방향이 있다. 예를 들어 “답변 텍스트”와 “언급한 영화 목록(제목, 연도)”을 아예 별도 필드로 분리해서 받으면, 정규식이 실패할 여지 자체가 없어진다.</p> <div class="language-ts highlighter-rouge"> <div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">chatCompletion</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">openai</span><span class="p">.</span><span class="nx">chat</span><span class="p">.</span><span class="nx">completions</span><span class="p">.</span><span class="nf">create</span><span class="p">({</span>
+  <span class="na">messages</span><span class="p">:</span> <span class="p">[...</span><span class="nx">fineTunedMessages</span><span class="p">,</span> <span class="p">...</span><span class="nx">messages</span><span class="p">],</span>
+  <span class="na">model</span><span class="p">:</span> <span class="dl">'</span><span class="s1">gpt-3.5-turbo</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">response_format</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">json_schema</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">json_schema</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">movie_reply</span><span class="dl">'</span><span class="p">,</span>
+      <span class="na">schema</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">object</span><span class="dl">'</span><span class="p">,</span>
+        <span class="na">properties</span><span class="p">:</span> <span class="p">{</span>
+          <span class="na">reply</span><span class="p">:</span> <span class="p">{</span> <span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">string</span><span class="dl">'</span> <span class="p">},</span>
+          <span class="na">movies</span><span class="p">:</span> <span class="p">{</span>
+            <span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">array</span><span class="dl">'</span><span class="p">,</span>
+            <span class="na">items</span><span class="p">:</span> <span class="p">{</span>
+              <span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">object</span><span class="dl">'</span><span class="p">,</span>
+              <span class="na">properties</span><span class="p">:</span> <span class="p">{</span>
+                <span class="na">titleKo</span><span class="p">:</span> <span class="p">{</span> <span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">string</span><span class="dl">'</span> <span class="p">},</span>
+                <span class="na">titleEn</span><span class="p">:</span> <span class="p">{</span> <span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">string</span><span class="dl">'</span> <span class="p">},</span>
+                <span class="na">year</span><span class="p">:</span> <span class="p">{</span> <span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">number</span><span class="dl">'</span> <span class="p">},</span>
+              <span class="p">},</span>
+              <span class="na">required</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">titleEn</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">year</span><span class="dl">'</span><span class="p">],</span>
+            <span class="p">},</span>
+          <span class="p">},</span>
+        <span class="p">},</span>
+        <span class="na">required</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">reply</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">movies</span><span class="dl">'</span><span class="p">],</span>
+      <span class="p">},</span>
+    <span class="p">},</span>
+  <span class="p">},</span>
+<span class="p">});</span>
+</code></pre></div> </div> <p>이렇게 하면 커스텀 마크업과 정규식이라는 “약속에 기반한 계약”에서, 스키마 검증이라는 “구조적으로 보장된 계약”으로 옮겨갈 수 있다.</p> <hr> <h2 id="section-4">정리 표</h2> <table> <thead> <tr> <th>항목</th> <th>구현 방식</th> <th>강점</th> <th>아쉬운 점</th> <th> </th> <th> </th> </tr> </thead> <tbody> <tr> <td>포맷 강제</td> <td>시스템 프롬프트 규칙 + <code class="language-plaintext highlighter-rouge">(연도)</code> 커스텀 마크업</td> <td>정규식 한 줄로 파싱 가능, 별도 NLP 불필요</td> <td>제목 자체에 <code class="language-plaintext highlighter-rouge">/g</code> → <code class="language-plaintext highlighter-rouge">span.movie-title</code> 치환</td> <td>구현이 단순하고 즉시 클릭 연동 가능</td> <td>모델이 포맷을 어기면 검증 없이 그대로 노출됨</td> </tr> <tr> <td>렌더링</td> <td>치환 결과를 <code class="language-plaintext highlighter-rouge">innerHTML</code>에 직접 삽입</td> <td>빠르게 기능 구현 가능</td> <td>이스케이프 없어 XSS 가능성 존재 (기술 부채로 인지)</td> <td> </td> <td> </td> </tr> <tr> <td>비용</td> <td>매 요청마다 few-shot 10개를 프롬프트에 포함</td> <td>파인튜닝 없이 즉시 적용 가능</td> <td>대화가 길어질수록 토큰 비용·레이턴시 누적</td> <td> </td> <td> </td> </tr> </tbody> </table> <h2 id="section-5">다음 단계로 갈 수 있는 방향</h2> <p>지금 구조는 “빠르게 동작하는 프로토타입”으로는 충분하지만, 실제 서비스로 키운다면 세 가지를 먼저 손볼 것 같다. <code class="language-plaintext highlighter-rouge">response_format</code>으로 출력을 스키마 강제해 파싱 실패 가능성을 구조적으로 없애는 것, few-shot 예시에 <code class="language-plaintext highlighter-rouge">user</code> 질문을 짝지어 포맷 준수율을 더 끌어올리는 것, 그리고 치환 결과를 <code class="language-plaintext highlighter-rouge">innerHTML</code>에 꽂기 전에 이스케이프 유틸을 거치는 것이다. LLM을 실제 UI 로직에 연결할 때는 “모델이 똑똑하니 알아서 잘 하겠지”가 아니라, 프론트가 안전하게 파싱할 수 있는 계약을 프롬프트와 코드 양쪽에서 명시적으로 설계해야 한다는 게 이번 작업에서 가장 크게 남은 교훈이다.</p> </div> </div> </article> </div> </div> <div class="col-sm-3"> <nav id="toc-sidebar" class="sticky-top toc toc-sidebar" aria-label="Table of contents" data-toc-collapse="expanded" data-toc-collapse-depth=""></nav> </div> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 원준 서. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>. Photos from <a href="https://unsplash.com" target="_blank" rel="external nofollow noopener">Unsplash</a>. </div> </footer> <script>
+  window.alFolio = {
+    compatBootstrap: false
+  };
+</script> <script src="/assets/js/nav-toggle.js?v=141bd79a73ebc0f0b6ea58e440ae79fc"></script> <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script> <script defer src="/assets/js/masonry.js?v=e49affc7bd2646f6acdad1dbe02c2359" type="text/javascript"></script> <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI=" crossorigin="anonymous"></script> <script src="/assets/al_math/js/mathjax-setup.js"></script> <script defer src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6" crossorigin="anonymous"></script> <script src="/assets/js/tooltips-setup.js?v=fe487e99db6c43751e6e7bdb2d6a0611"></script> <script defer src="https://cdn.jsdelivr.net/npm/tocbot@4.36.4/dist/tocbot.min.js" integrity="sha256-lo/r+jQ81wWrxdIiiiEEd538z4+dTJTt+leOuAS7GCw=" crossorigin="anonymous"></script> <script src="/assets/js/no_defer.js?v=53b1b1a645525975c963ce8bf8bfefcf"></script> <script defer src="/assets/js/common.js?v=87baac90f765f2f3362dcf6aaf312a8a"></script> <script defer src="/assets/js/copy_code.js?v=c8a01c11a92744d44b093fc3bda915df" type="text/javascript"></script> <script defer src="/assets/js/jupyter_new_tab.js?v=896d254890d9b47f0281f63bfccf0dee"></script> <script async src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script> <script async src="https://badge.dimensions.ai/badge.js"></script> <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script> <script defer src="/assets/al_img_tools/js/zoom.js"></script> <script defer src="/assets/js/progress-bar.js?v=499464c5c63ced6cf7ad62509f1e2610" type="text/javascript"></script> <script src="https://cdn.jsdelivr.net/npm/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js" integrity="sha256-uMJJ3EoTyfRBoTbR+lrfu1uRQ87RZG8AR3cVNuQVeFg=" crossorigin="anonymous"></script> <script>
+    addBackToTop();
+  </script> <script type="module" src="/assets/al_search/js/search/ninja-keys.min.js"></script> <ninja-keys hidebreadcrumbs noautoloadmdicons placeholder="Type to start searching"></ninja-keys> <script src="/assets/al_search/js/search-setup.js"></script> <script>
+// get the ninja-keys element
+const ninja = document.querySelector('ninja-keys');
+
+// add the home and posts menu items
+ninja.data = [{
+    id: "nav-about",
+    title: "about",
+    section: "Navigation",
+    handler: () => {
+      window.location.href = "/";
+    },
+  },{id: "nav-blog",
+          title: "blog",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/blog/";
+          },
+        },{id: "nav-daily",
+          title: "daily",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/news/";
+          },
+        },{id: "nav-projects",
+          title: "projects",
+          description: "실무, 개인 프로젝트",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/projects/";
+          },
+        },{id: "nav-cv",
+          title: "CV",
+          description: "This is a description of the page. You can modify it in &#39;_pages/cv.md&#39;. You can also change or remove the top pdf download button.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/cv/";
+          },
+        },{id: "post-omdb-movie-app에서-생각해봐야할-것들-2-llm-응답을-ui-로직에-연결하기-편",
+        
+          title: "omdb-movie-app에서 생각해봐야할 것들 (2) — LLM 응답을 UI 로직에 연결하기 편",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/02-llm-output-format/";
+          
+        },
+      },{id: "post-omdb-movie-app에서-생각해봐야할-것들-1-프레임워크-없이-spa-만들기-편",
+        
+          title: "omdb-movie-app에서 생각해봐야할 것들 (1) — 프레임워크 없이 SPA 만들기 편",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/01-vanilla-spa-core/";
+          
+        },
+      },{id: "post-ipad-homepage-프로젝트에서-생각해봐야할-것들-2-푸터-아코디언-편",
+        
+          title: "iPad Homepage 프로젝트에서 생각해봐야할 것들 (2) — 푸터 아코디언 편",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/accordion/";
+          
+        },
+      },{id: "post-ipad-homepage-프로젝트에서-생각해봐야할-5가지-1",
+        
+          title: "iPad Homepage 프로젝트에서 생각해봐야할 5가지 (1)",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/01-post/";
+          
+        },
+      },{id: "post-css만으로-패럴랙스-배경-만들기",
+        
+          title: "CSS만으로 패럴랙스 배경 만들기",
+        
+        description: "background-attachment fixed 파헤치기",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/parallax-background/";
+          
+        },
+      },{id: "post-커밋-메시지-컨벤션-가이드",
+        
+          title: "커밋 메시지 컨벤션 가이드",
+        
+        description: "용도별로 정리한 커밋 메시지 타입과 실전 팁",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/conventional-commits/";
+          
+        },
+      },{id: "books-the-godfather",
+          title: 'The Godfather',
+          description: "",
+          section: "Books",handler: () => {
+              window.location.href = "/books/the_godfather/";
+            },},{id: "news-2026-07-02-01-daily",
+          title: '2026-07-02-01 Daily',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/2026-07-02-01-daily/";
+            },},{id: "news-2026-07-06-01-daily",
+          title: '2026-07-06-01 Daily',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/2026-07-06-01-daily/";
+            },},{id: "news-2026-07-07-01-daily",
+          title: '2026-07-07-01 Daily',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/2026-07-07-01-daily/";
+            },},{id: "news-2026-07-07-02-daily",
+          title: '2026-07-07-02 Daily',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/2026-07-07-02-daily/";
+            },},{id: "news-2026-07-07-03-daily",
+          title: '2026-07-07-03 Daily',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/2026-07-07-03-daily/";
+            },},{id: "news-2026-07-10-01-daily",
+          title: '2026-07-10-01 Daily',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/2026-07-10-01-daily/";
+            },},{id: "projects-starbucks-homepage",
+          title: 'starbucks-homepage',
+          description: "스타벅스 코리아 공식 홈페이지 UI/인터랙션을 재현한 정적 프론트엔드 클론 프로젝트",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/1_project/";
+            },},{id: "projects-ipad-homepage",
+          title: 'ipad-homepage',
+          description: "Apple Korea 공식 홈페이지의 iPad 10.2 제품 소개 페이지를 그대로 재현한 반응형 프론트엔드 클론 프로젝트",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/2_project/";
+            },},{id: "projects-omdb-movie-app",
+          title: 'omdb-movie-app',
+          description: "프레임워크 없이 TypeScript로 직접 구현한 SPA 코어(Component/Store/Router) 기반 영화 검색 &amp; OpenAI 챗봇 추천 서비스",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/3_project/";
+            },},{id: "teachings-data-science-fundamentals",
+          title: 'Data Science Fundamentals',
+          description: "This course covers the foundational aspects of data science, including data collection, cleaning, analysis, and visualization. Students will learn practical skills for working with real-world datasets.",
+          section: "Teachings",handler: () => {
+              window.location.href = "/teachings/data-science-fundamentals/";
+            },},{id: "teachings-introduction-to-machine-learning",
+          title: 'Introduction to Machine Learning',
+          description: "This course provides an introduction to machine learning concepts, algorithms, and applications. Students will learn about supervised and unsupervised learning, model evaluation, and practical implementations.",
+          section: "Teachings",handler: () => {
+              window.location.href = "/teachings/introduction-to-machine-learning/";
+            },},{
+        id: 'social-cv',
+        title: 'CV',
+        section: 'Socials',
+        handler: () => {
+          window.open("/assets/pdf/example_pdf.pdf", "_blank");
+        },
+      },{
+        id: 'social-email',
+        title: 'email',
+        section: 'Socials',
+        handler: () => {
+          window.open("mailto:%79%6F%75@%65%78%61%6D%70%6C%65.%63%6F%6D", "_blank");
+        },
+      },{
+        id: 'social-inspire',
+        title: 'Inspire HEP',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://inspirehep.net/authors/1010907", "_blank");
+        },
+      },{
+        id: 'social-rss',
+        title: 'RSS Feed',
+        section: 'Socials',
+        handler: () => {
+          window.open("/feed.xml", "_blank");
+        },
+      },{
+        id: 'social-scholar',
+        title: 'Google Scholar',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://scholar.google.com/citations?user=qc6CJjYAAAAJ", "_blank");
+        },
+      },{
+        id: 'social-custom_social',
+        title: 'Custom_social',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://www.alberteinstein.com/", "_blank");
+        },
+      },{
+      id: 'light-theme',
+      title: 'Change theme to light',
+      description: 'Change the theme of the site to Light',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("light");
+      },
+    },
+    {
+      id: 'dark-theme',
+      title: 'Change theme to dark',
+      description: 'Change the theme of the site to Dark',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("dark");
+      },
+    },
+    {
+      id: 'system-theme',
+      title: 'Use system default theme',
+      description: 'Change the theme of the site to System Default',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("system");
+      },
+    },];
+
+</script> <script src="/assets/al_search/js/shortcut-key.js"></script> </body> </html>
