@@ -2,7 +2,7 @@
 layout: page
 title: omdb-movie-app
 description: 프레임워크 없이 TypeScript로 직접 구현한 SPA 코어(Component/Store/Router) 기반 영화 검색 & OpenAI 챗봇 추천 서비스
-img: assets/img/pro-03-00.png
+img: assets/img/pro3-00.png
 importance: 2
 category: study
 ---
