@@ -1,0 +1,261 @@
+<!DOCTYPE html> <html lang="ko"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title> omdb-movie-app | WonJun's Blog </title> <meta name="author" content="원준 서"> <meta name="description" content="프레임워크 없이 TypeScript로 직접 구현한 SPA 코어(Component/Store/Router) 기반 영화 검색 &amp; OpenAI 챗봇 추천 서비스"> <meta name="keywords" content="jekyll, jekyll-theme, academic-website, portfolio-website"> <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:; media-src 'self' https:; frame-src 'self' https:; connect-src 'self' https:;"> <style>
+  :root {
+    --max-content-width: 930px;
+  }
+</style> <link rel="stylesheet" href="/assets/css/tailwind.css?v=50c64c15cbb9fd1ce6056fdb8bcb4b62"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css" integrity="sha256-MVopmdyC2tYTiJ8wlktf0uh0v4NgT+vNdyVFepi7Q0c=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.5/css/academicons.min.css" integrity="sha256-SzrCOBJbGVFMahewkgjwnApaV2+av1DwMAA+/QGLyZw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/scholar-icons@1.0.3/css/scholar-icons.css" integrity="sha256-VY3hHVj/hNX3fYG6wtbA6TcKJQl7+FthzGSyIB64klY=" crossorigin="anonymous"> <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&amp;display=swap"> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?v=591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light"> <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%E2%9A%9B%EF%B8%8F&lt;/text&gt;&lt;/svg&gt;"> <link rel="stylesheet" href="/assets/css/main.css?v=f0b101217084a90093badfe99ff9a7d1"> <link rel="canonical" href="https://wonjun-s-dev.github.io/projects/3_project/"> <script src="/assets/js/theme.js?v=7af685e2ba20b37fef545c97b8064050"></script> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css?v=5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark"> <script>
+    initTheme();
+  </script> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> WonJun's Blog </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">about </a> </li> <li class="nav-item "> <a class="nav-link" href="/blog/">blog </a> </li> <li class="nav-item "> <a class="nav-link" href="/news/">daily </a> </li> <li class="nav-item active"> <a class="nav-link" href="/projects/">projects <span class="sr-only">(current)</span> </a> </li> <li class="nav-item "> <a class="nav-link" href="/cv/">CV </a> </li> <li class="nav-item"> <button id="search-toggle" type="button" title="Search" aria-label="Open search"> <span class="nav-link">ctrl k <i class="fa-solid fa-magnifying-glass"></i></span> </button> </li> <li class="toggle-container"> <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"> <i class="fa-half-sun-moon" id="light-toggle-system"></i> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="post"> <header class="post-header"> <h1 class="post-title">omdb-movie-app</h1> <p class="post-description">프레임워크 없이 TypeScript로 직접 구현한 SPA 코어(Component/Store/Router) 기반 영화 검색 &amp; OpenAI 챗봇 추천 서비스</p> </header> <article> <div style="word-break: keep-all; overflow-wrap: break-word;"> <p>React/Vue 같은 프레임워크 없이 TypeScript만으로 컴포넌트 렌더링·반응형 상태관리·라우팅을 직접 구현한 영화 검색 SPA입니다. OMDb API로 영화를 검색·조회하고, OpenAI 기반 챗봇이 대화로 취향에 맞는 영화를 추천해줍니다.</p> <p><strong>배포</strong>: <a href="https://omdb-movie-7xo0bcz1y-wonjuns-s-dev.vercel.app/#/" rel="external nofollow noopener" target="_blank">바로가기</a> <br> <strong>레포지토리</strong>: <a href="https://github.com/wonjun-s-dev/omdb-movie-app" rel="external nofollow noopener" target="_blank">바로가기</a> <br> <strong>Stack</strong>: TypeScript (Vanilla SPA), Parcel, Vercel Serverless Functions, OMDb API, OpenAI API <br> <strong>기간 / 인원</strong>: 2026.07.14 ~ 2026.07.15 (2일) · 1인 개발 <br></p> <div class="row"> <div class="col-sm mt-3 mt-md-0"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/pro3-01-480.webp 480w,/assets/img/pro3-01-800.webp 800w,/assets/img/pro3-01-1400.webp 1400w," type="image/webp" sizes="95vw"></source> <img src="/assets/img/pro3-01.png" class="img-fluid rounded z-depth-1" width="100%" height="auto" title="홈 · 영화 검색 결과" loading="eager" onerror="this.onerror=null; document.querySelectorAll('.responsive-img-srcset').forEach(function (n) { n.remove(); });"> </picture> </figure> </div> <div class="col-sm mt-3 mt-md-0"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/pro3-02-480.webp 480w,/assets/img/pro3-02-800.webp 800w,/assets/img/pro3-02-1400.webp 1400w," type="image/webp" sizes="95vw"></source> <img src="/assets/img/pro3-02.png" class="img-fluid rounded z-depth-1" width="100%" height="auto" title="영화 상세 페이지" loading="eager" onerror="this.onerror=null; document.querySelectorAll('.responsive-img-srcset').forEach(function (n) { n.remove(); });"> </picture> </figure> </div> <div class="col-sm mt-3 mt-md-0"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/pro3-03-480.webp 480w,/assets/img/pro3-03-800.webp 800w,/assets/img/pro3-03-1400.webp 1400w," type="image/webp" sizes="95vw"></source> <img src="/assets/img/pro3-03.png" class="img-fluid rounded z-depth-1" width="100%" height="auto" title="AI 챗봇 영화 추천" loading="eager" onerror="this.onerror=null; document.querySelectorAll('.responsive-img-srcset').forEach(function (n) { n.remove(); });"> </picture> </figure> </div> </div> <div class="caption"> 왼쪽부터 영화 검색 결과 홈 화면, 영화 상세 페이지, OpenAI 기반 챗봇의 영화 추천 화면입니다. </div> <h2 id="section">프로젝트 소개</h2> <p>React/Vue 없이 상태가 바뀔 때 화면이 어떻게 다시 그려지는지를 직접 구현해보며 SPA의 동작 원리를 이해하기 위해 만든 2일짜리 사이드 프로젝트입니다.</p> <ul> <li>프레임워크 없이 직접 구현한 <code class="language-plaintext highlighter-rouge">Component</code> / <code class="language-plaintext highlighter-rouge">Store</code> / <code class="language-plaintext highlighter-rouge">Router</code> 코어 위에서 동작하는 SPA</li> <li>OMDb API 연동 영화 검색, 무한 “더보기” 페이지네이션, 상세 페이지(스켈레톤 UI 포함)</li> <li>OpenAI 기반 AI 챗봇 — 답변 속 영화 제목을 파싱해 클릭 시 바로 검색으로 연결</li> <li>Vercel 서버리스 함수를 BFF로 두어 OMDb/OpenAI API 키를 클라이언트에 노출하지 않음</li> </ul> <p><strong>왜 만들었는가</strong></p> <p>평소 React로만 개발하다 보니 “상태가 바뀌면 화면이 왜/어떻게 다시 그려지는지”를 블랙박스로 여기고 있었습니다. 반응형 스토어와 라우터를 직접 만들어보면서, 프레임워크가 대신 해결해주던 문제를 스스로 풀어보고 싶어 시작했습니다.</p> <p><strong>성과 / 결과</strong></p> <p>2일 만에 커스텀 SPA 코어 + 영화 검색/상세 + AI 챗봇 + 반응형 레이아웃 + Vercel 배포까지 1인으로 완주했습니다. 배포 과정에서 발생한 TypeScript 버전 호환 이슈도 직접 원인을 분석해 해결했습니다 (아래 트러블슈팅 참고).</p> <hr> <h2 id="section-1">기술 스택</h2> <table> <thead> <tr> <th>구분</th> <th>기술</th> <th>선택 이유</th> </tr> </thead> <tbody> <tr> <td>Frontend</td> <td>TypeScript (Vanilla, 커스텀 미니 SPA 코어)</td> <td>컴포넌트 렌더링·반응형 상태·라우팅을 직접 구현해 SPA 동작 원리를 체득하기 위해</td> </tr> <tr> <td>Bundler</td> <td>Parcel</td> <td>별도 설정 없이 빠르게 TS를 번들링하고 dev 서버를 띄우기 위해</td> </tr> <tr> <td>Backend (BFF)</td> <td>Vercel Serverless Functions</td> <td>OMDb/OpenAI API 키를 클라이언트 번들에 노출하지 않기 위한 프록시</td> </tr> <tr> <td>외부 API</td> <td>OMDb API</td> <td>영화 검색 및 상세 정보 조회</td> </tr> <tr> <td>AI</td> <td>OpenAI <code class="language-plaintext highlighter-rouge">gpt-3.5-turbo</code> </td> <td>사용자 취향 기반 대화형 영화 추천 챗봇</td> </tr> <tr> <td>Deploy</td> <td>Vercel</td> <td>정적 프론트엔드 + 서버리스 함수를 한 번에 배포</td> </tr> </tbody> </table> <p>이번 프로젝트에서 처음 써본 방식은 React/Vue 없이 만든 커스텀 SPA 코어(<code class="language-plaintext highlighter-rouge">src/core/core.ts</code>)입니다. <code class="language-plaintext highlighter-rouge">Component</code>(렌더 생명주기), <code class="language-plaintext highlighter-rouge">Object.defineProperty</code> getter/setter + pub-sub 기반 반응형 <code class="language-plaintext highlighter-rouge">Store</code>, 해시 기반 <code class="language-plaintext highlighter-rouge">Router</code>를 직접 설계·구현하면서, Vue2가 <code class="language-plaintext highlighter-rouge">Object.defineProperty</code> 방식의 한계로 <code class="language-plaintext highlighter-rouge">Proxy</code> 기반 반응성(Vue3)으로 옮겨간 이유를 코드로 체감할 수 있었습니다.</p> <hr> <h2 id="section-2">아키텍처</h2> <pre><code class="language-mermaid">graph LR
+  A[main.ts] --&gt; B[App / hash Router]
+  B --&gt; C[Home / Movie / About / NotFound]
+  C --&gt; D[Store: movie / chatbot / about]
+  D --&gt;|POST fetch| E["/api/movie"]
+  D --&gt;|POST fetch| F["/api/chatbot"]
+  E --&gt; G[Vercel Serverless Function]
+  F --&gt; H[Vercel Serverless Function]
+  G --&gt; I[(OMDb API)]
+  H --&gt; J[(OpenAI API)]
+</code></pre> <p>클라이언트는 항상 <code class="language-plaintext highlighter-rouge">/api/*</code> 상대 경로만 호출하고, 실제 외부 API 키는 서버리스 함수(<code class="language-plaintext highlighter-rouge">api/movie.ts</code>, <code class="language-plaintext highlighter-rouge">api/chatbot.ts</code>) 안 환경 변수에서만 사용해 프론트 번들에 시크릿이 섞이지 않도록 설계했습니다.</p> <hr> <h2 id="section-3">프로젝트 구조</h2> <div class="language-plaintext highlighter-rouge"> <div class="highlight"><pre class="highlight"><code>omdb-movie-app/
+├── api/
+│   ├── movie.ts          # OMDb API 프록시 (Vercel Serverless Function)
+│   └── chatbot.ts        # OpenAI API 프록시 (Vercel Serverless Function)
+├── src/
+│   ├── core/core.ts      # Component / Store / Router 코어
+│   ├── components/       # Chatbot, Search, MovieList, MovieItem, TheHeader, TheFooter 등
+│   ├── routes/            # Home, Movie, About, NotFound + 라우트 정의
+│   ├── store/              # movie, chatbot, about 도메인 상태
+│   ├── main.ts
+│   └── main.css
+├── index.html
+└── vercel.json
+</code></pre></div> </div> <hr> <h2 id="section-4">주요 기능</h2> <p><strong>1. 영화 검색 &amp; 더보기 페이지네이션</strong></p> <p><code class="language-plaintext highlighter-rouge">Search</code> 컴포넌트에서 입력한 제목으로 OMDb를 검색하고, <code class="language-plaintext highlighter-rouge">MovieList</code>/<code class="language-plaintext highlighter-rouge">MovieItem</code>이 결과를 그리드로 렌더링. <code class="language-plaintext highlighter-rouge">totalResults</code> 기반으로 <code class="language-plaintext highlighter-rouge">MovieListMore</code> 버튼을 조건부 노출.</p> <p><strong>2. 영화 상세 페이지</strong></p> <p>데이터 로딩 중 스켈레톤 UI를 먼저 그리고, 로드가 끝나면 포스터(<code class="language-plaintext highlighter-rouge">SX300</code> → <code class="language-plaintext highlighter-rouge">SX700</code> 치환으로 고화질 요청)와 평점·배우·감독 정보를 채움.</p> <p><strong>3. AI 챗봇 영화 추천</strong></p> <p>플로팅 챗 위젯에서 대화로 영화를 추천받고, 응답 속 영화 제목을 클릭하면 검색창에 자동 입력되어 즉시 검색까지 실행.</p> <p><strong>4. 반응형 레이아웃</strong></p> <p>1200px / 720px / 600px 브레이크포인트로 헤더, 영화 그리드, 상세 페이지, 챗봇 위젯 레이아웃을 조정.</p> <hr> <h2 id="section-5">트러블슈팅</h2> <p><strong>1. 프레임워크 없이 반응형 상태 관리 구현하기</strong></p> <p>상태가 바뀔 때 관련 컴포넌트만 다시 그리는 구조가 필요했지만 별도 라이브러리는 쓰지 않기로 했습니다. <code class="language-plaintext highlighter-rouge">Store</code> 클래스에서 상태 객체의 각 key를 <code class="language-plaintext highlighter-rouge">Object.defineProperty</code>로 감싸 getter/setter를 만들고, setter 호출 시 <code class="language-plaintext highlighter-rouge">subscribe</code>로 등록된 콜백들을 실행하는 pub-sub 구조로 해결했습니다. <code class="language-plaintext highlighter-rouge">MovieList</code>, <code class="language-plaintext highlighter-rouge">Chatbot</code> 등은 생성자에서 관심 있는 key를 구독해 자신의 <code class="language-plaintext highlighter-rouge">render()</code>를 재호출합니다.</p> <p><strong>2. LLM 응답에서 영화 제목만 안전하게 추출하기</strong></p> <p>챗봇이 자연어로 영화를 추천하면 어떤 부분이 “영화 제목”인지 프론트에서 구분할 수 없었습니다. <code class="language-plaintext highlighter-rouge">api/chatbot.ts</code>의 system prompt에서 영화 제목을 항상 <code class="language-plaintext highlighter-rouge">(연도)</code> 형식으로 감싸도록 강제하고, 이 포맷을 따르는 few-shot 예시 10개를 시스템 메시지에 미리 넣어 포맷 준수율을 높였습니다. 프론트에서는 <code class="language-plaintext highlighter-rouge">//g</code> 정규식으로 이 포맷만 캡처해 클릭 가능한 <code class="language-plaintext highlighter-rouge">span</code>으로 치환합니다.</p> <p><strong>3. Vercel 배포 시 TypeScript 버전 호환성 문제</strong></p> <p>로컬에서는 문제없이 동작하던 프로젝트가 Vercel 배포 빌드에서만 실패했습니다. 원인은 <code class="language-plaintext highlighter-rouge">package.json</code>에 지정된 <code class="language-plaintext highlighter-rouge">typescript: "^7.0.2"</code>가 Vercel의 Node 빌드 환경에서 아직 지원되지 않는 버전이었기 때문입니다. TypeScript 7은 컴파일러가 네이티브(Go) 바이너리로 전환되면서 기존 JS 기반 Compiler API가 패키지에서 빠졌는데, Vercel 빌드 툴체인이 이 API를 호출하려다 <code class="language-plaintext highlighter-rouge">Cannot read properties of undefined (reading 'readFile')</code> 에러로 실패한 것입니다. <code class="language-plaintext highlighter-rouge">typescript</code>를 <code class="language-plaintext highlighter-rouge">5.9.3</code>으로 다운그레이드하고 <code class="language-plaintext highlighter-rouge">package-lock.json</code>을 재생성해 해결했고, 두 번의 커밋(<code class="language-plaintext highlighter-rouge">c737869</code>, <code class="language-plaintext highlighter-rouge">6b448af</code>)으로 배포를 정상화했습니다.</p> <hr> <h2 id="section-6">실행 방법</h2> <p>요구 사항: Node.js 18+, npm</p> <div class="language-bash highlighter-rouge"> <div class="highlight"><pre class="highlight"><code>git clone https://github.com/wonjun-s-dev/omdb-movie-app.git
+<span class="nb">cd </span>omdb-movie-app
+npm <span class="nb">install</span>
+
+<span class="c"># .env 파일 생성 후 아래 값 입력</span>
+<span class="c"># OMDB_API_KEY=발급받은_OMDb_API_키</span>
+<span class="c"># OPENAI_API_KEY=발급받은_OpenAI_API_키</span>
+
+npm run dev       <span class="c"># parcel dev 서버 (프론트만)</span>
+<span class="c"># 서버리스 함수(/api)까지 함께 테스트하려면</span>
+npm run vercel     <span class="c"># vercel dev</span>
+</code></pre></div> </div> <blockquote> <p>빌드/개발 명령은 <code class="language-plaintext highlighter-rouge">vercel.json</code>에서 <code class="language-plaintext highlighter-rouge">npm run build</code> / <code class="language-plaintext highlighter-rouge">npm run dev</code>로 지정되어 있어, <code class="language-plaintext highlighter-rouge">main</code> 브랜치에 push하면 Vercel이 자동으로 빌드·배포합니다.</p> </blockquote> <hr> <h2 id="section-7">회고</h2> <p><strong>상태 관리 관점</strong></p> <p>프레임워크 없이 SPA를 만들면서 React/Vue가 대신 해결해주던 “상태 변경 → DOM 리렌더링” 문제를 직접 풀어야 했습니다. <code class="language-plaintext highlighter-rouge">Store</code> 클래스는 상태 객체의 각 key를 <code class="language-plaintext highlighter-rouge">Object.defineProperty</code>로 감싸 getter/setter를 만들고, setter가 호출되는 시점에 <code class="language-plaintext highlighter-rouge">subscribe</code>로 등록된 콜백들을 순회 실행하는 pub-sub 구조로 구현했습니다. 이 방식을 직접 만들어보니 Vue2가 <code class="language-plaintext highlighter-rouge">push</code>, <code class="language-plaintext highlighter-rouge">splice</code> 같은 배열 변경을 감지하지 못했던 이유(배열의 모든 인덱스에 개별적으로 <code class="language-plaintext highlighter-rouge">defineProperty</code>를 걸 수는 없다는 한계)를 코드 레벨에서 이해할 수 있었고, Vue3가 왜 <code class="language-plaintext highlighter-rouge">Proxy</code> 기반 반응성으로 옮겨갔는지도 자연스럽게 체감했습니다. <code class="language-plaintext highlighter-rouge">MovieList</code>, <code class="language-plaintext highlighter-rouge">Chatbot</code> 같은 컴포넌트는 생성자에서 관심 있는 key만 구독해 자신의 <code class="language-plaintext highlighter-rouge">render()</code>만 재호출하도록 설계해, 전역 상태 하나가 바뀌어도 무관한 컴포넌트까지 다시 그려지지 않도록 했습니다.</p> <p><strong>AI 연동 관점</strong></p> <p>LLM을 실제 UI 로직에 연결할 때 가장 크게 배운 건, 자연어 응답을 그대로 신뢰하고 정규식으로 파싱하면 안 된다는 점이었습니다. 대신 시스템 프롬프트에서 영화 제목을 항상 <code class="language-plaintext highlighter-rouge">(연도)</code> 형식으로 감싸도록 강제하고, 이 포맷을 지키는 few-shot 예시 10개(장르별 추천 응답)를 미리 넣어 포맷 준수율을 끌어올렸습니다. few-shot 예시를 늘릴수록 포맷을 벗어나는 응답 빈도가 눈에 띄게 줄어드는 걸 직접 확인했고, “모델의 자유도를 프롬프트로 얼마나 좁혀줄 것인가”가 기능 구현 자체보다 더 중요한 설계 포인트라는 걸 체감했습니다.</p> <p><strong>아키텍처 관점</strong></p> <p>OMDb/OpenAI API 키를 클라이언트 번들에 노출하지 않기 위해 Vercel 서버리스 함수를 BFF로 두고, 프론트는 <code class="language-plaintext highlighter-rouge">/api/movie</code>, <code class="language-plaintext highlighter-rouge">/api/chatbot</code> 같은 상대 경로만 호출하도록 분리했습니다. 이 구조를 실제로 짜보면서 “프론트엔드 책임”과 “백엔드(프록시) 책임”의 경계를 어디서 그어야 하는지, 개인 사이드 프로젝트라도 시크릿 관리를 소홀히 하면 안 된다는 감각을 다시 잡을 수 있었습니다.</p> <p><strong>배포·디버깅 관점</strong></p> <p>로컬에서는 멀쩡하던 프로젝트가 Vercel 배포에서만 실패하는 상황을 겪으면서, 배포 환경과 로컬 환경의 툴체인 버전 차이가 실제 빌드 실패로 이어질 수 있다는 걸 체감했습니다. 원인은 <code class="language-plaintext highlighter-rouge">package.json</code>의 <code class="language-plaintext highlighter-rouge">typescript: "^7.0.2"</code>였는데, TypeScript 7이 컴파일러를 네이티브(Go) 바이너리로 전환하며 기존 JS 기반 Compiler API를 제거한 게 Vercel 빌드 툴체인과 충돌한 것이었습니다. “에러 로그 확인 → 의심되는 패키지 버전 특정 → lockfile까지 함께 정리해서 재현·해결”하는 순서로 원인을 좁혀간 이 디버깅 과정 자체가 이번 프로젝트에서 가장 실무에 가까운 경험이었습니다.</p> <p><strong>아쉬운 점</strong></p> <p>렌더링을 매번 <code class="language-plaintext highlighter-rouge">innerHTML</code> 전체 교체 방식으로 처리해서(Virtual DOM 없음) 상태가 바뀔 때마다 컴포넌트가 통째로 다시 그려집니다. <code class="language-plaintext highlighter-rouge">Chatbot</code>처럼 입력 포커스나 스크롤 위치가 중요한 컴포넌트는 <code class="language-plaintext highlighter-rouge">render()</code> 이후 수동으로 <code class="language-plaintext highlighter-rouge">focus()</code>/<code class="language-plaintext highlighter-rouge">scrollTo()</code>를 다시 호출해 겨우 우회했는데, 근본적으로는 필요한 DOM 노드만 갱신하는 부분 업데이트(diffing) 구조가 필요합니다. 사용자가 입력한 채팅 텍스트와 OpenAI 응답도 이스케이프 없이 <code class="language-plaintext highlighter-rouge">innerHTML</code>로 그대로 삽입하고 있어, 개인 학습용 프로젝트라 영향은 제한적이지만 실 서비스였다면 XSS 관점에서 반드시 sanitize가 필요했던 부분을 기능 구현 속도를 우선하며 기술 부채로 남겼습니다. 테스트 코드가 전혀 없어 <code class="language-plaintext highlighter-rouge">Store</code>의 페이지네이션 계산 로직이나 라우터의 정규식 매칭 같은 핵심 로직을 회귀 없이 안전하게 바꾸기 어렵고, 검색 API 호출에도 디바운스나 캐싱이 없어 같은 검색어를 다시 조회해도 매번 새로 fetch합니다. 2일이라는 짧은 기간에 커스텀 프레임워크 설계 + 라우팅 + 스토어 + API 연동 + AI 챗봇 + 반응형까지 욕심을 내다 보니, 네트워크 실패 시 사용자 피드백(토스트 등)이나 에러 바운더리 같은 디테일은 충분히 다듬지 못했습니다.</p> <p><strong>다음 계획</strong></p> <ul> <li> <code class="language-plaintext highlighter-rouge">innerHTML</code>로 꽂히는 사용자/외부 데이터(채팅 메시지, 영화 상세 필드)에 대한 이스케이프 유틸을 추가해 XSS 위험 제거</li> <li> <code class="language-plaintext highlighter-rouge">Store</code> 구독 로직과 라우터 경로 매칭 함수에 대한 유닛 테스트(Vitest) 추가</li> <li>검색 결과를 페이지 단위로 캐싱하고, 검색 입력에 debounce 적용</li> <li> <code class="language-plaintext highlighter-rouge">Movie</code>/<code class="language-plaintext highlighter-rouge">Chatbot</code> 컴포넌트를 부분 렌더링(필요한 DOM 노드만 갱신)으로 리팩토링해 포커스/스크롤 유지 문제 근본적으로 해결</li> <li>챗봇 응답을 OpenAI 스트리밍 API로 받아 타이핑 효과 제공</li> </ul> <h3 id="section-8">향후 개선 계획</h3> <ul class="task-list"> <li class="task-list-item"> <input type="checkbox" class="task-list-item-checkbox" disabled>채팅/상세 데이터 innerHTML 삽입부 XSS 이스케이프 처리</li> <li class="task-list-item"> <input type="checkbox" class="task-list-item-checkbox" disabled>Store·Router 핵심 로직 유닛 테스트 작성 (Vitest)</li> <li class="task-list-item"> <input type="checkbox" class="task-list-item-checkbox" disabled>검색 결과 페이지 캐싱 + 입력 debounce</li> <li class="task-list-item"> <input type="checkbox" class="task-list-item-checkbox" disabled>Chatbot/Movie 컴포넌트 부분 렌더링(diffing)으로 리팩토링</li> <li class="task-list-item"> <input type="checkbox" class="task-list-item-checkbox" disabled>챗봇 응답 스트리밍(타이핑 효과) 적용</li> <li class="task-list-item"> <input type="checkbox" class="task-list-item-checkbox" disabled>GitHub Actions로 배포 전 타입체크/린트 CI 추가</li> </ul> </div> </article> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 원준 서. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>. Photos from <a href="https://unsplash.com" target="_blank" rel="external nofollow noopener">Unsplash</a>. </div> </footer> <script>
+  window.alFolio = {
+    compatBootstrap: false
+  };
+</script> <script src="/assets/js/nav-toggle.js?v=141bd79a73ebc0f0b6ea58e440ae79fc"></script> <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script> <script defer src="/assets/js/masonry.js?v=e49affc7bd2646f6acdad1dbe02c2359" type="text/javascript"></script> <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI=" crossorigin="anonymous"></script> <script src="/assets/al_math/js/mathjax-setup.js"></script> <script defer src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6" crossorigin="anonymous"></script> <script src="/assets/js/tooltips-setup.js?v=fe487e99db6c43751e6e7bdb2d6a0611"></script> <script src="/assets/js/no_defer.js?v=53b1b1a645525975c963ce8bf8bfefcf"></script> <script defer src="/assets/js/common.js?v=87baac90f765f2f3362dcf6aaf312a8a"></script> <script defer src="/assets/js/copy_code.js?v=c8a01c11a92744d44b093fc3bda915df" type="text/javascript"></script> <script defer src="/assets/js/jupyter_new_tab.js?v=896d254890d9b47f0281f63bfccf0dee"></script> <script async src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script> <script async src="https://badge.dimensions.ai/badge.js"></script> <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script> <script defer src="/assets/al_img_tools/js/zoom.js"></script> <script defer src="/assets/js/progress-bar.js?v=499464c5c63ced6cf7ad62509f1e2610" type="text/javascript"></script> <script src="https://cdn.jsdelivr.net/npm/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js" integrity="sha256-uMJJ3EoTyfRBoTbR+lrfu1uRQ87RZG8AR3cVNuQVeFg=" crossorigin="anonymous"></script> <script>
+    addBackToTop();
+  </script> <script type="module" src="/assets/al_search/js/search/ninja-keys.min.js"></script> <ninja-keys hidebreadcrumbs noautoloadmdicons placeholder="Type to start searching"></ninja-keys> <script src="/assets/al_search/js/search-setup.js"></script> <script>
+// get the ninja-keys element
+const ninja = document.querySelector('ninja-keys');
+
+// add the home and posts menu items
+ninja.data = [{
+    id: "nav-about",
+    title: "about",
+    section: "Navigation",
+    handler: () => {
+      window.location.href = "/";
+    },
+  },{id: "nav-blog",
+          title: "blog",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/blog/";
+          },
+        },{id: "nav-daily",
+          title: "daily",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/news/";
+          },
+        },{id: "nav-projects",
+          title: "projects",
+          description: "실무, 개인 프로젝트",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/projects/";
+          },
+        },{id: "nav-cv",
+          title: "CV",
+          description: "This is a description of the page. You can modify it in &#39;_pages/cv.md&#39;. You can also change or remove the top pdf download button.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/cv/";
+          },
+        },{id: "post-ipad-homepage-프로젝트에서-생각해봐야할-것들-2-푸터-아코디언-편",
+        
+          title: "iPad Homepage 프로젝트에서 생각해봐야할 것들 (2) — 푸터 아코디언 편",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/accordion/";
+          
+        },
+      },{id: "post-ipad-homepage-프로젝트에서-생각해봐야할-5가지-1",
+        
+          title: "iPad Homepage 프로젝트에서 생각해봐야할 5가지 (1)",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/01-post/";
+          
+        },
+      },{id: "post-css만으로-패럴랙스-배경-만들기",
+        
+          title: "CSS만으로 패럴랙스 배경 만들기",
+        
+        description: "background-attachment fixed 파헤치기",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/parallax-background/";
+          
+        },
+      },{id: "post-커밋-메시지-컨벤션-가이드",
+        
+          title: "커밋 메시지 컨벤션 가이드",
+        
+        description: "용도별로 정리한 커밋 메시지 타입과 실전 팁",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/conventional-commits/";
+          
+        },
+      },{id: "books-the-godfather",
+          title: 'The Godfather',
+          description: "",
+          section: "Books",handler: () => {
+              window.location.href = "/books/the_godfather/";
+            },},{id: "news-2026-07-02-01-daily",
+          title: '2026-07-02-01 Daily',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/2026-07-02-01-daily/";
+            },},{id: "news-2026-07-06-01-daily",
+          title: '2026-07-06-01 Daily',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/2026-07-06-01-daily/";
+            },},{id: "news-2026-07-07-01-daily",
+          title: '2026-07-07-01 Daily',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/2026-07-07-01-daily/";
+            },},{id: "news-2026-07-07-02-daily",
+          title: '2026-07-07-02 Daily',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/2026-07-07-02-daily/";
+            },},{id: "news-2026-07-07-03-daily",
+          title: '2026-07-07-03 Daily',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/2026-07-07-03-daily/";
+            },},{id: "news-2026-07-10-01-daily",
+          title: '2026-07-10-01 Daily',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/2026-07-10-01-daily/";
+            },},{id: "projects-starbucks-homepage",
+          title: 'starbucks-homepage',
+          description: "스타벅스 코리아 공식 홈페이지 UI/인터랙션을 재현한 정적 프론트엔드 클론 프로젝트",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/1_project/";
+            },},{id: "projects-ipad-homepage",
+          title: 'ipad-homepage',
+          description: "Apple Korea 공식 홈페이지의 iPad 10.2 제품 소개 페이지를 그대로 재현한 반응형 프론트엔드 클론 프로젝트",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/2_project/";
+            },},{id: "projects-omdb-movie-app",
+          title: 'omdb-movie-app',
+          description: "프레임워크 없이 TypeScript로 직접 구현한 SPA 코어(Component/Store/Router) 기반 영화 검색 &amp; OpenAI 챗봇 추천 서비스",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/3_project/";
+            },},{id: "teachings-data-science-fundamentals",
+          title: 'Data Science Fundamentals',
+          description: "This course covers the foundational aspects of data science, including data collection, cleaning, analysis, and visualization. Students will learn practical skills for working with real-world datasets.",
+          section: "Teachings",handler: () => {
+              window.location.href = "/teachings/data-science-fundamentals/";
+            },},{id: "teachings-introduction-to-machine-learning",
+          title: 'Introduction to Machine Learning',
+          description: "This course provides an introduction to machine learning concepts, algorithms, and applications. Students will learn about supervised and unsupervised learning, model evaluation, and practical implementations.",
+          section: "Teachings",handler: () => {
+              window.location.href = "/teachings/introduction-to-machine-learning/";
+            },},{
+        id: 'social-cv',
+        title: 'CV',
+        section: 'Socials',
+        handler: () => {
+          window.open("/assets/pdf/example_pdf.pdf", "_blank");
+        },
+      },{
+        id: 'social-email',
+        title: 'email',
+        section: 'Socials',
+        handler: () => {
+          window.open("mailto:%79%6F%75@%65%78%61%6D%70%6C%65.%63%6F%6D", "_blank");
+        },
+      },{
+        id: 'social-inspire',
+        title: 'Inspire HEP',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://inspirehep.net/authors/1010907", "_blank");
+        },
+      },{
+        id: 'social-rss',
+        title: 'RSS Feed',
+        section: 'Socials',
+        handler: () => {
+          window.open("/feed.xml", "_blank");
+        },
+      },{
+        id: 'social-scholar',
+        title: 'Google Scholar',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://scholar.google.com/citations?user=qc6CJjYAAAAJ", "_blank");
+        },
+      },{
+        id: 'social-custom_social',
+        title: 'Custom_social',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://www.alberteinstein.com/", "_blank");
+        },
+      },{
+      id: 'light-theme',
+      title: 'Change theme to light',
+      description: 'Change the theme of the site to Light',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("light");
+      },
+    },
+    {
+      id: 'dark-theme',
+      title: 'Change theme to dark',
+      description: 'Change the theme of the site to Dark',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("dark");
+      },
+    },
+    {
+      id: 'system-theme',
+      title: 'Use system default theme',
+      description: 'Change the theme of the site to System Default',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("system");
+      },
+    },];
+
+</script> <script src="/assets/al_search/js/shortcut-key.js"></script> </body> </html>
