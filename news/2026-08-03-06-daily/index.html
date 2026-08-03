@@ -1,0 +1,328 @@
+<!DOCTYPE html> <html lang="ko"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title> 2026-08-03-06 Daily | WonJun's Blog </title> <meta name="author" content="원준 서"> <meta name="description" content="A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design. "> <meta name="keywords" content="jekyll, jekyll-theme, academic-website, portfolio-website"> <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:; media-src 'self' https:; frame-src 'self' https:; connect-src 'self' https:;"> <style>
+  :root {
+    --max-content-width: 930px;
+  }
+</style> <link rel="stylesheet" href="/assets/css/tailwind.css?v=50c64c15cbb9fd1ce6056fdb8bcb4b62"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tocbot@4.36.4/dist/tocbot.css" integrity="sha256-zTN0r+0OKaIv2xqeNNIYxNk0pWJ6+IqPGc1iDgVzWF0=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css" integrity="sha256-MVopmdyC2tYTiJ8wlktf0uh0v4NgT+vNdyVFepi7Q0c=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.5/css/academicons.min.css" integrity="sha256-SzrCOBJbGVFMahewkgjwnApaV2+av1DwMAA+/QGLyZw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/scholar-icons@1.0.3/css/scholar-icons.css" integrity="sha256-VY3hHVj/hNX3fYG6wtbA6TcKJQl7+FthzGSyIB64klY=" crossorigin="anonymous"> <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&amp;display=swap"> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?v=591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light"> <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%E2%9A%9B%EF%B8%8F&lt;/text&gt;&lt;/svg&gt;"> <link rel="stylesheet" href="/assets/css/main.css?v=f0b101217084a90093badfe99ff9a7d1"> <link rel="canonical" href="https://wonjun-s-dev.github.io/news/2026-08-03-06-daily/"> <script src="/assets/js/theme.js?v=7af685e2ba20b37fef545c97b8064050"></script> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css?v=5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark"> <script>
+    initTheme();
+  </script> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> WonJun's Blog </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">about </a> </li> <li class="nav-item "> <a class="nav-link" href="/blog/">blog </a> </li> <li class="nav-item active"> <a class="nav-link" href="/news/">daily <span class="sr-only">(current)</span> </a> </li> <li class="nav-item "> <a class="nav-link" href="/projects/">projects </a> </li> <li class="nav-item "> <a class="nav-link" href="/cv/">CV </a> </li> <li class="nav-item"> <button id="search-toggle" type="button" title="Search" aria-label="Open search"> <span class="nav-link">ctrl k <i class="fa-solid fa-magnifying-glass"></i></span> </button> </li> <li class="toggle-container"> <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"> <i class="fa-half-sun-moon" id="light-toggle-system"></i> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="row"> <div class="col-sm-9"> <div class="post"> <header class="post-header"> <h1 class="post-title">2026-08-03-06 Daily</h1> <p class="post-meta"> Created on August 03, 2026 </p> <p class="post-tags"> <i class="fa-solid fa-calendar fa-sm"></i> 2026   ·   <i class="fa-solid fa-hashtag fa-sm"></i> React   <i class="fa-solid fa-hashtag fa-sm"></i> Suspense   <i class="fa-solid fa-hashtag fa-sm"></i> Lazy Loading </p> </header> <article class="post-content"> <div id="markdown-content"> <div style="word-break: keep-all; overflow-wrap: break-word;"> <h2 id="section">1. 초기 번들 사이즈가 너무 크다는 문제에서 시작</h2> <p>라우트가 20개쯤 되는 SPA를 한 번에 번들링하면, 사용자가 로그인 페이지만 보고 싶어도 관리자 대시보드, 통계 차트 라이브러리까지 전부 다운로드해야 한다. 이 문제를 코드 스플리팅으로 풀 때 쓰는 두 가지 도구가 레이지 로딩(<code class="language-plaintext highlighter-rouge">React.lazy</code>)과 Suspense다.</p> <hr> <h2 id="reactlazy----import-">2. React.lazy — 컴포넌트를 동적 import로 감싸기</h2> <div class="language-jsx highlighter-rouge"> <div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">lazy</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">Dashboard</span> <span class="o">=</span> <span class="nf">lazy</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="k">import</span><span class="p">(</span><span class="dl">"</span><span class="s2">./Dashboard</span><span class="dl">"</span><span class="p">));</span>
+</code></pre></div> </div> <p><code class="language-plaintext highlighter-rouge">lazy</code>는 컴포넌트를 <strong>즉시 로드하지 않고, 실제로 렌더링이 필요한 시점에</strong> 동적 <code class="language-plaintext highlighter-rouge">import()</code>를 실행해서 그 순간에 코드를 네트워크로 받아온다. 번들러(webpack, Vite 등)는 <code class="language-plaintext highlighter-rouge">import()</code> 구문을 만나면 자동으로 해당 모듈을 별도의 청크(chunk) 파일로 분리한다. 결과적으로 초기 진입 시 받는 JS 번들에는 <code class="language-plaintext highlighter-rouge">Dashboard</code> 코드가 포함되지 않고, 사용자가 실제로 그 라우트에 진입할 때만 별도 파일이 다운로드된다.</p> <div class="language-jsx highlighter-rouge"> <div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">App</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">page</span><span class="p">,</span> <span class="nx">setPage</span><span class="p">]</span> <span class="o">=</span> <span class="nf">useState</span><span class="p">(</span><span class="dl">"</span><span class="s2">home</span><span class="dl">"</span><span class="p">);</span>
+  <span class="k">return</span> <span class="nx">page</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">dashboard</span><span class="dl">"</span> <span class="p">?</span> <span class="p">&lt;</span><span class="nc">Dashboard</span> <span class="p">/&gt;</span> <span class="p">:</span> <span class="p">&lt;</span><span class="nc">Home</span> <span class="p">/&gt;;</span>
+<span class="p">}</span>
+</code></pre></div> </div> <p>문제는 <code class="language-plaintext highlighter-rouge">import()</code>가 <strong>비동기</strong>라는 것. <code class="language-plaintext highlighter-rouge">Dashboard</code> 모듈을 받아오는 동안 리액트가 렌더링할 게 없다. 이걸 그냥 두면 에러가 난다 — “A component suspended while rendering, but no fallback UI was specified.”</p> <hr> <h2 id="suspense------">3. Suspense — 로딩 중 보여줄 화면을 선언</h2> <div class="language-jsx highlighter-rouge"> <div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">lazy</span><span class="p">,</span> <span class="nx">Suspense</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">Dashboard</span> <span class="o">=</span> <span class="nf">lazy</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="k">import</span><span class="p">(</span><span class="dl">"</span><span class="s2">./Dashboard</span><span class="dl">"</span><span class="p">));</span>
+
+<span class="kd">function</span> <span class="nf">App</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return </span><span class="p">(</span>
+    <span class="p">&lt;</span><span class="nc">Suspense</span> <span class="na">fallback</span><span class="p">=</span><span class="si">{</span><span class="p">&lt;</span><span class="nc">Spinner</span> <span class="p">/&gt;</span><span class="si">}</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nc">Dashboard</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;/</span><span class="nc">Suspense</span><span class="p">&gt;</span>
+  <span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div> </div> <p><code class="language-plaintext highlighter-rouge">Suspense</code>는 자식 트리 안에서 “아직 준비 안 됐다”는 신호(lazy 컴포넌트가 로딩 중이라는 것)를 감지하면, 그 트리를 통째로 <code class="language-plaintext highlighter-rouge">fallback</code>으로 대체해서 보여준다. <code class="language-plaintext highlighter-rouge">Dashboard</code> 모듈 다운로드가 끝나면 자동으로 <code class="language-plaintext highlighter-rouge">fallback</code>에서 실제 <code class="language-plaintext highlighter-rouge">Dashboard</code>로 전환된다.</p> <p>여기서 중요한 개념은 “suspend(중단)”다. 컴포넌트가 렌더링 도중 아직 준비되지 않은 리소스(코드, 데이터)를 필요로 하면 <strong>에러를 던지는 대신 Promise를 던진다.</strong> 가장 가까운 상위 <code class="language-plaintext highlighter-rouge">Suspense</code>가 이 Promise를 붙잡아서 fallback을 보여주고, Promise가 resolve되면 그 지점부터 다시 렌더링을 시도한다. <code class="language-plaintext highlighter-rouge">React.lazy</code>는 이 메커니즘을 활용해서 “모듈 로딩 중”이라는 상태를 Suspense가 이해할 수 있는 형태로 만들어주는 래퍼다.</p> <hr> <h2 id="suspense---">4. 여러 Suspense 경계의 배치 전략</h2> <div class="language-jsx highlighter-rouge"> <div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">App</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return </span><span class="p">(</span>
+    <span class="p">&lt;</span><span class="nc">Suspense</span> <span class="na">fallback</span><span class="p">=</span><span class="si">{</span><span class="p">&lt;</span><span class="nc">PageSpinner</span> <span class="p">/&gt;</span><span class="si">}</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nc">Header</span> <span class="p">/&gt;</span>
+      <span class="p">&lt;</span><span class="nc">Suspense</span> <span class="na">fallback</span><span class="p">=</span><span class="si">{</span><span class="p">&lt;</span><span class="nc">ChartSkeleton</span> <span class="p">/&gt;</span><span class="si">}</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nc">HeavyChart</span> <span class="p">/&gt;</span>
+      <span class="p">&lt;/</span><span class="nc">Suspense</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nc">Footer</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;/</span><span class="nc">Suspense</span><span class="p">&gt;</span>
+  <span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div> </div> <p><code class="language-plaintext highlighter-rouge">Suspense</code>를 하나만 최상위에 두면, 트리 안 어디서든 뭔가 로딩 중이면 페이지 전체가 스피너로 바뀐다. 안쪽에 별도 <code class="language-plaintext highlighter-rouge">Suspense</code>를 두면 <code class="language-plaintext highlighter-rouge">HeavyChart</code>만 로딩 중일 때 <code class="language-plaintext highlighter-rouge">Header</code>/<code class="language-plaintext highlighter-rouge">Footer</code>는 이미 보여주고 그 부분만 스켈레톤으로 대체할 수 있다. 이걸 흔히 “Suspense 경계(boundary)를 세분화한다”고 한다 — 세분화할수록 사용자는 더 빨리 더 많은 UI를 보게 되지만, 스피너/스켈레톤이 여러 군데서 따로 나타나 화면이 산만해질 수 있으니 트레이드오프다.</p> <hr> <h2 id="section-1">5. 라우터와 결합했을 때의 실전 패턴</h2> <div class="language-jsx highlighter-rouge"> <div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">Home</span> <span class="o">=</span> <span class="nf">lazy</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="k">import</span><span class="p">(</span><span class="dl">"</span><span class="s2">./pages/Home</span><span class="dl">"</span><span class="p">));</span>
+<span class="kd">const</span> <span class="nx">Dashboard</span> <span class="o">=</span> <span class="nf">lazy</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="k">import</span><span class="p">(</span><span class="dl">"</span><span class="s2">./pages/Dashboard</span><span class="dl">"</span><span class="p">));</span>
+<span class="kd">const</span> <span class="nx">Settings</span> <span class="o">=</span> <span class="nf">lazy</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="k">import</span><span class="p">(</span><span class="dl">"</span><span class="s2">./pages/Settings</span><span class="dl">"</span><span class="p">));</span>
+
+<span class="kd">function</span> <span class="nf">App</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return </span><span class="p">(</span>
+    <span class="p">&lt;</span><span class="nc">Suspense</span> <span class="na">fallback</span><span class="p">=</span><span class="si">{</span><span class="p">&lt;</span><span class="nc">PageSpinner</span> <span class="p">/&gt;</span><span class="si">}</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nc">Routes</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nc">Route</span> <span class="na">path</span><span class="p">=</span><span class="s">"/"</span> <span class="na">element</span><span class="p">=</span><span class="si">{</span><span class="p">&lt;</span><span class="nc">Home</span> <span class="p">/&gt;</span><span class="si">}</span> <span class="p">/&gt;</span>
+        <span class="p">&lt;</span><span class="nc">Route</span> <span class="na">path</span><span class="p">=</span><span class="s">"/dashboard"</span> <span class="na">element</span><span class="p">=</span><span class="si">{</span><span class="p">&lt;</span><span class="nc">Dashboard</span> <span class="p">/&gt;</span><span class="si">}</span> <span class="p">/&gt;</span>
+        <span class="p">&lt;</span><span class="nc">Route</span> <span class="na">path</span><span class="p">=</span><span class="s">"/settings"</span> <span class="na">element</span><span class="p">=</span><span class="si">{</span><span class="p">&lt;</span><span class="nc">Settings</span> <span class="p">/&gt;</span><span class="si">}</span> <span class="p">/&gt;</span>
+      <span class="p">&lt;/</span><span class="nc">Routes</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nc">Suspense</span><span class="p">&gt;</span>
+  <span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div> </div> <p>라우트 단위로 <code class="language-plaintext highlighter-rouge">lazy</code>를 걸어두면, 각 라우트가 별도 청크로 분리되어 사용자가 방문한 라우트의 코드만 그때그때 받는다. 초기 로딩 시점엔 현재 라우트 하나만 다운로드하면 되므로 첫 화면 표시 속도(TTI, LCP)가 크게 개선된다. 실무에서 코드 스플리팅을 도입할 때 가장 먼저, 가장 효과가 큰 지점이 라우트 단위 분리다.</p> <hr> <h2 id="suspense----1">6. 흔히 하는 실수 — Suspense와 에러 처리를 혼동</h2> <p><code class="language-plaintext highlighter-rouge">Suspense</code>는 “아직 준비 안 됨(로딩 중)”만 처리하고, “실패함(에러)”은 처리하지 않는다. <code class="language-plaintext highlighter-rouge">import()</code>가 네트워크 오류로 실패하면 <code class="language-plaintext highlighter-rouge">Suspense</code>가 아니라 <strong>에러 바운더리(Error Boundary)</strong>가 잡아야 한다.</p> <div class="language-jsx highlighter-rouge"> <div class="highlight"><pre class="highlight"><code><span class="p">&lt;</span><span class="nc">ErrorBoundary</span> <span class="na">fallback</span><span class="p">=</span><span class="si">{</span><span class="p">&lt;</span><span class="nc">LoadFailed</span> <span class="p">/&gt;</span><span class="si">}</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nc">Suspense</span> <span class="na">fallback</span><span class="p">=</span><span class="si">{</span><span class="p">&lt;</span><span class="nc">Spinner</span> <span class="p">/&gt;</span><span class="si">}</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nc">Dashboard</span> <span class="p">/&gt;</span>
+  <span class="p">&lt;/</span><span class="nc">Suspense</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nc">ErrorBoundary</span><span class="p">&gt;</span>
+</code></pre></div> </div> <p>로딩 실패(청크 로드 실패는 배포 직후 캐시 문제로 실무에서 꽤 자주 발생한다)를 대비하려면 <code class="language-plaintext highlighter-rouge">Suspense</code>만 두지 말고 반드시 바깥에 에러 바운더리를 같이 둬야 한다.</p> <hr> <h2 id="section-2">정리 표</h2> <table> <thead> <tr> <th>개념</th> <th>역할</th> <th>처리 대상</th> </tr> </thead> <tbody> <tr> <td>React.lazy</td> <td>컴포넌트를 동적 import로 감싸 별도 청크 분리</td> <td>코드 로딩</td> </tr> <tr> <td>Suspense</td> <td>자식이 준비 안 됐을 때 fallback UI로 대체</td> <td>로딩 중 상태</td> </tr> <tr> <td>ErrorBoundary</td> <td>렌더링/로딩 중 발생한 에러 처리</td> <td>실패 상태</td> </tr> <tr> <td>Suspense 경계 세분화</td> <td>부분별로 독립적인 로딩 표시</td> <td>UX 세밀도 조절</td> </tr> <tr> <td>라우트 단위 lazy</td> <td>초기 번들 크기 축소</td> <td>최초 로딩 성능</td> </tr> </tbody> </table> <h3 id="typescript--">TypeScript 프로젝트에서의 참고</h3> <p><code class="language-plaintext highlighter-rouge">lazy(() =&gt; import("./Dashboard"))</code>에서 <code class="language-plaintext highlighter-rouge">Dashboard.tsx</code>가 default export가 아니라 named export라면 타입 에러가 난다 (<code class="language-plaintext highlighter-rouge">lazy</code>는 <code class="language-plaintext highlighter-rouge">{ default: ComponentType }</code> 형태의 Promise를 기대함). 이 경우 <code class="language-plaintext highlighter-rouge">.then(module =&gt; ({ default: module.Dashboard }))</code>처럼 래핑해야 하는데, 이 부분을 놓치는 경우가 흔하다. Vite/webpack에서 라우트별 청크 이름을 명시하고 싶다면 매직 코멘트(<code class="language-plaintext highlighter-rouge">import(/* webpackChunkName: "dashboard" */ "./Dashboard")</code>)를 쓰되, TS 컴파일러는 이 주석을 이해하지 못하므로 타입 체크와는 무관하게 번들러 설정 문서를 따로 참고해야 한다.</p> </div> </div> </article> </div> </div> <div class="col-sm-3"> <nav id="toc-sidebar" class="sticky-top toc toc-sidebar" aria-label="Table of contents" data-toc-collapse="expanded" data-toc-collapse-depth=""></nav> </div> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 원준 서. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>. Photos from <a href="https://unsplash.com" target="_blank" rel="external nofollow noopener">Unsplash</a>. </div> </footer> <script>
+  window.alFolio = {
+    compatBootstrap: false
+  };
+</script> <script src="/assets/js/nav-toggle.js?v=141bd79a73ebc0f0b6ea58e440ae79fc"></script> <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script> <script defer src="/assets/js/masonry.js?v=e49affc7bd2646f6acdad1dbe02c2359" type="text/javascript"></script> <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI=" crossorigin="anonymous"></script> <script src="/assets/al_math/js/mathjax-setup.js"></script> <script defer src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6" crossorigin="anonymous"></script> <script src="/assets/js/tooltips-setup.js?v=fe487e99db6c43751e6e7bdb2d6a0611"></script> <script defer src="https://cdn.jsdelivr.net/npm/tocbot@4.36.4/dist/tocbot.min.js" integrity="sha256-lo/r+jQ81wWrxdIiiiEEd538z4+dTJTt+leOuAS7GCw=" crossorigin="anonymous"></script> <script src="/assets/js/no_defer.js?v=53b1b1a645525975c963ce8bf8bfefcf"></script> <script defer src="/assets/js/common.js?v=87baac90f765f2f3362dcf6aaf312a8a"></script> <script defer src="/assets/js/copy_code.js?v=c8a01c11a92744d44b093fc3bda915df" type="text/javascript"></script> <script defer src="/assets/js/jupyter_new_tab.js?v=896d254890d9b47f0281f63bfccf0dee"></script> <script async src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script> <script async src="https://badge.dimensions.ai/badge.js"></script> <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script> <script defer src="/assets/al_img_tools/js/zoom.js"></script> <script defer src="/assets/js/progress-bar.js?v=499464c5c63ced6cf7ad62509f1e2610" type="text/javascript"></script> <script src="https://cdn.jsdelivr.net/npm/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js" integrity="sha256-uMJJ3EoTyfRBoTbR+lrfu1uRQ87RZG8AR3cVNuQVeFg=" crossorigin="anonymous"></script> <script>
+    addBackToTop();
+  </script> <script type="module" src="/assets/al_search/js/search/ninja-keys.min.js"></script> <ninja-keys hidebreadcrumbs noautoloadmdicons placeholder="Type to start searching"></ninja-keys> <script src="/assets/al_search/js/search-setup.js"></script> <script>
+// get the ninja-keys element
+const ninja = document.querySelector('ninja-keys');
+
+// add the home and posts menu items
+ninja.data = [{
+    id: "nav-about",
+    title: "about",
+    section: "Navigation",
+    handler: () => {
+      window.location.href = "/";
+    },
+  },{id: "nav-blog",
+          title: "blog",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/blog/";
+          },
+        },{id: "nav-daily",
+          title: "daily",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/news/";
+          },
+        },{id: "nav-projects",
+          title: "projects",
+          description: "실무, 개인 프로젝트",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/projects/";
+          },
+        },{id: "nav-cv",
+          title: "CV",
+          description: "This is a description of the page. You can modify it in &#39;_pages/cv.md&#39;. You can also change or remove the top pdf download button.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/cv/";
+          },
+        },{id: "post-omdb-movie-app에서-생각해봐야할-것들-2-llm-응답을-ui-로직에-연결하기-편",
+        
+          title: "omdb-movie-app에서 생각해봐야할 것들 (2) — LLM 응답을 UI 로직에 연결하기 편",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/02-llm-output-format/";
+          
+        },
+      },{id: "post-omdb-movie-app에서-생각해봐야할-것들-1-프레임워크-없이-spa-만들기-편",
+        
+          title: "omdb-movie-app에서 생각해봐야할 것들 (1) — 프레임워크 없이 SPA 만들기 편",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/01-vanilla-spa-core/";
+          
+        },
+      },{id: "post-ipad-homepage-프로젝트에서-생각해봐야할-것들-2-푸터-아코디언-편",
+        
+          title: "iPad Homepage 프로젝트에서 생각해봐야할 것들 (2) — 푸터 아코디언 편",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/accordion/";
+          
+        },
+      },{id: "post-ipad-homepage-프로젝트에서-생각해봐야할-5가지-1",
+        
+          title: "iPad Homepage 프로젝트에서 생각해봐야할 5가지 (1)",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/01-post/";
+          
+        },
+      },{id: "post-css만으로-패럴랙스-배경-만들기",
+        
+          title: "CSS만으로 패럴랙스 배경 만들기",
+        
+        description: "background-attachment fixed 파헤치기",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/parallax-background/";
+          
+        },
+      },{id: "post-커밋-메시지-컨벤션-가이드",
+        
+          title: "커밋 메시지 컨벤션 가이드",
+        
+        description: "용도별로 정리한 커밋 메시지 타입과 실전 팁",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/conventional-commits/";
+          
+        },
+      },{id: "books-the-godfather",
+          title: 'The Godfather',
+          description: "",
+          section: "Books",handler: () => {
+              window.location.href = "/books/the_godfather/";
+            },},{id: "news-2026-07-02-01-daily",
+          title: '2026-07-02-01 Daily',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/2026-07-02-01-daily/";
+            },},{id: "news-2026-07-06-01-daily",
+          title: '2026-07-06-01 Daily',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/2026-07-06-01-daily/";
+            },},{id: "news-2026-07-07-01-daily",
+          title: '2026-07-07-01 Daily',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/2026-07-07-01-daily/";
+            },},{id: "news-2026-07-07-02-daily",
+          title: '2026-07-07-02 Daily',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/2026-07-07-02-daily/";
+            },},{id: "news-2026-07-07-03-daily",
+          title: '2026-07-07-03 Daily',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/2026-07-07-03-daily/";
+            },},{id: "news-2026-07-10-01-daily",
+          title: '2026-07-10-01 Daily',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/2026-07-10-01-daily/";
+            },},{id: "news-2026-08-03-01-daily",
+          title: '2026-08-03-01 Daily',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/2026-08-03-01-daily/";
+            },},{id: "news-2026-08-03-02-daily",
+          title: '2026-08-03-02 Daily',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/2026-08-03-02-daily/";
+            },},{id: "news-2026-08-03-03-daily",
+          title: '2026-08-03-03 Daily',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/2026-08-03-03-daily/";
+            },},{id: "news-2026-08-03-04-daily",
+          title: '2026-08-03-04 Daily',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/2026-08-03-04-daily/";
+            },},{id: "news-2026-08-03-05-daily",
+          title: '2026-08-03-05 Daily',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/2026-08-03-05-daily/";
+            },},{id: "news-2026-08-03-06-daily",
+          title: '2026-08-03-06 Daily',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/2026-08-03-06-daily/";
+            },},{id: "projects-starbucks-homepage",
+          title: 'starbucks-homepage',
+          description: "스타벅스 코리아 공식 홈페이지 UI/인터랙션을 재현한 정적 프론트엔드 클론 프로젝트",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/1_project/";
+            },},{id: "projects-ipad-homepage",
+          title: 'ipad-homepage',
+          description: "Apple Korea 공식 홈페이지의 iPad 10.2 제품 소개 페이지를 그대로 재현한 반응형 프론트엔드 클론 프로젝트",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/2_project/";
+            },},{id: "projects-omdb-movie-app",
+          title: 'omdb-movie-app',
+          description: "프레임워크 없이 TypeScript로 직접 구현한 SPA 코어(Component/Store/Router) 기반 영화 검색 &amp; OpenAI 챗봇 추천 서비스",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/3_project/";
+            },},{id: "teachings-data-science-fundamentals",
+          title: 'Data Science Fundamentals',
+          description: "This course covers the foundational aspects of data science, including data collection, cleaning, analysis, and visualization. Students will learn practical skills for working with real-world datasets.",
+          section: "Teachings",handler: () => {
+              window.location.href = "/teachings/data-science-fundamentals/";
+            },},{id: "teachings-introduction-to-machine-learning",
+          title: 'Introduction to Machine Learning',
+          description: "This course provides an introduction to machine learning concepts, algorithms, and applications. Students will learn about supervised and unsupervised learning, model evaluation, and practical implementations.",
+          section: "Teachings",handler: () => {
+              window.location.href = "/teachings/introduction-to-machine-learning/";
+            },},{
+        id: 'social-cv',
+        title: 'CV',
+        section: 'Socials',
+        handler: () => {
+          window.open("/assets/pdf/example_pdf.pdf", "_blank");
+        },
+      },{
+        id: 'social-email',
+        title: 'email',
+        section: 'Socials',
+        handler: () => {
+          window.open("mailto:%79%6F%75@%65%78%61%6D%70%6C%65.%63%6F%6D", "_blank");
+        },
+      },{
+        id: 'social-inspire',
+        title: 'Inspire HEP',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://inspirehep.net/authors/1010907", "_blank");
+        },
+      },{
+        id: 'social-rss',
+        title: 'RSS Feed',
+        section: 'Socials',
+        handler: () => {
+          window.open("/feed.xml", "_blank");
+        },
+      },{
+        id: 'social-scholar',
+        title: 'Google Scholar',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://scholar.google.com/citations?user=qc6CJjYAAAAJ", "_blank");
+        },
+      },{
+        id: 'social-custom_social',
+        title: 'Custom_social',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://www.alberteinstein.com/", "_blank");
+        },
+      },{
+      id: 'light-theme',
+      title: 'Change theme to light',
+      description: 'Change the theme of the site to Light',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("light");
+      },
+    },
+    {
+      id: 'dark-theme',
+      title: 'Change theme to dark',
+      description: 'Change the theme of the site to Dark',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("dark");
+      },
+    },
+    {
+      id: 'system-theme',
+      title: 'Use system default theme',
+      description: 'Change the theme of the site to System Default',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("system");
+      },
+    },];
+
+</script> <script src="/assets/al_search/js/shortcut-key.js"></script> </body> </html>

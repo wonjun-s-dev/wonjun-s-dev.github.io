@@ -1,0 +1,318 @@
+<!DOCTYPE html> <html lang="ko"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title> 2026-08-03-04 Daily | WonJun's Blog </title> <meta name="author" content="원준 서"> <meta name="description" content="A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design. "> <meta name="keywords" content="jekyll, jekyll-theme, academic-website, portfolio-website"> <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:; media-src 'self' https:; frame-src 'self' https:; connect-src 'self' https:;"> <style>
+  :root {
+    --max-content-width: 930px;
+  }
+</style> <link rel="stylesheet" href="/assets/css/tailwind.css?v=50c64c15cbb9fd1ce6056fdb8bcb4b62"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tocbot@4.36.4/dist/tocbot.css" integrity="sha256-zTN0r+0OKaIv2xqeNNIYxNk0pWJ6+IqPGc1iDgVzWF0=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css" integrity="sha256-MVopmdyC2tYTiJ8wlktf0uh0v4NgT+vNdyVFepi7Q0c=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.5/css/academicons.min.css" integrity="sha256-SzrCOBJbGVFMahewkgjwnApaV2+av1DwMAA+/QGLyZw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/scholar-icons@1.0.3/css/scholar-icons.css" integrity="sha256-VY3hHVj/hNX3fYG6wtbA6TcKJQl7+FthzGSyIB64klY=" crossorigin="anonymous"> <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&amp;display=swap"> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?v=591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light"> <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%E2%9A%9B%EF%B8%8F&lt;/text&gt;&lt;/svg&gt;"> <link rel="stylesheet" href="/assets/css/main.css?v=f0b101217084a90093badfe99ff9a7d1"> <link rel="canonical" href="https://wonjun-s-dev.github.io/news/2026-08-03-04-daily/"> <script src="/assets/js/theme.js?v=7af685e2ba20b37fef545c97b8064050"></script> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css?v=5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark"> <script>
+    initTheme();
+  </script> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> WonJun's Blog </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">about </a> </li> <li class="nav-item "> <a class="nav-link" href="/blog/">blog </a> </li> <li class="nav-item active"> <a class="nav-link" href="/news/">daily <span class="sr-only">(current)</span> </a> </li> <li class="nav-item "> <a class="nav-link" href="/projects/">projects </a> </li> <li class="nav-item "> <a class="nav-link" href="/cv/">CV </a> </li> <li class="nav-item"> <button id="search-toggle" type="button" title="Search" aria-label="Open search"> <span class="nav-link">ctrl k <i class="fa-solid fa-magnifying-glass"></i></span> </button> </li> <li class="toggle-container"> <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"> <i class="fa-half-sun-moon" id="light-toggle-system"></i> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="row"> <div class="col-sm-9"> <div class="post"> <header class="post-header"> <h1 class="post-title">2026-08-03-04 Daily</h1> <p class="post-meta"> Created on August 03, 2026 </p> <p class="post-tags"> <i class="fa-solid fa-calendar fa-sm"></i> 2026   ·   <i class="fa-solid fa-hashtag fa-sm"></i> React   <i class="fa-solid fa-hashtag fa-sm"></i> useEffect </p> </header> <article class="post-content"> <div id="markdown-content"> <div style="word-break: keep-all; overflow-wrap: break-word;"> <h2 id="useeffect------">1. “useEffect가 왜 이 순서로 찍히지?” 에서 시작</h2> <p>여러 컴포넌트가 중첩된 트리에서 <code class="language-plaintext highlighter-rouge">console.log</code>를 각 <code class="language-plaintext highlighter-rouge">useEffect</code>와 <code class="language-plaintext highlighter-rouge">useLayoutEffect</code>에 넣어보면, 직관과 다른 순서로 로그가 찍힐 때가 있다. 오늘은 이 순서를 렌더 페이즈/커밋 페이즈 개념과 엮어서 정리했다.</p> <hr> <h2 id="uselayouteffect-vs-useeffect----">2. useLayoutEffect vs useEffect — 실행 타이밍의 차이</h2> <div class="language-jsx highlighter-rouge"> <div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">Box</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nf">useLayoutEffect</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">layoutEffect</span><span class="dl">"</span><span class="p">);</span>
+  <span class="p">});</span>
+  <span class="nf">useEffect</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">effect</span><span class="dl">"</span><span class="p">);</span>
+  <span class="p">});</span>
+  <span class="k">return</span> <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>box<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;;</span>
+<span class="p">}</span>
+</code></pre></div> </div> <p>두 훅 다 “커밋 이후에 실행된다”는 공통점이 있지만, 브라우저 페인트와의 관계가 다르다.</p> <ul> <li> <strong><code class="language-plaintext highlighter-rouge">useLayoutEffect</code></strong>: DOM 변경이 끝난 직후, <strong>브라우저가 화면을 그리기 전에 동기적으로</strong> 실행된다. 이 안에서 DOM을 다시 읽고(측정) 조작해도 사용자는 중간 상태를 보지 못한다. 대신 여기서 무거운 작업을 하면 페인트가 그만큼 지연되어 화면이 버벅인다.</li> <li> <strong><code class="language-plaintext highlighter-rouge">useEffect</code></strong>: 브라우저가 페인트를 마친 <strong>이후에 비동기적으로</strong> 실행된다. 화면은 이미 그려진 상태이므로, 여기서 DOM 크기를 재고 나서 state를 바꾸면 사용자 눈에 “깜빡임(flash)”이 보일 수 있다.</li> </ul> <div class="language-plaintext highlighter-rouge"> <div class="highlight"><pre class="highlight"><code>DOM 커밋 → useLayoutEffect (동기, 페인트 전) → 브라우저 페인트 → useEffect (비동기, 페인트 후)
+</code></pre></div> </div> <p>그래서 “DOM 크기를 측정해서 즉시 레이아웃을 다시 잡아야 하는 경우”(툴팁 위치 계산 등)는 <code class="language-plaintext highlighter-rouge">useLayoutEffect</code>를 쓰고, “데이터 페칭, 구독 설정처럼 화면에 바로 영향을 안 주는 부수효과”는 <code class="language-plaintext highlighter-rouge">useEffect</code>를 쓰는 게 원칙이다.</p> <hr> <h2 id="useeffect--">3. 부모/자식 렌더링과 useEffect 실행 순서</h2> <div class="language-jsx highlighter-rouge"> <div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">Parent</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Parent 렌더링</span><span class="dl">"</span><span class="p">);</span>
+  <span class="nf">useEffect</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Parent useEffect</span><span class="dl">"</span><span class="p">);</span>
+  <span class="p">},</span> <span class="p">[]);</span>
+  <span class="k">return</span> <span class="p">&lt;</span><span class="nc">Child</span> <span class="p">/&gt;;</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nf">Child</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Child 렌더링</span><span class="dl">"</span><span class="p">);</span>
+  <span class="nf">useEffect</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Child useEffect</span><span class="dl">"</span><span class="p">);</span>
+  <span class="p">},</span> <span class="p">[]);</span>
+  <span class="k">return</span> <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>child<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;;</span>
+<span class="p">}</span>
+</code></pre></div> </div> <p>이 코드의 실제 출력 순서는:</p> <div class="language-plaintext highlighter-rouge"> <div class="highlight"><pre class="highlight"><code>Parent 렌더링
+Child 렌더링
+Child useEffect
+Parent useEffect
+</code></pre></div> </div> <p>렌더링(함수 호출) 자체는 부모→자식 순서로 진행되지만, <code class="language-plaintext highlighter-rouge">useEffect</code>는 <strong>자식이 먼저, 부모가 나중</strong>이다. 직관적으로는 “위에서 아래로” 실행될 것 같은데 실제로는 반대다.</p> <p>이유는 커밋 단계의 동작 방식에 있다. 리액트는 트리를 순회하면서 DOM을 실제로 붙이는데, 이 과정이 <strong>자식부터 완성되어야 부모에 붙일 수 있는</strong> 구조다(자식 DOM 노드가 먼저 만들어져야 부모가 그 자식을 담을 수 있으니까). 이펙트도 이 커밋 순서를 그대로 따라서, DOM 트리 상 가장 안쪽(리프에 가까운) 컴포넌트부터 이펙트가 실행되고 바깥쪽(부모)이 나중에 실행된다.</p> <p>이 순서가 중요한 이유: 부모의 <code class="language-plaintext highlighter-rouge">useEffect</code>에서 자식이 만들어둔 DOM이나 자식의 이펙트 결과(ref로 노출된 값 등)에 의존하는 로직을 짜도 안전하다는 뜻이다. 자식의 이펙트가 이미 끝난 뒤에 부모 이펙트가 실행되기 때문이다.</p> <h3 id="cleanup--">cleanup은 반대 순서</h3> <p>언마운트될 때 cleanup 함수는 이펙트 실행의 <strong>역순</strong>으로, 이번엔 부모가 먼저, 자식이 나중이다.</p> <div class="language-plaintext highlighter-rouge"> <div class="highlight"><pre class="highlight"><code>Parent cleanup
+Child cleanup
+</code></pre></div> </div> <p>정확히는 “형제 컴포넌트 간에는 이전 형제부터, 부모-자식 간에는 부모의 cleanup이 자식보다 먼저” 실행된다. 마운트 때 자식 먼저 → 부모, 언마운트 때 부모 먼저 → 자식으로 대칭을 이룬다.</p> <hr> <h2 id="section">4. 형제 컴포넌트 간의 순서</h2> <div class="language-jsx highlighter-rouge"> <div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">App</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return </span><span class="p">(</span>
+    <span class="p">&lt;&gt;</span>
+      <span class="p">&lt;</span><span class="nc">A</span> <span class="p">/&gt;</span>
+      <span class="p">&lt;</span><span class="nc">B</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;/&gt;</span>
+  <span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div> </div> <p><code class="language-plaintext highlighter-rouge">A</code>, <code class="language-plaintext highlighter-rouge">B</code>가 형제일 때는 JSX에 작성된 순서 그대로 <code class="language-plaintext highlighter-rouge">A</code>의 이펙트가 먼저, <code class="language-plaintext highlighter-rouge">B</code>의 이펙트가 나중에 실행된다. “자식 먼저, 부모 나중”이라는 depth 우선순위 규칙과, “형제는 작성 순서”라는 규칙이 합쳐져서 트리 전체의 이펙트 실행 순서가 결정된다.</p> <p>정리하면 이펙트 실행 순서는 <strong>DOM 트리를 post-order(후위 순회)로 방문한 순서</strong>와 같다. 자식들을 먼저 방문(왼쪽부터 순서대로)하고, 그 다음 자기 자신을 방문하는 방식이다.</p> <hr> <h2 id="uselayouteffect----">5. useLayoutEffect도 같은 순서 규칙을 따른다</h2> <p><code class="language-plaintext highlighter-rouge">useLayoutEffect</code>와 <code class="language-plaintext highlighter-rouge">useEffect</code>는 실행 “타이밍”(페인트 전/후)만 다를 뿐, 트리 내에서의 상대적 순서 규칙(자식 먼저, 형제는 작성 순서)은 동일하다. 다만 <code class="language-plaintext highlighter-rouge">useLayoutEffect</code>는 페인트 전에 전체 트리의 layout effect가 다 끝나야 페인트가 진행되므로, 여러 컴포넌트에 <code class="language-plaintext highlighter-rouge">useLayoutEffect</code>가 있으면 페인트가 그만큼 늦어진다는 점을 기억해야 한다.</p> <hr> <h2 id="section-1">정리 표</h2> <table> <thead> <tr> <th>상황</th> <th>순서</th> </tr> </thead> <tbody> <tr> <td>렌더링(함수 호출)</td> <td>부모 → 자식</td> </tr> <tr> <td>useLayoutEffect / useEffect 실행 (마운트)</td> <td>자식 → 부모 (post-order)</td> </tr> <tr> <td>useLayoutEffect vs useEffect 타이밍</td> <td>layoutEffect(페인트 전, 동기) → 페인트 → effect(페인트 후, 비동기)</td> </tr> <tr> <td>cleanup 실행 (언마운트)</td> <td>부모 → 자식</td> </tr> <tr> <td>형제 컴포넌트 간 이펙트 순서</td> <td>JSX 작성 순서대로</td> </tr> </tbody> </table> <h3 id="typescript--">TypeScript 프로젝트에서의 참고</h3> <p>이펙트 순서에 의존하는 로직(부모가 자식 ref를 통해 값을 읽는다든지)을 짤 때는, TS의 <code class="language-plaintext highlighter-rouge">useRef&lt;HTMLDivElement&gt;(null)</code> 같은 타입을 정확히 잡아두면 “이 시점에 ref.current가 null일 수 있는가”를 컴파일러가 계속 경고해준다. 실제로 부모 <code class="language-plaintext highlighter-rouge">useEffect</code>에서 자식 ref를 읽는 경우, 마운트 첫 렌더 직후엔 <code class="language-plaintext highlighter-rouge">ref.current</code>가 채워져 있다는 걸 위 순서 규칙으로 보장할 수 있지만, 타입 상으로는 여전히 <code class="language-plaintext highlighter-rouge">null</code> 가능성이 남아있으니 옵셔널 체이닝이나 널 체크를 생략하지 않는 게 안전하다.</p> </div> </div> </article> </div> </div> <div class="col-sm-3"> <nav id="toc-sidebar" class="sticky-top toc toc-sidebar" aria-label="Table of contents" data-toc-collapse="expanded" data-toc-collapse-depth=""></nav> </div> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 원준 서. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>. Photos from <a href="https://unsplash.com" target="_blank" rel="external nofollow noopener">Unsplash</a>. </div> </footer> <script>
+  window.alFolio = {
+    compatBootstrap: false
+  };
+</script> <script src="/assets/js/nav-toggle.js?v=141bd79a73ebc0f0b6ea58e440ae79fc"></script> <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script> <script defer src="/assets/js/masonry.js?v=e49affc7bd2646f6acdad1dbe02c2359" type="text/javascript"></script> <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI=" crossorigin="anonymous"></script> <script src="/assets/al_math/js/mathjax-setup.js"></script> <script defer src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6" crossorigin="anonymous"></script> <script src="/assets/js/tooltips-setup.js?v=fe487e99db6c43751e6e7bdb2d6a0611"></script> <script defer src="https://cdn.jsdelivr.net/npm/tocbot@4.36.4/dist/tocbot.min.js" integrity="sha256-lo/r+jQ81wWrxdIiiiEEd538z4+dTJTt+leOuAS7GCw=" crossorigin="anonymous"></script> <script src="/assets/js/no_defer.js?v=53b1b1a645525975c963ce8bf8bfefcf"></script> <script defer src="/assets/js/common.js?v=87baac90f765f2f3362dcf6aaf312a8a"></script> <script defer src="/assets/js/copy_code.js?v=c8a01c11a92744d44b093fc3bda915df" type="text/javascript"></script> <script defer src="/assets/js/jupyter_new_tab.js?v=896d254890d9b47f0281f63bfccf0dee"></script> <script async src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script> <script async src="https://badge.dimensions.ai/badge.js"></script> <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script> <script defer src="/assets/al_img_tools/js/zoom.js"></script> <script defer src="/assets/js/progress-bar.js?v=499464c5c63ced6cf7ad62509f1e2610" type="text/javascript"></script> <script src="https://cdn.jsdelivr.net/npm/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js" integrity="sha256-uMJJ3EoTyfRBoTbR+lrfu1uRQ87RZG8AR3cVNuQVeFg=" crossorigin="anonymous"></script> <script>
+    addBackToTop();
+  </script> <script type="module" src="/assets/al_search/js/search/ninja-keys.min.js"></script> <ninja-keys hidebreadcrumbs noautoloadmdicons placeholder="Type to start searching"></ninja-keys> <script src="/assets/al_search/js/search-setup.js"></script> <script>
+// get the ninja-keys element
+const ninja = document.querySelector('ninja-keys');
+
+// add the home and posts menu items
+ninja.data = [{
+    id: "nav-about",
+    title: "about",
+    section: "Navigation",
+    handler: () => {
+      window.location.href = "/";
+    },
+  },{id: "nav-blog",
+          title: "blog",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/blog/";
+          },
+        },{id: "nav-daily",
+          title: "daily",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/news/";
+          },
+        },{id: "nav-projects",
+          title: "projects",
+          description: "실무, 개인 프로젝트",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/projects/";
+          },
+        },{id: "nav-cv",
+          title: "CV",
+          description: "This is a description of the page. You can modify it in &#39;_pages/cv.md&#39;. You can also change or remove the top pdf download button.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/cv/";
+          },
+        },{id: "post-omdb-movie-app에서-생각해봐야할-것들-2-llm-응답을-ui-로직에-연결하기-편",
+        
+          title: "omdb-movie-app에서 생각해봐야할 것들 (2) — LLM 응답을 UI 로직에 연결하기 편",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/02-llm-output-format/";
+          
+        },
+      },{id: "post-omdb-movie-app에서-생각해봐야할-것들-1-프레임워크-없이-spa-만들기-편",
+        
+          title: "omdb-movie-app에서 생각해봐야할 것들 (1) — 프레임워크 없이 SPA 만들기 편",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/01-vanilla-spa-core/";
+          
+        },
+      },{id: "post-ipad-homepage-프로젝트에서-생각해봐야할-것들-2-푸터-아코디언-편",
+        
+          title: "iPad Homepage 프로젝트에서 생각해봐야할 것들 (2) — 푸터 아코디언 편",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/accordion/";
+          
+        },
+      },{id: "post-ipad-homepage-프로젝트에서-생각해봐야할-5가지-1",
+        
+          title: "iPad Homepage 프로젝트에서 생각해봐야할 5가지 (1)",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/01-post/";
+          
+        },
+      },{id: "post-css만으로-패럴랙스-배경-만들기",
+        
+          title: "CSS만으로 패럴랙스 배경 만들기",
+        
+        description: "background-attachment fixed 파헤치기",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/parallax-background/";
+          
+        },
+      },{id: "post-커밋-메시지-컨벤션-가이드",
+        
+          title: "커밋 메시지 컨벤션 가이드",
+        
+        description: "용도별로 정리한 커밋 메시지 타입과 실전 팁",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/conventional-commits/";
+          
+        },
+      },{id: "books-the-godfather",
+          title: 'The Godfather',
+          description: "",
+          section: "Books",handler: () => {
+              window.location.href = "/books/the_godfather/";
+            },},{id: "news-2026-07-02-01-daily",
+          title: '2026-07-02-01 Daily',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/2026-07-02-01-daily/";
+            },},{id: "news-2026-07-06-01-daily",
+          title: '2026-07-06-01 Daily',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/2026-07-06-01-daily/";
+            },},{id: "news-2026-07-07-01-daily",
+          title: '2026-07-07-01 Daily',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/2026-07-07-01-daily/";
+            },},{id: "news-2026-07-07-02-daily",
+          title: '2026-07-07-02 Daily',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/2026-07-07-02-daily/";
+            },},{id: "news-2026-07-07-03-daily",
+          title: '2026-07-07-03 Daily',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/2026-07-07-03-daily/";
+            },},{id: "news-2026-07-10-01-daily",
+          title: '2026-07-10-01 Daily',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/2026-07-10-01-daily/";
+            },},{id: "news-2026-08-03-01-daily",
+          title: '2026-08-03-01 Daily',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/2026-08-03-01-daily/";
+            },},{id: "news-2026-08-03-02-daily",
+          title: '2026-08-03-02 Daily',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/2026-08-03-02-daily/";
+            },},{id: "news-2026-08-03-03-daily",
+          title: '2026-08-03-03 Daily',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/2026-08-03-03-daily/";
+            },},{id: "news-2026-08-03-04-daily",
+          title: '2026-08-03-04 Daily',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/2026-08-03-04-daily/";
+            },},{id: "news-2026-08-03-05-daily",
+          title: '2026-08-03-05 Daily',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/2026-08-03-05-daily/";
+            },},{id: "news-2026-08-03-06-daily",
+          title: '2026-08-03-06 Daily',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/2026-08-03-06-daily/";
+            },},{id: "projects-starbucks-homepage",
+          title: 'starbucks-homepage',
+          description: "스타벅스 코리아 공식 홈페이지 UI/인터랙션을 재현한 정적 프론트엔드 클론 프로젝트",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/1_project/";
+            },},{id: "projects-ipad-homepage",
+          title: 'ipad-homepage',
+          description: "Apple Korea 공식 홈페이지의 iPad 10.2 제품 소개 페이지를 그대로 재현한 반응형 프론트엔드 클론 프로젝트",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/2_project/";
+            },},{id: "projects-omdb-movie-app",
+          title: 'omdb-movie-app',
+          description: "프레임워크 없이 TypeScript로 직접 구현한 SPA 코어(Component/Store/Router) 기반 영화 검색 &amp; OpenAI 챗봇 추천 서비스",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/3_project/";
+            },},{id: "teachings-data-science-fundamentals",
+          title: 'Data Science Fundamentals',
+          description: "This course covers the foundational aspects of data science, including data collection, cleaning, analysis, and visualization. Students will learn practical skills for working with real-world datasets.",
+          section: "Teachings",handler: () => {
+              window.location.href = "/teachings/data-science-fundamentals/";
+            },},{id: "teachings-introduction-to-machine-learning",
+          title: 'Introduction to Machine Learning',
+          description: "This course provides an introduction to machine learning concepts, algorithms, and applications. Students will learn about supervised and unsupervised learning, model evaluation, and practical implementations.",
+          section: "Teachings",handler: () => {
+              window.location.href = "/teachings/introduction-to-machine-learning/";
+            },},{
+        id: 'social-cv',
+        title: 'CV',
+        section: 'Socials',
+        handler: () => {
+          window.open("/assets/pdf/example_pdf.pdf", "_blank");
+        },
+      },{
+        id: 'social-email',
+        title: 'email',
+        section: 'Socials',
+        handler: () => {
+          window.open("mailto:%79%6F%75@%65%78%61%6D%70%6C%65.%63%6F%6D", "_blank");
+        },
+      },{
+        id: 'social-inspire',
+        title: 'Inspire HEP',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://inspirehep.net/authors/1010907", "_blank");
+        },
+      },{
+        id: 'social-rss',
+        title: 'RSS Feed',
+        section: 'Socials',
+        handler: () => {
+          window.open("/feed.xml", "_blank");
+        },
+      },{
+        id: 'social-scholar',
+        title: 'Google Scholar',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://scholar.google.com/citations?user=qc6CJjYAAAAJ", "_blank");
+        },
+      },{
+        id: 'social-custom_social',
+        title: 'Custom_social',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://www.alberteinstein.com/", "_blank");
+        },
+      },{
+      id: 'light-theme',
+      title: 'Change theme to light',
+      description: 'Change the theme of the site to Light',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("light");
+      },
+    },
+    {
+      id: 'dark-theme',
+      title: 'Change theme to dark',
+      description: 'Change the theme of the site to Dark',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("dark");
+      },
+    },
+    {
+      id: 'system-theme',
+      title: 'Use system default theme',
+      description: 'Change the theme of the site to System Default',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("system");
+      },
+    },];
+
+</script> <script src="/assets/al_search/js/shortcut-key.js"></script> </body> </html>

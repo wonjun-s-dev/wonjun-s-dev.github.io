@@ -1,0 +1,319 @@
+<!DOCTYPE html> <html lang="ko"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title> 2026-08-03-05 Daily | WonJun's Blog </title> <meta name="author" content="원준 서"> <meta name="description" content="A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design. "> <meta name="keywords" content="jekyll, jekyll-theme, academic-website, portfolio-website"> <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:; media-src 'self' https:; frame-src 'self' https:; connect-src 'self' https:;"> <style>
+  :root {
+    --max-content-width: 930px;
+  }
+</style> <link rel="stylesheet" href="/assets/css/tailwind.css?v=50c64c15cbb9fd1ce6056fdb8bcb4b62"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tocbot@4.36.4/dist/tocbot.css" integrity="sha256-zTN0r+0OKaIv2xqeNNIYxNk0pWJ6+IqPGc1iDgVzWF0=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css" integrity="sha256-MVopmdyC2tYTiJ8wlktf0uh0v4NgT+vNdyVFepi7Q0c=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.5/css/academicons.min.css" integrity="sha256-SzrCOBJbGVFMahewkgjwnApaV2+av1DwMAA+/QGLyZw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/scholar-icons@1.0.3/css/scholar-icons.css" integrity="sha256-VY3hHVj/hNX3fYG6wtbA6TcKJQl7+FthzGSyIB64klY=" crossorigin="anonymous"> <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&amp;display=swap"> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?v=591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light"> <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%E2%9A%9B%EF%B8%8F&lt;/text&gt;&lt;/svg&gt;"> <link rel="stylesheet" href="/assets/css/main.css?v=f0b101217084a90093badfe99ff9a7d1"> <link rel="canonical" href="https://wonjun-s-dev.github.io/news/2026-08-03-05-daily/"> <script src="/assets/js/theme.js?v=7af685e2ba20b37fef545c97b8064050"></script> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css?v=5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark"> <script>
+    initTheme();
+  </script> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> WonJun's Blog </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">about </a> </li> <li class="nav-item "> <a class="nav-link" href="/blog/">blog </a> </li> <li class="nav-item active"> <a class="nav-link" href="/news/">daily <span class="sr-only">(current)</span> </a> </li> <li class="nav-item "> <a class="nav-link" href="/projects/">projects </a> </li> <li class="nav-item "> <a class="nav-link" href="/cv/">CV </a> </li> <li class="nav-item"> <button id="search-toggle" type="button" title="Search" aria-label="Open search"> <span class="nav-link">ctrl k <i class="fa-solid fa-magnifying-glass"></i></span> </button> </li> <li class="toggle-container"> <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"> <i class="fa-half-sun-moon" id="light-toggle-system"></i> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="row"> <div class="col-sm-9"> <div class="post"> <header class="post-header"> <h1 class="post-title">2026-08-03-05 Daily</h1> <p class="post-meta"> Created on August 03, 2026 </p> <p class="post-tags"> <i class="fa-solid fa-calendar fa-sm"></i> 2026   ·   <i class="fa-solid fa-hashtag fa-sm"></i> React   <i class="fa-solid fa-hashtag fa-sm"></i> Forms </p> </header> <article class="post-content"> <div id="markdown-content"> <div style="word-break: keep-all; overflow-wrap: break-word;"> <h2 id="input-value-----">1. input에 value를 줬는데 타이핑이 안 되는 버그</h2> <div class="language-jsx highlighter-rouge"> <div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">SearchBox</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">&lt;</span><span class="nt">input</span> <span class="na">value</span><span class="p">=</span><span class="s">"검색어"</span> <span class="p">/&gt;;</span>
+<span class="p">}</span>
+</code></pre></div> </div> <p>이 코드를 브라우저에서 실행하면 인풋에 아무리 타이핑을 해도 값이 바뀌지 않고, 콘솔에는 “You provided a <code class="language-plaintext highlighter-rouge">value</code> prop to a form field without an <code class="language-plaintext highlighter-rouge">onChange</code> handler” 경고가 뜬다. 이게 제어/비제어 컴포넌트 개념을 이해해야 하는 이유다.</p> <hr> <h2 id="controlled-component">2. 제어 컴포넌트 (Controlled Component)</h2> <div class="language-jsx highlighter-rouge"> <div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">SearchBox</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">value</span><span class="p">,</span> <span class="nx">setValue</span><span class="p">]</span> <span class="o">=</span> <span class="nf">useState</span><span class="p">(</span><span class="dl">""</span><span class="p">);</span>
+  <span class="k">return </span><span class="p">(</span>
+    <span class="p">&lt;</span><span class="nt">input</span>
+      <span class="na">value</span><span class="p">=</span><span class="si">{</span><span class="nx">value</span><span class="si">}</span>
+      <span class="na">onChange</span><span class="p">=</span><span class="si">{</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nf">setValue</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">)</span><span class="si">}</span>
+    <span class="p">/&gt;</span>
+  <span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div> </div> <p><code class="language-plaintext highlighter-rouge">value</code>를 리액트 state로 관리하고, 사용자가 타이핑할 때마다 <code class="language-plaintext highlighter-rouge">onChange</code>로 그 state를 갱신한다. 인풋에 실제로 보이는 값은 <strong>항상 리액트 state가 결정</strong>한다. 사용자가 타이핑을 해도, 브라우저 DOM이 자체적으로 값을 바꾸는 게 아니라 “이런 입력이 들어왔다”는 이벤트만 발생시키고, 그 이벤트를 받아 state를 바꾸면 리액트가 다시 그 state 값으로 인풋을 렌더링하는 식이다.</p> <p>이 방식의 장점은 <strong>매 입력마다 값을 가로챌 수 있다</strong>는 것이다.</p> <div class="language-jsx highlighter-rouge"> <div class="highlight"><pre class="highlight"><code><span class="p">&lt;</span><span class="nt">input</span>
+  <span class="na">value</span><span class="p">=</span><span class="si">{</span><span class="nx">value</span><span class="si">}</span>
+  <span class="na">onChange</span><span class="p">=</span><span class="si">{</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">next</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">.</span><span class="nf">replace</span><span class="p">(</span><span class="sr">/</span><span class="se">[^</span><span class="sr">0-9</span><span class="se">]</span><span class="sr">/g</span><span class="p">,</span> <span class="dl">""</span><span class="p">);</span> <span class="c1">// 숫자만 허용</span>
+    <span class="nf">setValue</span><span class="p">(</span><span class="nx">next</span><span class="p">);</span>
+  <span class="p">}</span><span class="si">}</span>
+<span class="p">/&gt;</span>
+</code></pre></div> </div> <p>입력값 검증, 실시간 포맷팅(전화번호 하이픈 자동 삽입 등), 다른 필드와의 동기화가 전부 <code class="language-plaintext highlighter-rouge">onChange</code> 한 곳에서 가능하다. 단점은 매 키 입력마다 리렌더링이 발생한다는 것 — 인풋이 많은 폼에서는 리렌더링 비용이 누적될 수 있다.</p> <p>앞서 본 버그(<code class="language-plaintext highlighter-rouge">value</code>만 주고 <code class="language-plaintext highlighter-rouge">onChange</code> 없음)는 “제어 컴포넌트인데 값을 갱신할 방법이 없는” 상태라서 생긴다. 리액트는 <code class="language-plaintext highlighter-rouge">value</code> prop이 있으면 그 인풋을 제어 컴포넌트로 취급하고, DOM이 자체적으로 값을 바꾸는 걸 막아버리기 때문에 <code class="language-plaintext highlighter-rouge">onChange</code> 없이는 영원히 고정된 값만 보인다.</p> <hr> <h2 id="uncontrolled-component">3. 비제어 컴포넌트 (Uncontrolled Component)</h2> <div class="language-jsx highlighter-rouge"> <div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">SearchBox</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">inputRef</span> <span class="o">=</span> <span class="nf">useRef</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+
+  <span class="kd">const</span> <span class="nx">handleSubmit</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">inputRef</span><span class="p">.</span><span class="nx">current</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span> <span class="c1">// 필요할 때만 DOM에서 직접 읽음</span>
+  <span class="p">};</span>
+
+  <span class="k">return </span><span class="p">(</span>
+    <span class="p">&lt;&gt;</span>
+      <span class="p">&lt;</span><span class="nt">input</span> <span class="na">ref</span><span class="p">=</span><span class="si">{</span><span class="nx">inputRef</span><span class="si">}</span> <span class="na">defaultValue</span><span class="p">=</span><span class="s">"검색어"</span> <span class="p">/&gt;</span>
+      <span class="p">&lt;</span><span class="nt">button</span> <span class="na">onClick</span><span class="p">=</span><span class="si">{</span><span class="nx">handleSubmit</span><span class="si">}</span><span class="p">&gt;</span>검색<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+    <span class="p">&lt;/&gt;</span>
+  <span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div> </div> <p>비제어 컴포넌트는 인풋의 값을 리액트 state가 아니라 <strong>DOM 자체가 들고 있게</strong> 둔다. 초기값은 <code class="language-plaintext highlighter-rouge">value</code>가 아니라 <code class="language-plaintext highlighter-rouge">defaultValue</code>로 주고(이후엔 리액트가 관여하지 않음), 값이 필요한 시점(제출 시 등)에 <code class="language-plaintext highlighter-rouge">ref</code>를 통해 DOM에서 직접 읽어온다.</p> <p>장점은 매 키 입력마다 리렌더링이 일어나지 않는다는 것 — 브라우저 네이티브 인풋 동작 그대로라 성능 부담이 없다. 단점은 실시간 검증/포맷팅이 어렵다는 것(값이 바뀔 때마다 리액트가 알림을 받지 못하므로), 그리고 다른 state와 동기화하려면 결국 이벤트 리스너를 따로 붙여야 한다는 것.</p> <hr> <h2 id="section">4. 무엇을 기준으로 선택하나</h2> <table> <thead> <tr> <th>기준</th> <th>제어</th> <th>비제어</th> </tr> </thead> <tbody> <tr> <td>매 입력마다 검증/포맷팅 필요</td> <td>적합</td> <td>부적합</td> </tr> <tr> <td>다른 필드와 실시간 동기화 필요</td> <td>적합</td> <td>부적합</td> </tr> <tr> <td>입력창이 매우 많은 대형 폼 (리렌더링 비용 민감)</td> <td>리렌더링 비용 발생</td> <td>리렌더링 없음, 유리</td> </tr> <tr> <td>제출 시점에만 값이 필요 (단순 폼)</td> <td>불필요한 복잡도</td> <td>적합, 간단</td> </tr> <tr> <td>서드파티 비제어 라이브러리(파일 업로드 등)와 통합</td> <td>부적합</td> <td>적합</td> </tr> </tbody> </table> <p>실무에서는 대부분 제어 컴포넌트를 기본으로 쓰고(<code class="language-plaintext highlighter-rouge">react-hook-form</code> 같은 라이브러리는 사실 내부적으로 비제어 방식 + ref 구독을 써서 “제어 컴포넌트의 개발 경험 + 비제어의 성능”을 동시에 노리는 절충안이다), 성능이 정말 문제가 되는 대형 폼이나 파일 인풋(<code class="language-plaintext highlighter-rouge">&lt;input type="file"&gt;</code>은 애초에 <code class="language-plaintext highlighter-rouge">value</code>를 코드로 못 바꾸므로 항상 비제어)에서만 비제어를 쓴다.</p> <hr> <h2 id="section-1">5. 하나의 인풋을 제어→비제어로, 혹은 그 반대로 바꾸면 생기는 문제</h2> <div class="language-jsx highlighter-rouge"> <div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">Toggle</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">showDefault</span><span class="p">,</span> <span class="nx">setShowDefault</span><span class="p">]</span> <span class="o">=</span> <span class="nf">useState</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+  <span class="k">return</span> <span class="nx">showDefault</span>
+    <span class="p">?</span> <span class="p">&lt;</span><span class="nt">input</span> <span class="na">defaultValue</span><span class="p">=</span><span class="s">"x"</span> <span class="p">/&gt;</span>      <span class="c1">// 비제어</span>
+    <span class="p">:</span> <span class="p">&lt;</span><span class="nt">input</span> <span class="na">value</span><span class="p">=</span><span class="s">"x"</span> <span class="na">onChange</span><span class="p">=</span><span class="si">{</span><span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{}</span><span class="si">}</span> <span class="p">/&gt;;</span> <span class="c1">// 제어</span>
+<span class="p">}</span>
+</code></pre></div> </div> <p>리액트는 한 인풋이 렌더링 도중 제어↔비제어로 전환되는 걸 경고한다(“component is changing an uncontrolled input to be controlled”). <code class="language-plaintext highlighter-rouge">value</code>가 <code class="language-plaintext highlighter-rouge">undefined</code>였다가 나중에 문자열이 되거나 그 반대인 경우 흔히 발생한다. 예방법은 초기 state를 절대 <code class="language-plaintext highlighter-rouge">undefined</code>로 두지 않고 항상 빈 문자열(<code class="language-plaintext highlighter-rouge">""</code>)로 초기화해서, 처음부터 끝까지 “제어 컴포넌트”라는 정체성이 바뀌지 않게 하는 것이다.</p> <div class="language-jsx highlighter-rouge"> <div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="p">[</span><span class="nx">value</span><span class="p">,</span> <span class="nx">setValue</span><span class="p">]</span> <span class="o">=</span> <span class="nf">useState</span><span class="p">(</span><span class="dl">""</span><span class="p">);</span> <span class="c1">// undefined 아님, 항상 제어 컴포넌트로 유지</span>
+</code></pre></div> </div> <hr> <h2 id="section-2">정리 표</h2> <table> <thead> <tr> <th>개념</th> <th>값의 소유자</th> <th>리렌더링</th> <th>실시간 검증</th> <th>대표 사용처</th> </tr> </thead> <tbody> <tr> <td>제어 컴포넌트</td> <td>React state</td> <td>매 입력마다 발생</td> <td>가능</td> <td>검증/포맷팅 필요한 일반 폼</td> </tr> <tr> <td>비제어 컴포넌트</td> <td>DOM 자체</td> <td>발생 안 함</td> <td>어려움(ref로 수동 읽기)</td> <td>단순 폼, 파일 인풋, 대형 폼</td> </tr> </tbody> </table> <h3 id="typescript--">TypeScript 프로젝트에서의 참고</h3> <p>제어 컴포넌트는 <code class="language-plaintext highlighter-rouge">useState&lt;string&gt;("")</code>처럼 제네릭을 명시해두면 <code class="language-plaintext highlighter-rouge">onChange</code> 핸들러의 <code class="language-plaintext highlighter-rouge">e.target.value</code>가 항상 <code class="language-plaintext highlighter-rouge">string</code>으로 추론되어 타입 불일치가 잘 안 생긴다. 비제어 컴포넌트는 <code class="language-plaintext highlighter-rouge">useRef&lt;HTMLInputElement&gt;(null)</code> 타입을 정확히 잡아야 <code class="language-plaintext highlighter-rouge">inputRef.current.value</code> 접근 시 <code class="language-plaintext highlighter-rouge">current</code>가 <code class="language-plaintext highlighter-rouge">null</code>일 수 있다는 걸 컴파일러가 강제로 체크해주니, <code class="language-plaintext highlighter-rouge">inputRef.current?.value</code> 형태의 옵셔널 체이닝을 습관화하는 게 좋다. <code class="language-plaintext highlighter-rouge">react-hook-form</code> + TS 조합에서는 <code class="language-plaintext highlighter-rouge">register</code>가 반환하는 타입이 곧 비제어 방식 ref 바인딩이라는 걸 알면, “왜 onChange를 직접 안 쓰는데도 값이 잡히지”라는 의문이 풀린다.</p> </div> </div> </article> </div> </div> <div class="col-sm-3"> <nav id="toc-sidebar" class="sticky-top toc toc-sidebar" aria-label="Table of contents" data-toc-collapse="expanded" data-toc-collapse-depth=""></nav> </div> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 원준 서. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>. Photos from <a href="https://unsplash.com" target="_blank" rel="external nofollow noopener">Unsplash</a>. </div> </footer> <script>
+  window.alFolio = {
+    compatBootstrap: false
+  };
+</script> <script src="/assets/js/nav-toggle.js?v=141bd79a73ebc0f0b6ea58e440ae79fc"></script> <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script> <script defer src="/assets/js/masonry.js?v=e49affc7bd2646f6acdad1dbe02c2359" type="text/javascript"></script> <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI=" crossorigin="anonymous"></script> <script src="/assets/al_math/js/mathjax-setup.js"></script> <script defer src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6" crossorigin="anonymous"></script> <script src="/assets/js/tooltips-setup.js?v=fe487e99db6c43751e6e7bdb2d6a0611"></script> <script defer src="https://cdn.jsdelivr.net/npm/tocbot@4.36.4/dist/tocbot.min.js" integrity="sha256-lo/r+jQ81wWrxdIiiiEEd538z4+dTJTt+leOuAS7GCw=" crossorigin="anonymous"></script> <script src="/assets/js/no_defer.js?v=53b1b1a645525975c963ce8bf8bfefcf"></script> <script defer src="/assets/js/common.js?v=87baac90f765f2f3362dcf6aaf312a8a"></script> <script defer src="/assets/js/copy_code.js?v=c8a01c11a92744d44b093fc3bda915df" type="text/javascript"></script> <script defer src="/assets/js/jupyter_new_tab.js?v=896d254890d9b47f0281f63bfccf0dee"></script> <script async src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script> <script async src="https://badge.dimensions.ai/badge.js"></script> <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script> <script defer src="/assets/al_img_tools/js/zoom.js"></script> <script defer src="/assets/js/progress-bar.js?v=499464c5c63ced6cf7ad62509f1e2610" type="text/javascript"></script> <script src="https://cdn.jsdelivr.net/npm/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js" integrity="sha256-uMJJ3EoTyfRBoTbR+lrfu1uRQ87RZG8AR3cVNuQVeFg=" crossorigin="anonymous"></script> <script>
+    addBackToTop();
+  </script> <script type="module" src="/assets/al_search/js/search/ninja-keys.min.js"></script> <ninja-keys hidebreadcrumbs noautoloadmdicons placeholder="Type to start searching"></ninja-keys> <script src="/assets/al_search/js/search-setup.js"></script> <script>
+// get the ninja-keys element
+const ninja = document.querySelector('ninja-keys');
+
+// add the home and posts menu items
+ninja.data = [{
+    id: "nav-about",
+    title: "about",
+    section: "Navigation",
+    handler: () => {
+      window.location.href = "/";
+    },
+  },{id: "nav-blog",
+          title: "blog",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/blog/";
+          },
+        },{id: "nav-daily",
+          title: "daily",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/news/";
+          },
+        },{id: "nav-projects",
+          title: "projects",
+          description: "실무, 개인 프로젝트",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/projects/";
+          },
+        },{id: "nav-cv",
+          title: "CV",
+          description: "This is a description of the page. You can modify it in &#39;_pages/cv.md&#39;. You can also change or remove the top pdf download button.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/cv/";
+          },
+        },{id: "post-omdb-movie-app에서-생각해봐야할-것들-2-llm-응답을-ui-로직에-연결하기-편",
+        
+          title: "omdb-movie-app에서 생각해봐야할 것들 (2) — LLM 응답을 UI 로직에 연결하기 편",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/02-llm-output-format/";
+          
+        },
+      },{id: "post-omdb-movie-app에서-생각해봐야할-것들-1-프레임워크-없이-spa-만들기-편",
+        
+          title: "omdb-movie-app에서 생각해봐야할 것들 (1) — 프레임워크 없이 SPA 만들기 편",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/01-vanilla-spa-core/";
+          
+        },
+      },{id: "post-ipad-homepage-프로젝트에서-생각해봐야할-것들-2-푸터-아코디언-편",
+        
+          title: "iPad Homepage 프로젝트에서 생각해봐야할 것들 (2) — 푸터 아코디언 편",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/accordion/";
+          
+        },
+      },{id: "post-ipad-homepage-프로젝트에서-생각해봐야할-5가지-1",
+        
+          title: "iPad Homepage 프로젝트에서 생각해봐야할 5가지 (1)",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/01-post/";
+          
+        },
+      },{id: "post-css만으로-패럴랙스-배경-만들기",
+        
+          title: "CSS만으로 패럴랙스 배경 만들기",
+        
+        description: "background-attachment fixed 파헤치기",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/parallax-background/";
+          
+        },
+      },{id: "post-커밋-메시지-컨벤션-가이드",
+        
+          title: "커밋 메시지 컨벤션 가이드",
+        
+        description: "용도별로 정리한 커밋 메시지 타입과 실전 팁",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/conventional-commits/";
+          
+        },
+      },{id: "books-the-godfather",
+          title: 'The Godfather',
+          description: "",
+          section: "Books",handler: () => {
+              window.location.href = "/books/the_godfather/";
+            },},{id: "news-2026-07-02-01-daily",
+          title: '2026-07-02-01 Daily',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/2026-07-02-01-daily/";
+            },},{id: "news-2026-07-06-01-daily",
+          title: '2026-07-06-01 Daily',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/2026-07-06-01-daily/";
+            },},{id: "news-2026-07-07-01-daily",
+          title: '2026-07-07-01 Daily',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/2026-07-07-01-daily/";
+            },},{id: "news-2026-07-07-02-daily",
+          title: '2026-07-07-02 Daily',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/2026-07-07-02-daily/";
+            },},{id: "news-2026-07-07-03-daily",
+          title: '2026-07-07-03 Daily',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/2026-07-07-03-daily/";
+            },},{id: "news-2026-07-10-01-daily",
+          title: '2026-07-10-01 Daily',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/2026-07-10-01-daily/";
+            },},{id: "news-2026-08-03-01-daily",
+          title: '2026-08-03-01 Daily',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/2026-08-03-01-daily/";
+            },},{id: "news-2026-08-03-02-daily",
+          title: '2026-08-03-02 Daily',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/2026-08-03-02-daily/";
+            },},{id: "news-2026-08-03-03-daily",
+          title: '2026-08-03-03 Daily',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/2026-08-03-03-daily/";
+            },},{id: "news-2026-08-03-04-daily",
+          title: '2026-08-03-04 Daily',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/2026-08-03-04-daily/";
+            },},{id: "news-2026-08-03-05-daily",
+          title: '2026-08-03-05 Daily',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/2026-08-03-05-daily/";
+            },},{id: "news-2026-08-03-06-daily",
+          title: '2026-08-03-06 Daily',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/2026-08-03-06-daily/";
+            },},{id: "projects-starbucks-homepage",
+          title: 'starbucks-homepage',
+          description: "스타벅스 코리아 공식 홈페이지 UI/인터랙션을 재현한 정적 프론트엔드 클론 프로젝트",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/1_project/";
+            },},{id: "projects-ipad-homepage",
+          title: 'ipad-homepage',
+          description: "Apple Korea 공식 홈페이지의 iPad 10.2 제품 소개 페이지를 그대로 재현한 반응형 프론트엔드 클론 프로젝트",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/2_project/";
+            },},{id: "projects-omdb-movie-app",
+          title: 'omdb-movie-app',
+          description: "프레임워크 없이 TypeScript로 직접 구현한 SPA 코어(Component/Store/Router) 기반 영화 검색 &amp; OpenAI 챗봇 추천 서비스",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/3_project/";
+            },},{id: "teachings-data-science-fundamentals",
+          title: 'Data Science Fundamentals',
+          description: "This course covers the foundational aspects of data science, including data collection, cleaning, analysis, and visualization. Students will learn practical skills for working with real-world datasets.",
+          section: "Teachings",handler: () => {
+              window.location.href = "/teachings/data-science-fundamentals/";
+            },},{id: "teachings-introduction-to-machine-learning",
+          title: 'Introduction to Machine Learning',
+          description: "This course provides an introduction to machine learning concepts, algorithms, and applications. Students will learn about supervised and unsupervised learning, model evaluation, and practical implementations.",
+          section: "Teachings",handler: () => {
+              window.location.href = "/teachings/introduction-to-machine-learning/";
+            },},{
+        id: 'social-cv',
+        title: 'CV',
+        section: 'Socials',
+        handler: () => {
+          window.open("/assets/pdf/example_pdf.pdf", "_blank");
+        },
+      },{
+        id: 'social-email',
+        title: 'email',
+        section: 'Socials',
+        handler: () => {
+          window.open("mailto:%79%6F%75@%65%78%61%6D%70%6C%65.%63%6F%6D", "_blank");
+        },
+      },{
+        id: 'social-inspire',
+        title: 'Inspire HEP',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://inspirehep.net/authors/1010907", "_blank");
+        },
+      },{
+        id: 'social-rss',
+        title: 'RSS Feed',
+        section: 'Socials',
+        handler: () => {
+          window.open("/feed.xml", "_blank");
+        },
+      },{
+        id: 'social-scholar',
+        title: 'Google Scholar',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://scholar.google.com/citations?user=qc6CJjYAAAAJ", "_blank");
+        },
+      },{
+        id: 'social-custom_social',
+        title: 'Custom_social',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://www.alberteinstein.com/", "_blank");
+        },
+      },{
+      id: 'light-theme',
+      title: 'Change theme to light',
+      description: 'Change the theme of the site to Light',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("light");
+      },
+    },
+    {
+      id: 'dark-theme',
+      title: 'Change theme to dark',
+      description: 'Change the theme of the site to Dark',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("dark");
+      },
+    },
+    {
+      id: 'system-theme',
+      title: 'Use system default theme',
+      description: 'Change the theme of the site to System Default',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("system");
+      },
+    },];
+
+</script> <script src="/assets/al_search/js/shortcut-key.js"></script> </body> </html>

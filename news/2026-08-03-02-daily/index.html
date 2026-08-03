@@ -1,0 +1,325 @@
+<!DOCTYPE html> <html lang="ko"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title> 2026-08-03-02 Daily | WonJun's Blog </title> <meta name="author" content="원준 서"> <meta name="description" content="A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design. "> <meta name="keywords" content="jekyll, jekyll-theme, academic-website, portfolio-website"> <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:; media-src 'self' https:; frame-src 'self' https:; connect-src 'self' https:;"> <style>
+  :root {
+    --max-content-width: 930px;
+  }
+</style> <link rel="stylesheet" href="/assets/css/tailwind.css?v=50c64c15cbb9fd1ce6056fdb8bcb4b62"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tocbot@4.36.4/dist/tocbot.css" integrity="sha256-zTN0r+0OKaIv2xqeNNIYxNk0pWJ6+IqPGc1iDgVzWF0=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css" integrity="sha256-MVopmdyC2tYTiJ8wlktf0uh0v4NgT+vNdyVFepi7Q0c=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.5/css/academicons.min.css" integrity="sha256-SzrCOBJbGVFMahewkgjwnApaV2+av1DwMAA+/QGLyZw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/scholar-icons@1.0.3/css/scholar-icons.css" integrity="sha256-VY3hHVj/hNX3fYG6wtbA6TcKJQl7+FthzGSyIB64klY=" crossorigin="anonymous"> <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&amp;display=swap"> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?v=591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light"> <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%E2%9A%9B%EF%B8%8F&lt;/text&gt;&lt;/svg&gt;"> <link rel="stylesheet" href="/assets/css/main.css?v=f0b101217084a90093badfe99ff9a7d1"> <link rel="canonical" href="https://wonjun-s-dev.github.io/news/2026-08-03-02-daily/"> <script src="/assets/js/theme.js?v=7af685e2ba20b37fef545c97b8064050"></script> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css?v=5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark"> <script>
+    initTheme();
+  </script> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> WonJun's Blog </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">about </a> </li> <li class="nav-item "> <a class="nav-link" href="/blog/">blog </a> </li> <li class="nav-item active"> <a class="nav-link" href="/news/">daily <span class="sr-only">(current)</span> </a> </li> <li class="nav-item "> <a class="nav-link" href="/projects/">projects </a> </li> <li class="nav-item "> <a class="nav-link" href="/cv/">CV </a> </li> <li class="nav-item"> <button id="search-toggle" type="button" title="Search" aria-label="Open search"> <span class="nav-link">ctrl k <i class="fa-solid fa-magnifying-glass"></i></span> </button> </li> <li class="toggle-container"> <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"> <i class="fa-half-sun-moon" id="light-toggle-system"></i> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="row"> <div class="col-sm-9"> <div class="post"> <header class="post-header"> <h1 class="post-title">2026-08-03-02 Daily</h1> <p class="post-meta"> Created on August 03, 2026 </p> <p class="post-tags"> <i class="fa-solid fa-calendar fa-sm"></i> 2026   ·   <i class="fa-solid fa-hashtag fa-sm"></i> TypeScript </p> </header> <article class="post-content"> <div id="markdown-content"> <div style="word-break: keep-all; overflow-wrap: break-word;"> <h2 id="section">1. “어차피 런타임엔 다 지워지는데” 라는 질문</h2> <p>TypeScript는 컴파일하면 타입이 전부 지워지고 결국 JS가 실행된다. 그럼 “런타임 버그를 막아주는 것도 아닌데 왜 굳이 써야 하나”라는 질문이 나올 수 있다. 답은 “런타임 이전, 즉 개발 시점에 잡을 수 있는 오류의 범위가 완전히 다르다”는 것이다. 오늘은 그 이유를 실제 코드 예시로 정리했다.</p> <hr> <h2 id="vs---">2. 컴파일 타임에 잡히는 것 vs 안 잡히는 것</h2> <div class="language-js highlighter-rouge"> <div class="highlight"><pre class="highlight"><code><span class="c1">// JS</span>
+<span class="kd">function</span> <span class="nf">getUser</span><span class="p">(</span><span class="nx">id</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nf">fetch</span><span class="p">(</span><span class="s2">`/api/users/</span><span class="p">${</span><span class="nx">id</span><span class="p">}</span><span class="s2">`</span><span class="p">).</span><span class="nf">then</span><span class="p">(</span><span class="nx">res</span> <span class="o">=&gt;</span> <span class="nx">res</span><span class="p">.</span><span class="nf">json</span><span class="p">());</span>
+<span class="p">}</span>
+
+<span class="nf">getUser</span><span class="p">(</span><span class="dl">"</span><span class="s2">abc</span><span class="dl">"</span><span class="p">).</span><span class="nf">then</span><span class="p">(</span><span class="nx">user</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">user</span><span class="p">.</span><span class="nx">name</span><span class="p">.</span><span class="nf">toUpperCase</span><span class="p">());</span> <span class="c1">// user가 null이면? name이 undefined면?</span>
+<span class="p">});</span>
+</code></pre></div> </div> <p>JS에서는 <code class="language-plaintext highlighter-rouge">user</code>가 <code class="language-plaintext highlighter-rouge">null</code>이든, <code class="language-plaintext highlighter-rouge">name</code>이 없든 실행 전까지 아무것도 알 수 없다. 배포 후 프로덕션에서 에러 로그를 보고서야 안다.</p> <div class="language-ts highlighter-rouge"> <div class="highlight"><pre class="highlight"><code><span class="c1">// TS</span>
+<span class="kr">interface</span> <span class="nx">User</span> <span class="p">{</span>
+  <span class="nl">id</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">name</span><span class="p">:</span> <span class="kr">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">async</span> <span class="kd">function</span> <span class="nf">getUser</span><span class="p">(</span><span class="nx">id</span><span class="p">:</span> <span class="kr">string</span><span class="p">):</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">User</span><span class="o">&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">res</span> <span class="o">=</span> <span class="k">await</span> <span class="nf">fetch</span><span class="p">(</span><span class="s2">`/api/users/</span><span class="p">${</span><span class="nx">id</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
+  <span class="k">return</span> <span class="nx">res</span><span class="p">.</span><span class="nf">json</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">user</span> <span class="o">=</span> <span class="k">await</span> <span class="nf">getUser</span><span class="p">(</span><span class="dl">"</span><span class="s2">abc</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">user</span><span class="p">.</span><span class="nx">name</span><span class="p">.</span><span class="nf">toUpperCase</span><span class="p">());</span>
+<span class="c1">// Error: Object is possibly 'null'.</span>
+</code></pre></div> </div> <p><code class="language-plaintext highlighter-rouge">name</code>이 <code class="language-plaintext highlighter-rouge">string | null</code>이라고 명시하는 순간, <code class="language-plaintext highlighter-rouge">.toUpperCase()</code>를 호출하려는 시점에 컴파일러가 “null일 수도 있는데 처리 안 했다”고 즉시 알려준다. 이 오류는 <strong>코드를 실행하지 않아도</strong>, 에디터에서 타이핑하는 즉시 잡힌다.</p> <hr> <h2 id="section-1">3. 리팩터링 안전망</h2> <div class="language-ts highlighter-rouge"> <div class="highlight"><pre class="highlight"><code><span class="kr">interface</span> <span class="nx">Order</span> <span class="p">{</span>
+  <span class="nl">id</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">totalPrice</span><span class="p">:</span> <span class="kr">number</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nf">formatOrder</span><span class="p">(</span><span class="nx">order</span><span class="p">:</span> <span class="nx">Order</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="s2">`#</span><span class="p">${</span><span class="nx">order</span><span class="p">.</span><span class="nx">id</span><span class="p">}</span><span class="s2">: $</span><span class="p">${</span><span class="nx">order</span><span class="p">.</span><span class="nx">totalPrice</span><span class="p">}</span><span class="s2">`</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div> </div> <p>여기서 <code class="language-plaintext highlighter-rouge">totalPrice</code>를 <code class="language-plaintext highlighter-rouge">total</code>로 이름을 바꾼다고 하자. JS였다면 <code class="language-plaintext highlighter-rouge">formatOrder</code> 안의 <code class="language-plaintext highlighter-rouge">order.totalPrice</code>는 그냥 <code class="language-plaintext highlighter-rouge">undefined</code>가 되고, <code class="language-plaintext highlighter-rouge">$undefined</code>라는 문자열이 조용히 만들어진다. 프로덕션에 배포되고 나서야 발견될 수도 있다.</p> <p>TS에서는 <code class="language-plaintext highlighter-rouge">Order</code> 인터페이스의 필드명을 바꾸는 순간, 이 필드를 참조하는 모든 곳에서 컴파일 에러가 뜬다. 에디터가 “여기, 여기, 여기 다 고쳐야 해”라고 파일 몇 개, 몇 번째 줄인지까지 알려준다. 이게 흔히 말하는 “타입이 곧 리팩터링 안전망”이라는 것의 실체다. 사람이 grep으로 찾아 고치는 게 아니라 컴파일러가 빠짐없이 찾아준다.</p> <hr> <h2 id="section-2">4. 협업에서의 이점 — 타입이 곧 문서</h2> <div class="language-ts highlighter-rouge"> <div class="highlight"><pre class="highlight"><code><span class="kr">interface</span> <span class="nx">FetchUsersOptions</span> <span class="p">{</span>
+  <span class="nl">page</span><span class="p">:</span> <span class="kr">number</span><span class="p">;</span>
+  <span class="nl">pageSize</span><span class="p">:</span> <span class="kr">number</span><span class="p">;</span>
+  <span class="nl">sortBy</span><span class="p">?:</span> <span class="dl">"</span><span class="s2">name</span><span class="dl">"</span> <span class="o">|</span> <span class="dl">"</span><span class="s2">createdAt</span><span class="dl">"</span><span class="p">;</span>
+  <span class="nl">order</span><span class="p">?:</span> <span class="dl">"</span><span class="s2">asc</span><span class="dl">"</span> <span class="o">|</span> <span class="dl">"</span><span class="s2">desc</span><span class="dl">"</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nf">fetchUsers</span><span class="p">(</span><span class="nx">options</span><span class="p">:</span> <span class="nx">FetchUsersOptions</span><span class="p">):</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">User</span><span class="p">[]</span><span class="o">&gt;</span> <span class="p">{</span> <span class="cm">/* ... */</span> <span class="p">}</span>
+</code></pre></div> </div> <p>이 함수를 처음 보는 팀원은 함수 본문을 읽지 않고도 시그니처만 보고 “<code class="language-plaintext highlighter-rouge">sortBy</code>는 <code class="language-plaintext highlighter-rouge">name</code> 아니면 <code class="language-plaintext highlighter-rouge">createdAt</code>만 가능하구나”, “<code class="language-plaintext highlighter-rouge">page</code>는 필수, <code class="language-plaintext highlighter-rouge">sortBy</code>는 선택”이라는 걸 즉시 안다. JS였다면 JSDoc 주석에 의존하거나, 함수 내부 로직을 직접 읽어야 알 수 있었을 정보다. 주석은 코드가 바뀌어도 갱신을 안 하면 거짓말을 하게 되지만, 타입은 코드가 바뀌면 컴파일이 깨지기 때문에 <strong>거짓말을 할 수 없는 문서</strong>다.</p> <hr> <h2 id="section-3">5. 에디터 지원 — 자동완성이 곧 생산성</h2> <p>타입 정보가 있으면 에디터(VSCode 등)가 정확한 자동완성을 제공한다. <code class="language-plaintext highlighter-rouge">options.</code> 을 입력하는 순간 <code class="language-plaintext highlighter-rouge">page</code>, <code class="language-plaintext highlighter-rouge">pageSize</code>, <code class="language-plaintext highlighter-rouge">sortBy</code>, <code class="language-plaintext highlighter-rouge">order</code>만 뜨고 오타가 나면 즉시 빨간 줄이 그어진다. JS에서는 객체 구조를 추론할 방법이 없어서 자동완성이 부정확하거나 아예 안 뜬다. 이 차이는 코드를 “얼마나 빨리 정확하게” 짜는지에 직접적인 영향을 준다.</p> <hr> <h2 id="section-4">6. 흔한 반박과 그에 대한 답</h2> <h3 id="any-----">“any 쓰면 결국 똑같은 거 아닌가”</h3> <div class="language-ts highlighter-rouge"> <div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">processData</span><span class="p">(</span><span class="nx">data</span><span class="p">:</span> <span class="kr">any</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">data</span><span class="p">.</span><span class="nx">value</span><span class="p">.</span><span class="nf">toUpperCase</span><span class="p">();</span> <span class="c1">// 타입 체크 무력화</span>
+<span class="p">}</span>
+</code></pre></div> </div> <p>맞다. <code class="language-plaintext highlighter-rouge">any</code>를 남발하면 TS의 이점이 전부 사라진다. 하지만 이건 TS의 한계가 아니라 잘못된 사용이다. <code class="language-plaintext highlighter-rouge">any</code> 대신 <code class="language-plaintext highlighter-rouge">unknown</code>을 쓰고 타입 가드로 좁혀나가면, “모르는 타입”을 다루면서도 안전성을 유지할 수 있다.</p> <div class="language-ts highlighter-rouge"> <div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">processData</span><span class="p">(</span><span class="nx">data</span><span class="p">:</span> <span class="nx">unknown</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if </span><span class="p">(</span><span class="k">typeof</span> <span class="nx">data</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">object</span><span class="dl">"</span> <span class="o">&amp;&amp;</span> <span class="nx">data</span> <span class="o">!==</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="dl">"</span><span class="s2">value</span><span class="dl">"</span> <span class="k">in</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// 여기서부터 안전하게 좁혀진 타입으로 접근</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div> </div> <h3 id="section-5">“타입 정의하는 시간이 아깝다”</h3> <p>초기 개발 속도는 JS가 약간 빠를 수 있다. 하지만 프로젝트가 커지고 파일 수가 늘어날수록, 타입 없이 리팩터링/디버깅에 드는 시간이 기하급수적으로 늘어난다. 손익분기점은 생각보다 빨리 온다 — 파일이 10개를 넘어가고 팀원이 2명 이상이 되는 순간부터다.</p> <hr> <h2 id="section-6">정리 표</h2> <table> <thead> <tr> <th>항목</th> <th>JS</th> <th>TS</th> </tr> </thead> <tbody> <tr> <td>null/undefined 접근 오류</td> <td>런타임에 발견</td> <td>컴파일(타이핑) 시점에 발견</td> </tr> <tr> <td>필드명 변경 시 영향 범위</td> <td>수동 grep, 누락 위험</td> <td>컴파일러가 전부 찾아줌</td> </tr> <tr> <td>함수 시그니처 이해</td> <td>본문/주석 의존</td> <td>타입 자체가 문서</td> </tr> <tr> <td>에디터 자동완성</td> <td>부정확/미제공</td> <td>정확한 속성/값 목록 제공</td> </tr> <tr> <td>any 남용 시</td> <td>-</td> <td>JS와 사실상 동일 (unknown+가드로 대체 권장)</td> </tr> </tbody> </table> <h3 id="typescript--">TypeScript 프로젝트에서의 참고</h3> <p>우리 팀 프로젝트처럼 프론트-백엔드를 모두 TS로 작성하면 얻는 추가 이점이 하나 더 있다. API 응답 타입을 백엔드와 공유(모노레포의 공용 패키지, 또는 <code class="language-plaintext highlighter-rouge">zod</code>/<code class="language-plaintext highlighter-rouge">tRPC</code>로 스키마를 한 곳에서 관리)하면, 백엔드가 필드를 바꿨을 때 프론트 컴파일이 즉시 깨져서 “API 스펙 불일치”를 배포 전에 잡을 수 있다. REST + 수동 타입 유지보수보다 <code class="language-plaintext highlighter-rouge">tRPC</code>나 OpenAPI 코드 생성기를 붙여 타입을 자동 동기화하는 방향이 장기적으로 훨씬 안전하다.</p> </div> </div> </article> </div> </div> <div class="col-sm-3"> <nav id="toc-sidebar" class="sticky-top toc toc-sidebar" aria-label="Table of contents" data-toc-collapse="expanded" data-toc-collapse-depth=""></nav> </div> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 원준 서. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>. Photos from <a href="https://unsplash.com" target="_blank" rel="external nofollow noopener">Unsplash</a>. </div> </footer> <script>
+  window.alFolio = {
+    compatBootstrap: false
+  };
+</script> <script src="/assets/js/nav-toggle.js?v=141bd79a73ebc0f0b6ea58e440ae79fc"></script> <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script> <script defer src="/assets/js/masonry.js?v=e49affc7bd2646f6acdad1dbe02c2359" type="text/javascript"></script> <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI=" crossorigin="anonymous"></script> <script src="/assets/al_math/js/mathjax-setup.js"></script> <script defer src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6" crossorigin="anonymous"></script> <script src="/assets/js/tooltips-setup.js?v=fe487e99db6c43751e6e7bdb2d6a0611"></script> <script defer src="https://cdn.jsdelivr.net/npm/tocbot@4.36.4/dist/tocbot.min.js" integrity="sha256-lo/r+jQ81wWrxdIiiiEEd538z4+dTJTt+leOuAS7GCw=" crossorigin="anonymous"></script> <script src="/assets/js/no_defer.js?v=53b1b1a645525975c963ce8bf8bfefcf"></script> <script defer src="/assets/js/common.js?v=87baac90f765f2f3362dcf6aaf312a8a"></script> <script defer src="/assets/js/copy_code.js?v=c8a01c11a92744d44b093fc3bda915df" type="text/javascript"></script> <script defer src="/assets/js/jupyter_new_tab.js?v=896d254890d9b47f0281f63bfccf0dee"></script> <script async src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script> <script async src="https://badge.dimensions.ai/badge.js"></script> <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script> <script defer src="/assets/al_img_tools/js/zoom.js"></script> <script defer src="/assets/js/progress-bar.js?v=499464c5c63ced6cf7ad62509f1e2610" type="text/javascript"></script> <script src="https://cdn.jsdelivr.net/npm/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js" integrity="sha256-uMJJ3EoTyfRBoTbR+lrfu1uRQ87RZG8AR3cVNuQVeFg=" crossorigin="anonymous"></script> <script>
+    addBackToTop();
+  </script> <script type="module" src="/assets/al_search/js/search/ninja-keys.min.js"></script> <ninja-keys hidebreadcrumbs noautoloadmdicons placeholder="Type to start searching"></ninja-keys> <script src="/assets/al_search/js/search-setup.js"></script> <script>
+// get the ninja-keys element
+const ninja = document.querySelector('ninja-keys');
+
+// add the home and posts menu items
+ninja.data = [{
+    id: "nav-about",
+    title: "about",
+    section: "Navigation",
+    handler: () => {
+      window.location.href = "/";
+    },
+  },{id: "nav-blog",
+          title: "blog",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/blog/";
+          },
+        },{id: "nav-daily",
+          title: "daily",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/news/";
+          },
+        },{id: "nav-projects",
+          title: "projects",
+          description: "실무, 개인 프로젝트",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/projects/";
+          },
+        },{id: "nav-cv",
+          title: "CV",
+          description: "This is a description of the page. You can modify it in &#39;_pages/cv.md&#39;. You can also change or remove the top pdf download button.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/cv/";
+          },
+        },{id: "post-omdb-movie-app에서-생각해봐야할-것들-2-llm-응답을-ui-로직에-연결하기-편",
+        
+          title: "omdb-movie-app에서 생각해봐야할 것들 (2) — LLM 응답을 UI 로직에 연결하기 편",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/02-llm-output-format/";
+          
+        },
+      },{id: "post-omdb-movie-app에서-생각해봐야할-것들-1-프레임워크-없이-spa-만들기-편",
+        
+          title: "omdb-movie-app에서 생각해봐야할 것들 (1) — 프레임워크 없이 SPA 만들기 편",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/01-vanilla-spa-core/";
+          
+        },
+      },{id: "post-ipad-homepage-프로젝트에서-생각해봐야할-것들-2-푸터-아코디언-편",
+        
+          title: "iPad Homepage 프로젝트에서 생각해봐야할 것들 (2) — 푸터 아코디언 편",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/accordion/";
+          
+        },
+      },{id: "post-ipad-homepage-프로젝트에서-생각해봐야할-5가지-1",
+        
+          title: "iPad Homepage 프로젝트에서 생각해봐야할 5가지 (1)",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/01-post/";
+          
+        },
+      },{id: "post-css만으로-패럴랙스-배경-만들기",
+        
+          title: "CSS만으로 패럴랙스 배경 만들기",
+        
+        description: "background-attachment fixed 파헤치기",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/parallax-background/";
+          
+        },
+      },{id: "post-커밋-메시지-컨벤션-가이드",
+        
+          title: "커밋 메시지 컨벤션 가이드",
+        
+        description: "용도별로 정리한 커밋 메시지 타입과 실전 팁",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/conventional-commits/";
+          
+        },
+      },{id: "books-the-godfather",
+          title: 'The Godfather',
+          description: "",
+          section: "Books",handler: () => {
+              window.location.href = "/books/the_godfather/";
+            },},{id: "news-2026-07-02-01-daily",
+          title: '2026-07-02-01 Daily',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/2026-07-02-01-daily/";
+            },},{id: "news-2026-07-06-01-daily",
+          title: '2026-07-06-01 Daily',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/2026-07-06-01-daily/";
+            },},{id: "news-2026-07-07-01-daily",
+          title: '2026-07-07-01 Daily',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/2026-07-07-01-daily/";
+            },},{id: "news-2026-07-07-02-daily",
+          title: '2026-07-07-02 Daily',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/2026-07-07-02-daily/";
+            },},{id: "news-2026-07-07-03-daily",
+          title: '2026-07-07-03 Daily',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/2026-07-07-03-daily/";
+            },},{id: "news-2026-07-10-01-daily",
+          title: '2026-07-10-01 Daily',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/2026-07-10-01-daily/";
+            },},{id: "news-2026-08-03-01-daily",
+          title: '2026-08-03-01 Daily',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/2026-08-03-01-daily/";
+            },},{id: "news-2026-08-03-02-daily",
+          title: '2026-08-03-02 Daily',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/2026-08-03-02-daily/";
+            },},{id: "news-2026-08-03-03-daily",
+          title: '2026-08-03-03 Daily',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/2026-08-03-03-daily/";
+            },},{id: "news-2026-08-03-04-daily",
+          title: '2026-08-03-04 Daily',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/2026-08-03-04-daily/";
+            },},{id: "news-2026-08-03-05-daily",
+          title: '2026-08-03-05 Daily',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/2026-08-03-05-daily/";
+            },},{id: "news-2026-08-03-06-daily",
+          title: '2026-08-03-06 Daily',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/2026-08-03-06-daily/";
+            },},{id: "projects-starbucks-homepage",
+          title: 'starbucks-homepage',
+          description: "스타벅스 코리아 공식 홈페이지 UI/인터랙션을 재현한 정적 프론트엔드 클론 프로젝트",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/1_project/";
+            },},{id: "projects-ipad-homepage",
+          title: 'ipad-homepage',
+          description: "Apple Korea 공식 홈페이지의 iPad 10.2 제품 소개 페이지를 그대로 재현한 반응형 프론트엔드 클론 프로젝트",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/2_project/";
+            },},{id: "projects-omdb-movie-app",
+          title: 'omdb-movie-app',
+          description: "프레임워크 없이 TypeScript로 직접 구현한 SPA 코어(Component/Store/Router) 기반 영화 검색 &amp; OpenAI 챗봇 추천 서비스",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/3_project/";
+            },},{id: "teachings-data-science-fundamentals",
+          title: 'Data Science Fundamentals',
+          description: "This course covers the foundational aspects of data science, including data collection, cleaning, analysis, and visualization. Students will learn practical skills for working with real-world datasets.",
+          section: "Teachings",handler: () => {
+              window.location.href = "/teachings/data-science-fundamentals/";
+            },},{id: "teachings-introduction-to-machine-learning",
+          title: 'Introduction to Machine Learning',
+          description: "This course provides an introduction to machine learning concepts, algorithms, and applications. Students will learn about supervised and unsupervised learning, model evaluation, and practical implementations.",
+          section: "Teachings",handler: () => {
+              window.location.href = "/teachings/introduction-to-machine-learning/";
+            },},{
+        id: 'social-cv',
+        title: 'CV',
+        section: 'Socials',
+        handler: () => {
+          window.open("/assets/pdf/example_pdf.pdf", "_blank");
+        },
+      },{
+        id: 'social-email',
+        title: 'email',
+        section: 'Socials',
+        handler: () => {
+          window.open("mailto:%79%6F%75@%65%78%61%6D%70%6C%65.%63%6F%6D", "_blank");
+        },
+      },{
+        id: 'social-inspire',
+        title: 'Inspire HEP',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://inspirehep.net/authors/1010907", "_blank");
+        },
+      },{
+        id: 'social-rss',
+        title: 'RSS Feed',
+        section: 'Socials',
+        handler: () => {
+          window.open("/feed.xml", "_blank");
+        },
+      },{
+        id: 'social-scholar',
+        title: 'Google Scholar',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://scholar.google.com/citations?user=qc6CJjYAAAAJ", "_blank");
+        },
+      },{
+        id: 'social-custom_social',
+        title: 'Custom_social',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://www.alberteinstein.com/", "_blank");
+        },
+      },{
+      id: 'light-theme',
+      title: 'Change theme to light',
+      description: 'Change the theme of the site to Light',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("light");
+      },
+    },
+    {
+      id: 'dark-theme',
+      title: 'Change theme to dark',
+      description: 'Change the theme of the site to Dark',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("dark");
+      },
+    },
+    {
+      id: 'system-theme',
+      title: 'Use system default theme',
+      description: 'Change the theme of the site to System Default',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("system");
+      },
+    },];
+
+</script> <script src="/assets/al_search/js/shortcut-key.js"></script> </body> </html>
