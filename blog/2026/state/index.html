@@ -1,0 +1,413 @@
+<!DOCTYPE html> <html lang="ko"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title> 상태를 뭉뚱그리지 않기 — 앱 하나에 상태가 몇 종류나 섞여 있을까 | WonJun's Blog </title> <meta name="author" content="원준 서"> <meta name="description" content="A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design. "> <meta name="keywords" content="jekyll, jekyll-theme, academic-website, portfolio-website"> <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:; media-src 'self' https:; frame-src 'self' https:; connect-src 'self' https:;"> <style>
+  :root {
+    --max-content-width: 930px;
+  }
+</style> <link rel="stylesheet" href="/assets/css/tailwind.css?v=50c64c15cbb9fd1ce6056fdb8bcb4b62"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tocbot@4.36.4/dist/tocbot.css" integrity="sha256-zTN0r+0OKaIv2xqeNNIYxNk0pWJ6+IqPGc1iDgVzWF0=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css" integrity="sha256-MVopmdyC2tYTiJ8wlktf0uh0v4NgT+vNdyVFepi7Q0c=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.5/css/academicons.min.css" integrity="sha256-SzrCOBJbGVFMahewkgjwnApaV2+av1DwMAA+/QGLyZw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/scholar-icons@1.0.3/css/scholar-icons.css" integrity="sha256-VY3hHVj/hNX3fYG6wtbA6TcKJQl7+FthzGSyIB64klY=" crossorigin="anonymous"> <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&amp;display=swap"> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?v=591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light"> <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%E2%9A%9B%EF%B8%8F&lt;/text&gt;&lt;/svg&gt;"> <link rel="stylesheet" href="/assets/css/main.css?v=f0b101217084a90093badfe99ff9a7d1"> <link rel="canonical" href="https://wonjun-s-dev.github.io/blog/2026/state/"> <script src="/assets/js/theme.js?v=7af685e2ba20b37fef545c97b8064050"></script> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css?v=5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark"> <script>
+    initTheme();
+  </script> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> WonJun's Blog </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">about </a> </li> <li class="nav-item active"> <a class="nav-link" href="/blog/">blog </a> </li> <li class="nav-item "> <a class="nav-link" href="/news/">daily </a> </li> <li class="nav-item "> <a class="nav-link" href="/projects/">projects </a> </li> <li class="nav-item "> <a class="nav-link" href="/cv/">CV </a> </li> <li class="nav-item"> <button id="search-toggle" type="button" title="Search" aria-label="Open search"> <span class="nav-link">ctrl k <i class="fa-solid fa-magnifying-glass"></i></span> </button> </li> <li class="toggle-container"> <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"> <i class="fa-half-sun-moon" id="light-toggle-system"></i> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="row"> <div class="col-sm-9"> <div class="post"> <header class="post-header"> <h1 class="post-title">상태를 뭉뚱그리지 않기 — 앱 하나에 상태가 몇 종류나 섞여 있을까</h1> <p class="post-meta"> Created on August 05, 2026 </p> <p class="post-tags"> <a href="/blog/2026"> <i class="fa-solid fa-calendar fa-sm"></i> 2026 </a>   ·   <a href="/blog/tag/typescript"> <i class="fa-solid fa-hashtag fa-sm"></i> TypeScript</a>   <a href="/blog/tag/react"> <i class="fa-solid fa-hashtag fa-sm"></i> React</a>   <a href="/blog/tag/state-management"> <i class="fa-solid fa-hashtag fa-sm"></i> State Management</a>   <a href="/blog/tag/mobx"> <i class="fa-solid fa-hashtag fa-sm"></i> MobX</a>   <a href="/blog/tag/tanstack-query"> <i class="fa-solid fa-hashtag fa-sm"></i> TanStack Query</a>   <a href="/blog/tag/zustand"> <i class="fa-solid fa-hashtag fa-sm"></i> Zustand</a> </p> </header> <article class="post-content"> <div id="markdown-content"> <div style="word-break: keep-all; overflow-wrap: break-word;"> <p>“상태관리 라이브러리 뭐 쓸까”는 프론트엔드에서 제일 자주 나오는 질문이지만, 사실 이 질문 자체가 함정이다. 앱 안의 “상태”는 하나의 덩어리가 아니라 성격이 완전히 다른 여러 종류가 섞여 있고, 그걸 구분하지 않은 채 Redux든 MobX든 하나의 도구에 전부 밀어넣으면 캐싱·동기화·URL 연동 같은 걸 전부 직접 구현하게 된다. 이 글은 상태를 종류별로 쪼개고, 각 종류에 어떤 도구가 왜 어울리는지, 그리고 같은 기능을 여러 상태관리 스택(Redux Toolkit, RTK Query, TanStack Query, MobX, Zustand)으로 구현했을 때 코드가 어떻게 달라지는지를 설문 앱 예제로 정리한다.</p> <h2 id="section">1. “상태관리 뭐 쓸까”라는 질문이 틀린 이유</h2> <p>라이브러리를 고르기 전에 먼저 물어야 할 건 “이 값의 진실(source of truth)이 어디에 있는가”다. 이 기준 하나로 상태는 최소 일곱 갈래로 나뉜다.</p> <ol> <li>서버 상태 (Server State) — DB에 있는 데이터, fetch 필요</li> <li>전역 클라이언트 상태 (Global UI State) — 여러 컴포넌트가 공유하는 UI 값</li> <li>로컬 컴포넌트 상태 (Local State) — 그 컴포넌트 안에서만 의미 있는 값</li> <li>폼 상태 (Form State) — 입력값, 검증 에러, 제출 여부</li> <li>URL 상태 (URL State) — 쿼리스트링/경로에 들어있는 값</li> <li>영속 상태 (Persisted State) — 브라우저를 닫아도 유지돼야 하는 값</li> <li>낙관적 업데이트 (Optimistic State) — 서버 응답 전에 미리 반영하고 실패 시 롤백</li> </ol> <p>이 중 “상태관리 라이브러리”라는 이름으로 보통 떠올리는 Redux/MobX/Zustand는 사실 2번(전역 클라이언트 상태)만을 위한 도구다. 나머지는 각자 전용 도구가 따로 있고, 그 전용 도구를 안 쓰면 결국 그 라이브러리 위에 로딩·에러·재검증·URL 동기화를 직접 재구현하게 된다.</p> <h2 id="section-1">2. 판별 기준을 표로 정리하면</h2> <table> <thead> <tr> <th>질문</th> <th>Yes면</th> <th>No면</th> </tr> </thead> <tbody> <tr> <td>새로고침 후 서버에 다시 물어봐도 같은 값이 나오나</td> <td>서버 상태</td> <td>클라이언트 상태</td> </tr> <tr> <td>다른 사용자도 똑같이 볼 수 있는 값인가</td> <td>서버 상태</td> <td>클라이언트 상태</td> </tr> <tr> <td>“오래된 값”이라는 개념이 있어 재요청이 필요한가</td> <td>서버 상태</td> <td>클라이언트 상태</td> </tr> <tr> <td>링크로 공유되거나 뒤로가기와 연동돼야 하는가</td> <td>URL 상태</td> <td>그 외</td> </tr> <tr> <td>탭을 닫아도 유지돼야 하는가</td> <td>영속 상태</td> <td>휘발성 상태</td> </tr> </tbody> </table> <p>이 판별을 실제 설문 앱에 적용하면 다음과 같이 갈린다.</p> <table> <thead> <tr> <th>값</th> <th>종류</th> <th>이유</th> </tr> </thead> <tbody> <tr> <td>설문 목록, 설문 상세, 응답 통계</td> <td>서버 상태</td> <td>DB가 원본, 다른 사용자도 같은 값을 봄</td> </tr> <tr> <td>로그인한 사용자의 role</td> <td>서버 상태</td> <td>서버 세션이 원본</td> </tr> <tr> <td>수정 모달 열림 여부</td> <td>전역 클라이언트 상태</td> <td>화면을 벗어나면 의미 없음</td> </tr> <tr> <td>작성 중인 설문 응답 입력값</td> <td>폼 상태</td> <td>검증·제출과 강하게 결합</td> </tr> <tr> <td>목록 필터/정렬/페이지</td> <td>URL 상태</td> <td>링크 공유·새로고침 유지 필요</td> </tr> <tr> <td>다크모드 설정</td> <td>영속 상태</td> <td>탭을 닫아도 유지돼야 함</td> </tr> <tr> <td>좋아요/북마크 토글</td> <td>낙관적 업데이트</td> <td>응답 지연 없이 즉시 피드백 필요</td> </tr> </tbody> </table> <h2 id="section-2">3. 서버 상태를 전역 상태 도구에 직접 넣으면 뭐가 힘들어지는가</h2> <p>MobX로 서버 상태까지 관리하면 이런 코드가 나온다.</p> <div class="language-ts highlighter-rouge"> <div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">SurveyStore</span> <span class="p">{</span>
+  <span class="nl">items</span><span class="p">:</span> <span class="nx">Survey</span><span class="p">[]</span> <span class="o">=</span> <span class="p">[];</span>
+  <span class="nx">isLoading</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+  <span class="nl">error</span><span class="p">:</span> <span class="kr">string</span> <span class="o">|</span> <span class="kc">null</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+
+  <span class="nf">constructor</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nf">makeAutoObservable</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="p">{},</span> <span class="p">{</span> <span class="na">autoBind</span><span class="p">:</span> <span class="kc">true</span> <span class="p">});</span>
+  <span class="p">}</span>
+
+  <span class="k">async</span> <span class="nf">fetchSurveys</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">isLoading</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+    <span class="k">try</span> <span class="p">{</span>
+      <span class="kd">const</span> <span class="nx">res</span> <span class="o">=</span> <span class="k">await</span> <span class="nf">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">/api/surveys</span><span class="dl">'</span><span class="p">);</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">items</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">res</span><span class="p">.</span><span class="nf">json</span><span class="p">();</span>
+    <span class="p">}</span> <span class="k">catch </span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">error</span> <span class="o">=</span> <span class="nc">String</span><span class="p">(</span><span class="nx">e</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">finally</span> <span class="p">{</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">isLoading</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div> </div> <p>이 코드 자체는 문제없이 동작한다. 문제는 요구사항이 하나씩 늘어날 때다. “같은 데이터를 두 화면에서 동시에 요청하면 중복 fetch를 막아야 한다”, “5분이 지나면 백그라운드에서 자동으로 재검증해야 한다”, “다른 화면에서 설문을 수정하면 이 목록도 갱신돼야 한다” — 이런 요구가 하나씩 붙을 때마다 <code class="language-plaintext highlighter-rouge">isLoading</code>/<code class="language-plaintext highlighter-rouge">error</code>/<code class="language-plaintext highlighter-rouge">lastFetchedAt</code>/<code class="language-plaintext highlighter-rouge">isStale</code> 같은 필드와 그걸 다루는 로직을 계속 손으로 늘려야 한다. TanStack Query나 RTK Query는 이걸 이미 다 구현해둔 라이브러리라, 서버 상태에는 이쪽을 쓰는 게 실무 표준으로 자리잡은 이유가 여기에 있다.</p> <div class="language-ts highlighter-rouge"> <div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">useSurveys</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nf">useQuery</span><span class="p">({</span>
+    <span class="na">queryKey</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">surveys</span><span class="dl">'</span><span class="p">],</span>
+    <span class="na">queryFn</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nf">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">/api/surveys</span><span class="dl">'</span><span class="p">).</span><span class="nf">then</span><span class="p">((</span><span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">res</span><span class="p">.</span><span class="nf">json</span><span class="p">()),</span>
+    <span class="na">staleTime</span><span class="p">:</span> <span class="mi">5</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">,</span> <span class="c1">// 5분 후 자동 재검증</span>
+  <span class="p">});</span>
+<span class="p">}</span>
+</code></pre></div> </div> <p>같은 기능을 훨씬 적은 코드로, 그리고 캐시 무효화·중복 요청 방지까지 포함해서 얻는다.</p> <h2 id="section-3">4. 스택별로 같은 기능을 짜보면 코드량과 책임이 어떻게 갈리는가</h2> <p>설문 목록 조회 + 설문 생성 + 모달 상태라는 동일한 기능을, 서버 상태와 클라이언트 상태를 어떻게 나누는지 기준으로 다섯 스택에 대입해봤다.</p> <h3 id="redux-toolkit-rtk-rtk-query---">Redux Toolkit (RTK, RTK Query 없이 순수 버전)</h3> <div class="language-ts highlighter-rouge"> <div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="kd">const</span> <span class="nx">fetchSurveys</span> <span class="o">=</span> <span class="nf">createAsyncThunk</span><span class="p">(</span><span class="dl">'</span><span class="s1">surveys/fetch</span><span class="dl">'</span><span class="p">,</span> <span class="k">async </span><span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">res</span> <span class="o">=</span> <span class="k">await</span> <span class="nf">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">/api/surveys</span><span class="dl">'</span><span class="p">);</span>
+  <span class="k">return</span> <span class="nx">res</span><span class="p">.</span><span class="nf">json</span><span class="p">();</span>
+<span class="p">});</span>
+
+<span class="kd">const</span> <span class="nx">surveySlice</span> <span class="o">=</span> <span class="nf">createSlice</span><span class="p">({</span>
+  <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">surveys</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">initialState</span><span class="p">:</span> <span class="p">{</span> <span class="na">items</span><span class="p">:</span> <span class="p">[],</span> <span class="na">isLoading</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span> <span class="na">error</span><span class="p">:</span> <span class="kc">null</span> <span class="kd">as </span><span class="kr">string</span> <span class="o">|</span> <span class="kc">null</span> <span class="p">},</span>
+  <span class="na">reducers</span><span class="p">:</span> <span class="p">{},</span>
+  <span class="na">extraReducers</span><span class="p">:</span> <span class="p">(</span><span class="nx">builder</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">builder</span>
+      <span class="p">.</span><span class="nf">addCase</span><span class="p">(</span><span class="nx">fetchSurveys</span><span class="p">.</span><span class="nx">pending</span><span class="p">,</span> <span class="p">(</span><span class="nx">state</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="nx">state</span><span class="p">.</span><span class="nx">isLoading</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span> <span class="p">})</span>
+      <span class="p">.</span><span class="nf">addCase</span><span class="p">(</span><span class="nx">fetchSurveys</span><span class="p">.</span><span class="nx">fulfilled</span><span class="p">,</span> <span class="p">(</span><span class="nx">state</span><span class="p">,</span> <span class="nx">action</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="nx">state</span><span class="p">.</span><span class="nx">items</span> <span class="o">=</span> <span class="nx">action</span><span class="p">.</span><span class="nx">payload</span><span class="p">;</span>
+        <span class="nx">state</span><span class="p">.</span><span class="nx">isLoading</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+      <span class="p">})</span>
+      <span class="p">.</span><span class="nf">addCase</span><span class="p">(</span><span class="nx">fetchSurveys</span><span class="p">.</span><span class="nx">rejected</span><span class="p">,</span> <span class="p">(</span><span class="nx">state</span><span class="p">,</span> <span class="nx">action</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="nx">state</span><span class="p">.</span><span class="nx">error</span> <span class="o">=</span> <span class="nx">action</span><span class="p">.</span><span class="nx">error</span><span class="p">.</span><span class="nx">message</span> <span class="o">??</span> <span class="kc">null</span><span class="p">;</span>
+        <span class="nx">state</span><span class="p">.</span><span class="nx">isLoading</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+      <span class="p">});</span>
+  <span class="p">},</span>
+<span class="p">});</span>
+</code></pre></div> </div> <p>서버 상태를 순수 RTK로 다루면 로딩/에러/성공 3단계를 매번 직접 분기해야 한다. 대신 Redux DevTools에서 액션이 시간순으로 전부 기록되기 때문에 “언제 무슨 일이 일어났는지” 추적하는 디버깅 경험은 가장 강력하다.</p> <h3 id="rtk-query----rtk--">RTK Query (서버 상태 전용, RTK 안에 내장)</h3> <div class="language-ts highlighter-rouge"> <div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="kd">const</span> <span class="nx">surveyApi</span> <span class="o">=</span> <span class="nf">createApi</span><span class="p">({</span>
+  <span class="na">reducerPath</span><span class="p">:</span> <span class="dl">'</span><span class="s1">surveyApi</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">baseQuery</span><span class="p">:</span> <span class="nf">fetchBaseQuery</span><span class="p">({</span> <span class="na">baseUrl</span><span class="p">:</span> <span class="dl">'</span><span class="s1">/api</span><span class="dl">'</span> <span class="p">}),</span>
+  <span class="na">tagTypes</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">Survey</span><span class="dl">'</span><span class="p">],</span>
+  <span class="na">endpoints</span><span class="p">:</span> <span class="p">(</span><span class="nx">builder</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">({</span>
+    <span class="na">getSurveys</span><span class="p">:</span> <span class="nx">builder</span><span class="p">.</span><span class="nx">query</span><span class="o">&lt;</span><span class="nx">Survey</span><span class="p">[],</span> <span class="k">void</span><span class="o">&gt;</span><span class="p">({</span>
+      <span class="na">query</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="dl">'</span><span class="s1">surveys</span><span class="dl">'</span><span class="p">,</span>
+      <span class="na">providesTags</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">Survey</span><span class="dl">'</span><span class="p">],</span>
+    <span class="p">}),</span>
+    <span class="na">createSurvey</span><span class="p">:</span> <span class="nx">builder</span><span class="p">.</span><span class="nx">mutation</span><span class="o">&lt;</span><span class="nx">Survey</span><span class="p">,</span> <span class="nb">Partial</span><span class="o">&lt;</span><span class="nx">Survey</span><span class="o">&gt;&gt;</span><span class="p">({</span>
+      <span class="na">query</span><span class="p">:</span> <span class="p">(</span><span class="nx">body</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">({</span> <span class="na">url</span><span class="p">:</span> <span class="dl">'</span><span class="s1">surveys</span><span class="dl">'</span><span class="p">,</span> <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">POST</span><span class="dl">'</span><span class="p">,</span> <span class="nx">body</span> <span class="p">}),</span>
+      <span class="na">invalidatesTags</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">Survey</span><span class="dl">'</span><span class="p">],</span> <span class="c1">// 생성 성공 시 목록 자동 재조회</span>
+    <span class="p">}),</span>
+  <span class="p">}),</span>
+<span class="p">});</span>
+</code></pre></div> </div> <p><code class="language-plaintext highlighter-rouge">invalidatesTags</code>/<code class="language-plaintext highlighter-rouge">providesTags</code>로 “이 데이터가 바뀌면 저 쿼리를 다시 가져와라”는 관계를 선언적으로 표현한다. 위에서 손으로 짰던 pending/fulfilled/rejected 분기가 통째로 사라진다.</p> <h3 id="tanstack-query--zustand----">TanStack Query + Zustand (서버/클라이언트를 완전히 분리하는 조합)</h3> <div class="language-ts highlighter-rouge"> <div class="highlight"><pre class="highlight"><code><span class="c1">// 서버 상태</span>
+<span class="kd">function</span> <span class="nf">useSurveys</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nf">useQuery</span><span class="p">({</span>
+    <span class="na">queryKey</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">surveys</span><span class="dl">'</span><span class="p">],</span>
+    <span class="na">queryFn</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nf">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">/api/surveys</span><span class="dl">'</span><span class="p">).</span><span class="nf">then</span><span class="p">((</span><span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">res</span><span class="p">.</span><span class="nf">json</span><span class="p">()),</span>
+  <span class="p">});</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nf">useCreateSurvey</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">queryClient</span> <span class="o">=</span> <span class="nf">useQueryClient</span><span class="p">();</span>
+  <span class="k">return</span> <span class="nf">useMutation</span><span class="p">({</span>
+    <span class="na">mutationFn</span><span class="p">:</span> <span class="p">(</span><span class="na">data</span><span class="p">:</span> <span class="nb">Partial</span><span class="o">&lt;</span><span class="nx">Survey</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">=&gt;</span>
+      <span class="nf">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">/api/surveys</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span> <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">POST</span><span class="dl">'</span><span class="p">,</span> <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nf">stringify</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">}),</span>
+    <span class="na">onSuccess</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">queryClient</span><span class="p">.</span><span class="nf">invalidateQueries</span><span class="p">({</span> <span class="na">queryKey</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">surveys</span><span class="dl">'</span><span class="p">]</span> <span class="p">}),</span>
+  <span class="p">});</span>
+<span class="p">}</span>
+</code></pre></div> </div> <div class="language-ts highlighter-rouge"> <div class="highlight"><pre class="highlight"><code><span class="c1">// 클라이언트 상태</span>
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">useUiStore</span> <span class="o">=</span> <span class="nx">create</span><span class="o">&lt;</span><span class="p">{</span> <span class="na">isModalOpen</span><span class="p">:</span> <span class="nx">boolean</span><span class="p">;</span> <span class="nl">toggleModal</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="k">void</span> <span class="p">}</span><span class="o">&gt;</span><span class="p">((</span><span class="kd">set</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">({</span>
+  <span class="na">isModalOpen</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="na">toggleModal</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nf">set</span><span class="p">((</span><span class="nx">s</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">({</span> <span class="na">isModalOpen</span><span class="p">:</span> <span class="o">!</span><span class="nx">s</span><span class="p">.</span><span class="nx">isModalOpen</span> <span class="p">})),</span>
+<span class="p">}));</span>
+</code></pre></div> </div> <p>서버 상태 코드에 로딩/에러/캐시 관련 필드가 아예 등장하지 않는다는 게 RTK 순수 버전과의 가장 큰 차이다. 클라이언트 상태(<code class="language-plaintext highlighter-rouge">isModalOpen</code>)는 서버 상태와 완전히 분리된 별도 스토어에만 존재해서, “이 값이 서버 값인지 UI 값인지” 헷갈릴 여지가 코드 구조상 사라진다. 2026년 현재 실무에서 가장 널리 쓰이는 조합이 이 형태다.</p> <h3 id="mobx-----">MobX (서버 상태까지 클래스로 직접 관리)</h3> <div class="language-ts highlighter-rouge"> <div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">SurveyStore</span> <span class="p">{</span>
+  <span class="nl">items</span><span class="p">:</span> <span class="nx">Survey</span><span class="p">[]</span> <span class="o">=</span> <span class="p">[];</span>
+  <span class="nx">isLoading</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+
+  <span class="nf">constructor</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nf">makeAutoObservable</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="p">{},</span> <span class="p">{</span> <span class="na">autoBind</span><span class="p">:</span> <span class="kc">true</span> <span class="p">});</span>
+  <span class="p">}</span>
+
+  <span class="k">async</span> <span class="nf">fetchSurveys</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">isLoading</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+    <span class="kd">const</span> <span class="nx">res</span> <span class="o">=</span> <span class="k">await</span> <span class="nf">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">/api/surveys</span><span class="dl">'</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">items</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">res</span><span class="p">.</span><span class="nf">json</span><span class="p">();</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">isLoading</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="k">async</span> <span class="nf">createSurvey</span><span class="p">(</span><span class="nx">data</span><span class="p">:</span> <span class="nb">Partial</span><span class="o">&lt;</span><span class="nx">Survey</span><span class="o">&gt;</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">await</span> <span class="nf">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">/api/surveys</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span> <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">POST</span><span class="dl">'</span><span class="p">,</span> <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nf">stringify</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">});</span>
+    <span class="k">await</span> <span class="k">this</span><span class="p">.</span><span class="nf">fetchSurveys</span><span class="p">();</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div> </div> <p>서버/클라이언트 상태를 같은 클래스 패턴으로 다룰 수 있다는 일관성이 장점이지만, 캐시 무효화와 중복 요청 방지는 여전히 직접 구현해야 한다. TanStack Query와 병행해서 “MobX는 UI 상태만, 서버 상태는 TanStack Query”로 역할을 나누는 조합도 실무에서 흔히 쓰인다.</p> <h3 id="zustand-----">Zustand (서버 상태까지 스토어로 직접 관리)</h3> <div class="language-ts highlighter-rouge"> <div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="kd">const</span> <span class="nx">useSurveyStore</span> <span class="o">=</span> <span class="nx">create</span><span class="o">&lt;</span><span class="nx">SurveyState</span><span class="o">&gt;</span><span class="p">((</span><span class="kd">set</span><span class="p">,</span> <span class="kd">get</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">({</span>
+  <span class="na">items</span><span class="p">:</span> <span class="p">[],</span>
+  <span class="na">isLoading</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="na">fetchSurveys</span><span class="p">:</span> <span class="k">async </span><span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nf">set</span><span class="p">({</span> <span class="na">isLoading</span><span class="p">:</span> <span class="kc">true</span> <span class="p">});</span>
+    <span class="kd">const</span> <span class="nx">res</span> <span class="o">=</span> <span class="k">await</span> <span class="nf">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">/api/surveys</span><span class="dl">'</span><span class="p">);</span>
+    <span class="nf">set</span><span class="p">({</span> <span class="na">items</span><span class="p">:</span> <span class="k">await</span> <span class="nx">res</span><span class="p">.</span><span class="nf">json</span><span class="p">(),</span> <span class="na">isLoading</span><span class="p">:</span> <span class="kc">false</span> <span class="p">});</span>
+  <span class="p">},</span>
+  <span class="na">createSurvey</span><span class="p">:</span> <span class="k">async </span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">await</span> <span class="nf">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">/api/surveys</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span> <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">POST</span><span class="dl">'</span><span class="p">,</span> <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nf">stringify</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">});</span>
+    <span class="k">await</span> <span class="nf">get</span><span class="p">().</span><span class="nf">fetchSurveys</span><span class="p">();</span>
+  <span class="p">},</span>
+<span class="p">}));</span>
+</code></pre></div> </div> <p>MobX와 결이 비슷하지만 클래스 없이 함수형 클로저로 짠다는 차이만 있고, 서버 상태를 직접 다룰 때의 한계(캐싱/재검증 미구현)는 동일하게 남는다.</p> <h2 id="url-">5. 놓치기 쉬운 두 종류 — 폼 상태와 URL 상태</h2> <p>지금까지의 다섯 스택 비교는 전부 “전역 클라이언트 상태 vs 서버 상태” 축에 머물러 있는데, 실무에서 실수가 가장 잦은 건 오히려 폼 상태와 URL 상태를 이 축 안에 억지로 넣는 경우다.</p> <p>폼 상태를 MobX/Zustand 스토어에 넣으면, 인풋 하나 바뀔 때마다 전역 상태가 갱신되면서 그 스토어를 구독하는 다른 컴포넌트까지 불필요하게 리렌더링될 수 있다. <code class="language-plaintext highlighter-rouge">react-hook-form</code>처럼 비제어 방식(ref 기반)으로 입력을 다루는 폼 전용 라이브러리를 쓰면 이 문제 자체가 생기지 않는다.</p> <div class="language-ts highlighter-rouge"> <div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="p">{</span> <span class="nx">register</span><span class="p">,</span> <span class="nx">handleSubmit</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">useForm</span><span class="o">&lt;</span><span class="nx">SurveyForm</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="c1">// register된 인풋은 전역 상태를 거치지 않고 리렌더링 최소화</span>
+</code></pre></div> </div> <p>URL 상태를 전역 스토어에 넣으면 “새로고침하면 필터가 초기화된다”, “이 목록 링크를 복사해서 보내도 필터가 안 걸린 상태로 열린다” 같은 문제가 생긴다. 필터/정렬/페이지 값은 <code class="language-plaintext highlighter-rouge">useSearchParams</code>로 주소창에 반영해야 뒤로가기, 새로고침, 링크 공유가 전부 자연스럽게 동작한다.</p> <div class="language-ts highlighter-rouge"> <div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="p">[</span><span class="nx">searchParams</span><span class="p">,</span> <span class="nx">setSearchParams</span><span class="p">]</span> <span class="o">=</span> <span class="nf">useSearchParams</span><span class="p">();</span>
+<span class="kd">const</span> <span class="nx">page</span> <span class="o">=</span> <span class="nc">Number</span><span class="p">(</span><span class="nx">searchParams</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">page</span><span class="dl">'</span><span class="p">)</span> <span class="o">??</span> <span class="dl">'</span><span class="s1">1</span><span class="dl">'</span><span class="p">);</span>
+</code></pre></div> </div> <h2 id="section-4">6. 결론 — 도구가 아니라 상태의 종류부터 나눈다</h2> <p>“Redux냐 MobX냐 Zustand냐”라는 질문은 사실 상태의 7종류 중 딱 하나(전역 클라이언트 상태)에만 해당하는 질문이다. 서버 상태는 TanStack Query/RTK Query 같은 전용 도구, 폼 상태는 react-hook-form, URL 상태는 라우터의 쿼리스트링 API, 영속 상태는 persist 미들웨어나 직접적인 storage 연동으로 각각 분리하는 게 먼저다. 그렇게 역할을 나눠놓고 나면, 남는 “진짜 전역 클라이언트 상태”는 생각보다 양이 많지 않고, 그 좁아진 범위 안에서는 MobX든 Zustand든 Redux Toolkit이든 어느 걸 골라도 큰 차이가 없어진다. 즉 상태관리 스택 선택 고민의 8할은 “상태를 종류별로 먼저 쪼갰는가”에서 이미 끝나 있다.</p> <hr> <h2 id="section-5">정리 표</h2> <table> <thead> <tr> <th>상태 종류</th> <th>예시</th> <th>특징</th> <th>전용 도구</th> </tr> </thead> <tbody> <tr> <td>서버 상태</td> <td>설문 목록, 사용자 role</td> <td>fetch 필요, staleness 존재, 여러 사용자 공유</td> <td>TanStack Query, RTK Query</td> </tr> <tr> <td>전역 클라이언트 상태</td> <td>모달 열림, 다크모드 토글</td> <td>화면 여러 곳에서 공유, 서버와 무관</td> <td>MobX, Zustand, Redux Toolkit</td> </tr> <tr> <td>로컬 컴포넌트 상태</td> <td>아코디언 펼침, hover</td> <td>해당 컴포넌트 밖에서 의미 없음</td> <td>useState</td> </tr> <tr> <td>폼 상태</td> <td>입력값, 검증 에러</td> <td>입력마다 빈번히 갱신, 검증 로직 결합</td> <td>react-hook-form</td> </tr> <tr> <td>URL 상태</td> <td>검색어, 페이지, 필터</td> <td>공유·새로고침·뒤로가기와 연동 필요</td> <td>useSearchParams</td> </tr> <tr> <td>영속 상태</td> <td>로그인 토큰, 설정값</td> <td>탭을 닫아도 유지</td> <td>localStorage + persist 미들웨어</td> </tr> <tr> <td>낙관적 업데이트</td> <td>좋아요, 순서 변경</td> <td>응답 전 선반영, 실패 시 롤백</td> <td>TanStack Query optimistic update</td> </tr> </tbody> </table> <h2 id="section-6">다음 단계로 갈 수 있는 방향</h2> <p>지금 정리는 “상태를 종류별로 나눈다”는 원칙 수준이고, 실제로 다섯 스택으로 동일한 설문 앱을 완성해보면 여기서 더 세부적인 차이가 드러날 것 같다. RTK Query의 태그 기반 캐시 무효화가 실제로 몇 줄이나 코드를 줄여주는지, TanStack Query의 <code class="language-plaintext highlighter-rouge">staleTime</code>/<code class="language-plaintext highlighter-rouge">gcTime</code> 튜닝이 네트워크 요청 수에 실제로 얼마나 영향을 주는지, MobX의 자동 추적이 Zustand의 수동 선택자(selector) 방식보다 실제 리렌더링 횟수를 얼마나 줄이는지를 다음 글에서 각 스택별로 프로파일링해볼 계획이다. 상태관리는 “정답 하나를 고르는 문제”가 아니라 “이 값의 성격에 맞는 도구를 각각 배치하는 설계 문제”라는 게, 이번에 다섯 스택을 나란히 놓고 비교하며 다시 확인한 지점이다.</p> </div> </div> </article> </div> </div> <div class="col-sm-3"> <nav id="toc-sidebar" class="sticky-top toc toc-sidebar" aria-label="Table of contents" data-toc-collapse="expanded" data-toc-collapse-depth=""></nav> </div> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 원준 서. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>. Photos from <a href="https://unsplash.com" target="_blank" rel="external nofollow noopener">Unsplash</a>. </div> </footer> <script>
+  window.alFolio = {
+    compatBootstrap: false
+  };
+</script> <script src="/assets/js/nav-toggle.js?v=141bd79a73ebc0f0b6ea58e440ae79fc"></script> <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script> <script defer src="/assets/js/masonry.js?v=e49affc7bd2646f6acdad1dbe02c2359" type="text/javascript"></script> <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI=" crossorigin="anonymous"></script> <script src="/assets/al_math/js/mathjax-setup.js"></script> <script defer src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6" crossorigin="anonymous"></script> <script src="/assets/js/tooltips-setup.js?v=fe487e99db6c43751e6e7bdb2d6a0611"></script> <script defer src="https://cdn.jsdelivr.net/npm/tocbot@4.36.4/dist/tocbot.min.js" integrity="sha256-lo/r+jQ81wWrxdIiiiEEd538z4+dTJTt+leOuAS7GCw=" crossorigin="anonymous"></script> <script src="/assets/js/no_defer.js?v=53b1b1a645525975c963ce8bf8bfefcf"></script> <script defer src="/assets/js/common.js?v=87baac90f765f2f3362dcf6aaf312a8a"></script> <script defer src="/assets/js/copy_code.js?v=c8a01c11a92744d44b093fc3bda915df" type="text/javascript"></script> <script defer src="/assets/js/jupyter_new_tab.js?v=896d254890d9b47f0281f63bfccf0dee"></script> <script async src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script> <script async src="https://badge.dimensions.ai/badge.js"></script> <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script> <script defer src="/assets/al_img_tools/js/zoom.js"></script> <script defer src="/assets/js/progress-bar.js?v=499464c5c63ced6cf7ad62509f1e2610" type="text/javascript"></script> <script src="https://cdn.jsdelivr.net/npm/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js" integrity="sha256-uMJJ3EoTyfRBoTbR+lrfu1uRQ87RZG8AR3cVNuQVeFg=" crossorigin="anonymous"></script> <script>
+    addBackToTop();
+  </script> <script type="module" src="/assets/al_search/js/search/ninja-keys.min.js"></script> <ninja-keys hidebreadcrumbs noautoloadmdicons placeholder="Type to start searching"></ninja-keys> <script src="/assets/al_search/js/search-setup.js"></script> <script>
+// get the ninja-keys element
+const ninja = document.querySelector('ninja-keys');
+
+// add the home and posts menu items
+ninja.data = [{
+    id: "nav-about",
+    title: "about",
+    section: "Navigation",
+    handler: () => {
+      window.location.href = "/";
+    },
+  },{id: "nav-blog",
+          title: "blog",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/blog/";
+          },
+        },{id: "nav-daily",
+          title: "daily",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/news/";
+          },
+        },{id: "nav-projects",
+          title: "projects",
+          description: "실무, 개인 프로젝트",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/projects/";
+          },
+        },{id: "nav-cv",
+          title: "CV",
+          description: "This is a description of the page. You can modify it in &#39;_pages/cv.md&#39;. You can also change or remove the top pdf download button.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/cv/";
+          },
+        },{id: "post-상태를-뭉뚱그리지-않기-앱-하나에-상태가-몇-종류나-섞여-있을까",
+        
+          title: "상태를 뭉뚱그리지 않기 — 앱 하나에 상태가 몇 종류나 섞여 있을까",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/state/";
+          
+        },
+      },{id: "post-omdb-movie-app에서-생각해봐야할-것들-2-llm-응답을-ui-로직에-연결하기-편",
+        
+          title: "omdb-movie-app에서 생각해봐야할 것들 (2) — LLM 응답을 UI 로직에 연결하기 편",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/02-llm-output-format/";
+          
+        },
+      },{id: "post-omdb-movie-app에서-생각해봐야할-것들-1-프레임워크-없이-spa-만들기-편",
+        
+          title: "omdb-movie-app에서 생각해봐야할 것들 (1) — 프레임워크 없이 SPA 만들기 편",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/01-vanilla-spa-core/";
+          
+        },
+      },{id: "post-ipad-homepage-프로젝트에서-생각해봐야할-것들-2-푸터-아코디언-편",
+        
+          title: "iPad Homepage 프로젝트에서 생각해봐야할 것들 (2) — 푸터 아코디언 편",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/accordion/";
+          
+        },
+      },{id: "post-ipad-homepage-프로젝트에서-생각해봐야할-5가지-1",
+        
+          title: "iPad Homepage 프로젝트에서 생각해봐야할 5가지 (1)",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/01-post/";
+          
+        },
+      },{id: "post-css만으로-패럴랙스-배경-만들기",
+        
+          title: "CSS만으로 패럴랙스 배경 만들기",
+        
+        description: "background-attachment fixed 파헤치기",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/parallax-background/";
+          
+        },
+      },{id: "post-커밋-메시지-컨벤션-가이드",
+        
+          title: "커밋 메시지 컨벤션 가이드",
+        
+        description: "용도별로 정리한 커밋 메시지 타입과 실전 팁",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/conventional-commits/";
+          
+        },
+      },{id: "books-the-godfather",
+          title: 'The Godfather',
+          description: "",
+          section: "Books",handler: () => {
+              window.location.href = "/books/the_godfather/";
+            },},{id: "news-2026-07-02-01-daily",
+          title: '2026-07-02-01 Daily',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/2026-07-02-01-daily/";
+            },},{id: "news-2026-07-06-01-daily",
+          title: '2026-07-06-01 Daily',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/2026-07-06-01-daily/";
+            },},{id: "news-2026-07-07-01-daily",
+          title: '2026-07-07-01 Daily',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/2026-07-07-01-daily/";
+            },},{id: "news-2026-07-07-02-daily",
+          title: '2026-07-07-02 Daily',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/2026-07-07-02-daily/";
+            },},{id: "news-2026-07-07-03-daily",
+          title: '2026-07-07-03 Daily',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/2026-07-07-03-daily/";
+            },},{id: "news-2026-07-10-01-daily",
+          title: '2026-07-10-01 Daily',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/2026-07-10-01-daily/";
+            },},{id: "news-2026-08-03-01-daily",
+          title: '2026-08-03-01 Daily',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/2026-08-03-01-daily/";
+            },},{id: "news-2026-08-03-02-daily",
+          title: '2026-08-03-02 Daily',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/2026-08-03-02-daily/";
+            },},{id: "news-2026-08-03-03-daily",
+          title: '2026-08-03-03 Daily',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/2026-08-03-03-daily/";
+            },},{id: "news-2026-08-03-04-daily",
+          title: '2026-08-03-04 Daily',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/2026-08-03-04-daily/";
+            },},{id: "news-2026-08-03-05-daily",
+          title: '2026-08-03-05 Daily',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/2026-08-03-05-daily/";
+            },},{id: "news-2026-08-03-06-daily",
+          title: '2026-08-03-06 Daily',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/2026-08-03-06-daily/";
+            },},{id: "projects-starbucks-homepage",
+          title: 'starbucks-homepage',
+          description: "스타벅스 코리아 공식 홈페이지 UI/인터랙션을 재현한 정적 프론트엔드 클론 프로젝트",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/1_project/";
+            },},{id: "projects-ipad-homepage",
+          title: 'ipad-homepage',
+          description: "Apple Korea 공식 홈페이지의 iPad 10.2 제품 소개 페이지를 그대로 재현한 반응형 프론트엔드 클론 프로젝트",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/2_project/";
+            },},{id: "projects-omdb-movie-app",
+          title: 'omdb-movie-app',
+          description: "프레임워크 없이 TypeScript로 직접 구현한 SPA 코어(Component/Store/Router) 기반 영화 검색 &amp; OpenAI 챗봇 추천 서비스",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/3_project/";
+            },},{id: "teachings-data-science-fundamentals",
+          title: 'Data Science Fundamentals',
+          description: "This course covers the foundational aspects of data science, including data collection, cleaning, analysis, and visualization. Students will learn practical skills for working with real-world datasets.",
+          section: "Teachings",handler: () => {
+              window.location.href = "/teachings/data-science-fundamentals/";
+            },},{id: "teachings-introduction-to-machine-learning",
+          title: 'Introduction to Machine Learning',
+          description: "This course provides an introduction to machine learning concepts, algorithms, and applications. Students will learn about supervised and unsupervised learning, model evaluation, and practical implementations.",
+          section: "Teachings",handler: () => {
+              window.location.href = "/teachings/introduction-to-machine-learning/";
+            },},{
+        id: 'social-cv',
+        title: 'CV',
+        section: 'Socials',
+        handler: () => {
+          window.open("/assets/pdf/example_pdf.pdf", "_blank");
+        },
+      },{
+        id: 'social-email',
+        title: 'email',
+        section: 'Socials',
+        handler: () => {
+          window.open("mailto:%79%6F%75@%65%78%61%6D%70%6C%65.%63%6F%6D", "_blank");
+        },
+      },{
+        id: 'social-inspire',
+        title: 'Inspire HEP',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://inspirehep.net/authors/1010907", "_blank");
+        },
+      },{
+        id: 'social-rss',
+        title: 'RSS Feed',
+        section: 'Socials',
+        handler: () => {
+          window.open("/feed.xml", "_blank");
+        },
+      },{
+        id: 'social-scholar',
+        title: 'Google Scholar',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://scholar.google.com/citations?user=qc6CJjYAAAAJ", "_blank");
+        },
+      },{
+        id: 'social-custom_social',
+        title: 'Custom_social',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://www.alberteinstein.com/", "_blank");
+        },
+      },{
+      id: 'light-theme',
+      title: 'Change theme to light',
+      description: 'Change the theme of the site to Light',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("light");
+      },
+    },
+    {
+      id: 'dark-theme',
+      title: 'Change theme to dark',
+      description: 'Change the theme of the site to Dark',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("dark");
+      },
+    },
+    {
+      id: 'system-theme',
+      title: 'Use system default theme',
+      description: 'Change the theme of the site to System Default',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("system");
+      },
+    },];
+
+</script> <script src="/assets/al_search/js/shortcut-key.js"></script> </body> </html>
